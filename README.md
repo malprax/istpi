@@ -532,13 +532,6 @@ aavalue.com
 10bonusringtones.com
 101soho.com
 
-Daftar nomor telepon :
-
-
-
-
-
-
 
 youtube-dl -u syaiful.sabril@gmail.com -p Passw0rd -o ' %(title)s.%(ext)s' https://www.udemy.com/make-money-with-simple-youtube-videos/learn/v4/t/lecture/1569696
 
