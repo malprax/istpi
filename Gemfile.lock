@@ -148,7 +148,6 @@ GEM
       compass (~> 1.0.0)
       sass-rails (< 5.1)
       sprockets (< 2.13)
-    concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     devise (4.1.1)
       bcrypt (~> 3.0)
