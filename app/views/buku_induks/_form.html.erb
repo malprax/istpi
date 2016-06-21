@@ -1,0 +1,27 @@
+<%= simple_form_for(@buku_induk) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :no_stambuk %>
+    <%= f.input :nama %>
+    <%= f.input :jenis_kelamin %>
+    <%= f.input :tempat_lahir %>
+    <%= f.input :tanggal_lahir %>
+    <%= f.input :bangsa %>
+    <%= f.input :agama %>
+    <%= f.input :alamat %>
+    <%= f.input :ijazah_terakhir %>
+    <%= f.input :nama_ayah %>
+    <%= f.input :nama_ibu %>
+    <%= f.input :nama_wali %>
+    <%= f.input :pekerjaan_orangtua_wali %>
+    <%= f.input :tanggal_akademik %>
+    <%= f.input :status_akademik %>
+    <%= f.input :semester_akademik %>
+    <%= f.input :foto %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
