@@ -1,7 +1,5 @@
 defaults: &defaults
 
-
-
 development:
   database: istpi_development
   username: postgres
@@ -13,7 +11,6 @@ development:
   pool: 5
 
   # <<: *defaults
-
 production:
 # development:
 #   database: dc57tjbnmppg78

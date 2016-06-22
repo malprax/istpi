@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621135211) do
+ActiveRecord::Schema.define(version: 20160622035726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,21 @@ ActiveRecord::Schema.define(version: 20160621135211) do
     t.string   "foto"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.string   "nama"
+    t.string   "tempat_lahir"
+    t.string   "tanggal_lahir"
+    t.string   "jenis_kelamin"
+    t.string   "alamat"
+    t.string   "kontak_person"
+    t.string   "asal_sekolah"
+    t.string   "tahun_lulus"
+    t.string   "fakultas_peminat"
+    t.string   "jurusan_peminat"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end

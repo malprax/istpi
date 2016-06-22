@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nama: MyString
+  tempat_lahir: MyString
+  tanggal_lahir: MyString
+  jenis_kelamin: MyString
+  alamat: MyString
+  kontak_person: MyString
+  asal_sekolah: MyString
+  tahun_lulus: MyString
+  fakultas_peminat: MyString
+  jurusan_peminat: MyString
+
+two:
+  nama: MyString
+  tempat_lahir: MyString
+  tanggal_lahir: MyString
+  jenis_kelamin: MyString
+  alamat: MyString
+  kontak_person: MyString
+  asal_sekolah: MyString
+  tahun_lulus: MyString
+  fakultas_peminat: MyString
+  jurusan_peminat: MyString

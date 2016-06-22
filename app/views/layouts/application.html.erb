@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Istpi</title>
+  <title>ISTPI Online</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<section class="head_body">
+    <h4>INSTITUT SAINS DAN TEKNOLOGI PEMBANGUNAN INDONESIA</h4>
+</section>
+<section class="navigasi">
+  <%= render 'shared/navigation' %>
+</section>
+<section class="body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+          <%= yield %>
+      </div>
+    </div>
+  </div>
+</section>
 
-<%= yield %>
+
 
 </body>
 </html>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nama:</strong>
+  <%= @registration.nama %>
+</p>
+
+<p>
+  <strong>Tempat lahir:</strong>
+  <%= @registration.tempat_lahir %>
+</p>
+
+<p>
+  <strong>Tanggal lahir:</strong>
+  <%= @registration.tanggal_lahir %>
+</p>
+
+<p>
+  <strong>Jenis kelamin:</strong>
+  <%= @registration.jenis_kelamin %>
+</p>
+
+<p>
+  <strong>Alamat:</strong>
+  <%= @registration.alamat %>
+</p>
+
+<p>
+  <strong>Kontak person:</strong>
+  <%= @registration.kontak_person %>
+</p>
+
+<p>
+  <strong>Asal sekolah:</strong>
+  <%= @registration.asal_sekolah %>
+</p>
+
+<p>
+  <strong>Tahun lulus:</strong>
+  <%= @registration.tahun_lulus %>
+</p>
+
+<p>
+  <strong>Fakultas peminat:</strong>
+  <%= @registration.fakultas_peminat %>
+</p>
+
+<p>
+  <strong>Jurusan peminat:</strong>
+  <%= @registration.jurusan_peminat %>
+</p>
+
+<%= link_to 'Edit', edit_registration_path(@registration) %> |
+<%= link_to 'Back', registrations_path %>
