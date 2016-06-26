@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'pages/index'
-
+  resources :students_biographies
+  resources :index
   resources :registrations
   resources :buku_induks
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'buku_induks#index'
+  root 'pages#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,2 @@
+module StudentsBiographiesHelper
+end

@@ -1,0 +1,133 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Students Biographies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Stambuk</th>
+      <th>Jenis kelamin</th>
+      <th>Tempat lahir</th>
+      <th>Tanggal lahir</th>
+      <th>Agama</th>
+      <th>Alamat rumah rt</th>
+      <th>Alamat rumah rw</th>
+      <th>Alamat rumah kota</th>
+      <th>Alamat rumah kabupaten</th>
+      <th>Alamat rumah kodepos</th>
+      <th>Siswa no kontak</th>
+      <th>Siswa email</th>
+      <th>Ayah nama</th>
+      <th>Ayah tempat lahir</th>
+      <th>Ayah tanggal lahir</th>
+      <th>Ayah no kontak</th>
+      <th>Ayah alamat rt</th>
+      <th>Ayah alamat rw</th>
+      <th>Ayah alamat kota</th>
+      <th>Ayah alamat kabupaten</th>
+      <th>Ayah alamat kodepos</th>
+      <th>Ayah pendidikan terakhir</th>
+      <th>Ayah pekerjaan</th>
+      <th>Ibu nama</th>
+      <th>Ibu tempat lahir</th>
+      <th>Ibu tanggal lahir</th>
+      <th>Ibu no kontak</th>
+      <th>Ibu alamat rt</th>
+      <th>Ibu alamat rw</th>
+      <th>Ibu alamat kota</th>
+      <th>Ibu alamat kabupaten</th>
+      <th>Ibu alamat kodepos</th>
+      <th>Ibu pendidikan terakhir</th>
+      <th>Ibu pekerjaan</th>
+      <th>Wali nama</th>
+      <th>Wali tempat lahir</th>
+      <th>Wali tanggal lahir</th>
+      <th>Wali no kontak</th>
+      <th>Wali alamat rt</th>
+      <th>Wali alamat rw</th>
+      <th>Wali alamat kota</th>
+      <th>Wali alamat kabupaten</th>
+      <th>Wali alamat kodepos</th>
+      <th>Wali pendidikan terakhir</th>
+      <th>Wali pekerjaan</th>
+      <th>Fakultas</th>
+      <th>Jurusan</th>
+      <th>Sekolah sd</th>
+      <th>Sekolah sd tahun lulus</th>
+      <th>Sekolah smp tahun lulus</th>
+      <th>Sekolah smu tahun lulus</th>
+      <th>Perguruan tinggi asal</th>
+      <th>Perguruan tinggi asal tahun terakhir</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students_biographies.each do |students_biography| %>
+      <tr>
+        <td><%= students_biography.name %></td>
+        <td><%= students_biography.stambuk %></td>
+        <td><%= students_biography.jenis_kelamin %></td>
+        <td><%= students_biography.tempat_lahir %></td>
+        <td><%= students_biography.tanggal_lahir %></td>
+        <td><%= students_biography.agama %></td>
+        <td><%= students_biography.alamat_rumah_rt %></td>
+        <td><%= students_biography.alamat_rumah_rw %></td>
+        <td><%= students_biography.alamat_rumah_kota %></td>
+        <td><%= students_biography.alamat_rumah_kabupaten %></td>
+        <td><%= students_biography.alamat_rumah_kodepos %></td>
+        <td><%= students_biography.siswa_no_kontak %></td>
+        <td><%= students_biography.siswa_email %></td>
+        <td><%= students_biography.ayah_nama %></td>
+        <td><%= students_biography.ayah_tempat_lahir %></td>
+        <td><%= students_biography.ayah_tanggal_lahir %></td>
+        <td><%= students_biography.ayah_no_kontak %></td>
+        <td><%= students_biography.ayah_alamat_rt %></td>
+        <td><%= students_biography.ayah_alamat_rw %></td>
+        <td><%= students_biography.ayah_alamat_kota %></td>
+        <td><%= students_biography.ayah_alamat_kabupaten %></td>
+        <td><%= students_biography.ayah_alamat_kodepos %></td>
+        <td><%= students_biography.ayah_pendidikan_terakhir %></td>
+        <td><%= students_biography.ayah_pekerjaan %></td>
+        <td><%= students_biography.ibu_nama %></td>
+        <td><%= students_biography.ibu_tempat_lahir %></td>
+        <td><%= students_biography.ibu_tanggal_lahir %></td>
+        <td><%= students_biography.ibu_no_kontak %></td>
+        <td><%= students_biography.ibu_alamat_rt %></td>
+        <td><%= students_biography.ibu_alamat_rw %></td>
+        <td><%= students_biography.ibu_alamat_kota %></td>
+        <td><%= students_biography.ibu_alamat_kabupaten %></td>
+        <td><%= students_biography.ibu_alamat_kodepos %></td>
+        <td><%= students_biography.ibu_pendidikan_terakhir %></td>
+        <td><%= students_biography.ibu_pekerjaan %></td>
+        <td><%= students_biography.wali_nama %></td>
+        <td><%= students_biography.wali_tempat_lahir %></td>
+        <td><%= students_biography.wali_tanggal_lahir %></td>
+        <td><%= students_biography.wali_no_kontak %></td>
+        <td><%= students_biography.wali_alamat_rt %></td>
+        <td><%= students_biography.wali_alamat_rw %></td>
+        <td><%= students_biography.wali_alamat_kota %></td>
+        <td><%= students_biography.wali_alamat_kabupaten %></td>
+        <td><%= students_biography.wali_alamat_kodepos %></td>
+        <td><%= students_biography.wali_pendidikan_terakhir %></td>
+        <td><%= students_biography.wali_pekerjaan %></td>
+        <td><%= students_biography.fakultas %></td>
+        <td><%= students_biography.jurusan %></td>
+        <td><%= students_biography.sekolah_sd %></td>
+        <td><%= students_biography.sekolah_sd_tahun_lulus %></td>
+        <td><%= students_biography.sekolah_smp_tahun_lulus %></td>
+        <td><%= students_biography.sekolah_smu_tahun_lulus %></td>
+        <td><%= students_biography.perguruan_tinggi_asal %></td>
+        <td><%= students_biography.perguruan_tinggi_asal_tahun_terakhir %></td>
+        <td><%= link_to 'Show', students_biography %></td>
+        <td><%= link_to 'Edit', edit_students_biography_path(students_biography) %></td>
+        <td><%= link_to 'Destroy', students_biography, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Students biography', new_students_biography_path %>

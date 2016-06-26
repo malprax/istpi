@@ -6,12 +6,11 @@
   <thead>
     <tr>
       <th>Nama</th>
-      <th>Tempat lahir</th>
-      <th>Tanggal lahir</th>
+      <th>Tempat, Tanggal Lahir</th>
       <th>Jenis kelamin</th>
       <th>Alamat</th>
-      <th>Kontak person</th>
-      <th>Asal sekolah</th>
+      <th>No. Kontak</th>
+      <th>Asal Sekolah</th>
       <th>Tahun lulus</th>
       <th>Fakultas</th>
       <th>Jurusan</th>
@@ -23,8 +22,7 @@
     <% @registrations.each do |registration| %>
       <tr>
         <td><%= link_to registration.nama, registration %></td>
-        <td><%= registration.tempat_lahir %></td>
-        <td><%= registration.tanggal_lahir %></td>
+        <td><%= registration.tempat_lahir %>, &nbsp;<%= registration.tanggal_lahir %></td>
         <td><%= registration.jenis_kelamin %></td>
         <td><%= registration.alamat %></td>
         <td><%= registration.kontak_person %></td>
@@ -34,7 +32,7 @@
         <td><%= registration.jurusan_peminat %></td>
 
         <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
-        <td><%= link_to 'Destroy', registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Hapus', registration, method: :delete, data: { confirm: 'Anda Yakin?' } %></td>
       </tr>
     <% end %>
   </tbody>

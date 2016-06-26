@@ -6,6 +6,7 @@ $colHighlight   : #f0f691;
 .navbar-default {
   background-color: $bgDefault;
   border-color: $bgHighlight;
+  border-radius: 0px;
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus {

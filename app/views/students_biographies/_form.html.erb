@@ -1,0 +1,64 @@
+<%= simple_form_for(@students_biography) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :stambuk %>
+    <%= f.input :jenis_kelamin %>
+    <%= f.input :tempat_lahir %>
+    <%= f.input :tanggal_lahir %>
+    <%= f.input :agama %>
+    <%= f.input :alamat_rumah_rt %>
+    <%= f.input :alamat_rumah_rw %>
+    <%= f.input :alamat_rumah_kota %>
+    <%= f.input :alamat_rumah_kabupaten %>
+    <%= f.input :alamat_rumah_kodepos %>
+    <%= f.input :siswa_no_kontak %>
+    <%= f.input :siswa_email %>
+    <%= f.input :ayah_nama %>
+    <%= f.input :ayah_tempat_lahir %>
+    <%= f.input :ayah_tanggal_lahir %>
+    <%= f.input :ayah_no_kontak %>
+    <%= f.input :ayah_alamat_rt %>
+    <%= f.input :ayah_alamat_rw %>
+    <%= f.input :ayah_alamat_kota %>
+    <%= f.input :ayah_alamat_kabupaten %>
+    <%= f.input :ayah_alamat_kodepos %>
+    <%= f.input :ayah_pendidikan_terakhir %>
+    <%= f.input :ayah_pekerjaan %>
+    <%= f.input :ibu_nama %>
+    <%= f.input :ibu_tempat_lahir %>
+    <%= f.input :ibu_tanggal_lahir %>
+    <%= f.input :ibu_no_kontak %>
+    <%= f.input :ibu_alamat_rt %>
+    <%= f.input :ibu_alamat_rw %>
+    <%= f.input :ibu_alamat_kota %>
+    <%= f.input :ibu_alamat_kabupaten %>
+    <%= f.input :ibu_alamat_kodepos %>
+    <%= f.input :ibu_pendidikan_terakhir %>
+    <%= f.input :ibu_pekerjaan %>
+    <%= f.input :wali_nama %>
+    <%= f.input :wali_tempat_lahir %>
+    <%= f.input :wali_tanggal_lahir %>
+    <%= f.input :wali_no_kontak %>
+    <%= f.input :wali_alamat_rt %>
+    <%= f.input :wali_alamat_rw %>
+    <%= f.input :wali_alamat_kota %>
+    <%= f.input :wali_alamat_kabupaten %>
+    <%= f.input :wali_alamat_kodepos %>
+    <%= f.input :wali_pendidikan_terakhir %>
+    <%= f.input :wali_pekerjaan %>
+    <%= f.input :fakultas %>
+    <%= f.input :jurusan %>
+    <%= f.input :sekolah_sd %>
+    <%= f.input :sekolah_sd_tahun_lulus %>
+    <%= f.input :sekolah_smp_tahun_lulus %>
+    <%= f.input :sekolah_smu_tahun_lulus %>
+    <%= f.input :perguruan_tinggi_asal %>
+    <%= f.input :perguruan_tinggi_asal_tahun_terakhir %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
