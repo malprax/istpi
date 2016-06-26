@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
   resources :registrations
   resources :buku_induks
   # The priority is based upon order of creation: first created -> highest priority.
