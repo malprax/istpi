@@ -1,19 +1,25 @@
-<%= simple_form_for(@registration, wrapper: :horizontal_form) do |f| %>
-  <%= f.error_notification %>
+<div class="container-fluid">
+  <div class="row">
+    <%= simple_form_for(@registration, wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
+      <%= f.error_notification %>
 
-    <%= f.input :nama, label: "Nama" %>
-    <%= f.input :tempat_lahir, label: "Tempat Lahir" %>
-    <%= f.input :tanggal_lahir, label: "Tanggal Lahir"%>
-    <%= f.input :jenis_kelamin, label: "Jenis Kelamin"%>
-    <%= f.input :alamat, label: "Alamat"%>
-    <%= f.input :kontak_person, label: "Nomor Kontak Yang Bisa Dihubungi"%>
-    <%= f.input :asal_sekolah, label: "Asal Sekolah"%>
-    <%= f.input :tahun_lulus, label: "Tahun Lulus"%>
-    <%= f.input :fakultas_peminat, label: "Fakultas Yang Diminati"%>
-    <%= f.input :jurusan_peminat, label: "Jurusan Yang Diminati"%>
+          <%= f.input :nama, label: "Nama" %>
+          <%= f.input :tempat_lahir, label: "Tempat Lahir"%>
+          <%= f.input :tanggal_lahir, label: "Tanggal Lahir"%>
+          <%= f.input :jenis_kelamin, label: "Jenis Kelamin"%>
+          <%= f.input :alamat, label: "Alamat"%>
+          <%= f.input :kontak_person, label: "Nomor Handphone", hint: "Pastikan nomornya masih aktif dan dapat dihubungi", wrapper: :horizontal_form do %>
+              <%= f.input_field :kontak_person, wrapper: :horizontal_form %>
+          <% end %>
+          <%= f.input :asal_sekolah, label: "Asal Sekolah"%>
+          <%= f.input :tahun_lulus, label: "Tahun Lulus"%>
+          <%= f.input :fakultas_peminat, label: "Fakultas Yang Diminati"%>
+          <%= f.input :jurusan_peminat, label: "Jurusan Yang Diminati"%>
 
+      <div class="col-sm-offset-3">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
 
-  <div class="form-actions col-sm-12 col-sm-offset-3">
-    <%= f.button :submit %>
   </div>
-<% end %>
+</div>
