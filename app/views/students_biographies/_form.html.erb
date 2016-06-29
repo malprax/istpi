@@ -1,4 +1,4 @@
-<%= simple_form_for(@students_biography) do |f| %>
+<%= simple_form_for(@students_biography, wrapper: :horizontal_form) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -18,10 +18,14 @@
     <%= f.input :ayah_nama %>
     <%= f.input :ayah_tempat_lahir %>
     <%= f.input :ayah_tanggal_lahir %>
-    <%= f.input :ayah_no_kontak %>
-    <%= f.input :ayah_alamat_rt %>
-    <%= f.input :ayah_alamat_rw %>
-    <%= f.input :ayah_alamat_kota %>
+
+    <p class="lead">
+      Ayah
+    </p>
+    <%= f.input :ayah_no_kontak, label: "No Kontak" %>
+    <%= f.input :ayah_alamat_rt, label: "RT"  %>
+    <%= f.input :ayah_alamat_rw, label: "RW"  %>
+    <%= f.input :ayah_alamat_kota, label: "Kota" %>
     <%= f.input :ayah_alamat_kabupaten %>
     <%= f.input :ayah_alamat_kodepos %>
     <%= f.input :ayah_pendidikan_terakhir %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :incoming_mails
+  resources :outcoming_mails
   resources :students_biographies
   resources :index
   resources :registrations

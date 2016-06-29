@@ -14,20 +14,41 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Beranda", root_url %></li>
-        <li ><%= link_to "Mahasiswa", '#' %></li>
-        <li ><%= link_to "Perkuliahan", '#' %></li>
-        <li ><%= link_to "Perpustakaan", '#' %></li>
-        <li ><%= link_to "Pendaftaran", registrations_path %></li>
+        <li class="<%= params[:controller]== 'pages' && params[:action]== 'index' ? 'active' : '' %>"><%= link_to "Beranda", root_url %></li>
+        <li class="<%= params[:controller]== 'students_biographies' ? 'active' : '' %>"><%= link_to "Mahasiswa", students_biographies_path %></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Perkuliahan <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><%= link_to "", "#" %></li>
-            <li><%= link_to "", "#" %></li>
-            <li><%= link_to "", "#" %></li>
-            <li><%= link_to "", "#" %></li>
+            <li><%= link_to "Aturan", "#" %></li>
+            <li><%= link_to "Jadwal", "#" %></li>
+            <li><%= link_to "Nilai", "#" %></li>
+            <li><%= link_to "Penasehat Akademik", "#" %></li>
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Biro Akademik<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="<%= params[:controller] == 'registrations' ? 'active' : '' %>"><%= link_to "Calon Mahasiswa", registrations_path %></li>
+            <li ><%= link_to "Buku Induk", registrations_path %></li>
+            <li ><%= link_to "Kalender Akademik", '#' %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Biro Umum<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ><%= link_to "Program kerja", '#' %></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Persuratan<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="<%= params[:controller]== 'incomings' ? 'active' : '' %>"><%= link_to "Surat Masuk", incoming_mails_path %></li>
+            <li class="<%= params[:controller]== 'outcomings' ? 'active' : '' %>"><%= link_to "Surat Keluar", outcoming_mails_path %></li>
+          </ul>
+        </li>
+        <li ><%= link_to "Perpustakaan", '#' %></li>
+        <li ><%= link_to "Keuangan", '#' %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <%# if user_signed_in? %>

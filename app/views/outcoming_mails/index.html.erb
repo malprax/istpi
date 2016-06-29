@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Surat Keluar</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nomor Berkas</th>
+      <th>Alamat Tujuan</th>
+      <th>Tanggal</th>
+      <th>Perihal</th>
+      <th>Nomor petunjuk</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @outcoming_mails.each_with_index do |outcoming_mail, i| %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%= "5/1/IST-PI/VI.2016" %></td>
+        <td><%= outcoming_mail.address %></td>
+        <td><%= outcoming_mail.date %></td>
+        <td><%= outcoming_mail.abouts %></td>
+        <td><%= outcoming_mail.nomor_petunjuk %></td>
+        <td><%= link_to 'Edit', edit_outcoming_mail_path(outcoming_mail) %></td>
+        <td><%= link_to 'Hapus', outcoming_mail, method: :delete, data: { confirm: 'Anda Yakin?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Buat Surat Keluar', new_outcoming_mail_path %>

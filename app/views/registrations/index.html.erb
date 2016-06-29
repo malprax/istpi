@@ -12,9 +12,9 @@
       <th>No. Kontak</th>
       <th>Asal Sekolah</th>
       <th>Tahun lulus</th>
-      <th>Fakultas</th>
-      <th>Jurusan</th>
-      <th colspan="3"></th>
+      <th>Program Studi</th>
+      <th>Referal</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -28,8 +28,8 @@
         <td><%= registration.kontak_person %></td>
         <td><%= registration.asal_sekolah %></td>
         <td><%= registration.tahun_lulus %></td>
-        <td><%= registration.fakultas_peminat %></td>
         <td><%= registration.jurusan_peminat %></td>
+        <td><%= registration.referal %></td>
 
         <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
         <td><%= link_to 'Hapus', registration, method: :delete, data: { confirm: 'Anda Yakin?' } %></td>

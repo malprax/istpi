@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Surat Masuk</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Date</th>
+      <th>Abouts</th>
+      <th>Nomor petunjuk</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @incoming_mails.each do |incoming_mail| %>
+      <tr>
+        <td><%= incoming_mail.address %></td>
+        <td><%= incoming_mail.date %></td>
+        <td><%= incoming_mail.abouts %></td>
+        <td><%= incoming_mail.nomor_petunjuk %></td>
+        <td><%= link_to 'Show', incoming_mail %></td>
+        <td><%= link_to 'Edit', edit_incoming_mail_path(incoming_mail) %></td>
+        <td><%= link_to 'Destroy', incoming_mail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Incoming mail', new_incoming_mail_path %>

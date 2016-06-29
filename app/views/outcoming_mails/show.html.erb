@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @outcoming_mail.address %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @outcoming_mail.date %>
+</p>
+
+<p>
+  <strong>Abouts:</strong>
+  <%= @outcoming_mail.abouts %>
+</p>
+
+<p>
+  <strong>Nomor petunjuk:</strong>
+  <%= @outcoming_mail.nomor_petunjuk %>
+</p>
+
+<%= link_to 'Edit', edit_outcoming_mail_path(@outcoming_mail) %> |
+<%= link_to 'Back', outcoming_mails_path %>

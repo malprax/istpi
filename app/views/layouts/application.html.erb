@@ -11,9 +11,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<section class="head_body">
-    <h4>INSTITUT SAINS DAN TEKNOLOGI PEMBANGUNAN INDONESIA</h4>
+<section id="head_body">
+  <div class="container">
+    <div class="row">
+      <div class = "col-sm-1" id="image_logo">
+        <%= image_tag('logo_istpi.svg') %>
+      </div>
+      <div class="col-sm-8" id="text_logo">
+          <p>YAYASAN PEMBANGUNAN INDONESIA</p>
+          <p>INSTITUT SAINS DAN TEKNOLOGI PEMBANGUNAN INDONESIA</p>
+          <p>Jln. Andi Pangeran Pettarani No.99 B, Makassar</p>
+      </div>
+    </div>
+  </div>
+
 </section>
+
 <section class="navigasi">
   <%= render 'shared/navigation' %>
 </section>

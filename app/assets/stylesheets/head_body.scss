@@ -1,3 +1,13 @@
-.head_body{
-  padding: 20px 0 20px 20px;
+#head_body{
+  padding: 10px 0 10px 0px !important;
+  img{
+    width: 85%;
+    padding-right: 0px !important;
+  }
+  #text_logo{
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+    padding-left: 0px !important;
+  }
 }

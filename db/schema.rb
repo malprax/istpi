@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160626132232) do
+ActiveRecord::Schema.define(version: 20160627082428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,24 @@ ActiveRecord::Schema.define(version: 20160626132232) do
     t.datetime "updated_at",              null: false
   end
 
+  create_table "incoming_mails", force: :cascade do |t|
+    t.string   "address"
+    t.string   "date"
+    t.string   "abouts"
+    t.string   "nomor_petunjuk"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "outcoming_mails", force: :cascade do |t|
+    t.string   "address"
+    t.string   "date"
+    t.string   "abouts"
+    t.string   "nomor_petunjuk"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "registrations", force: :cascade do |t|
     t.string   "nama"
     t.string   "tempat_lahir"
@@ -49,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160626132232) do
     t.string   "tahun_lulus"
     t.string   "fakultas_peminat"
     t.string   "jurusan_peminat"
+    t.string   "referal"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

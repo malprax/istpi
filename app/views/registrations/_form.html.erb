@@ -1,23 +1,46 @@
 <div class="container-fluid">
   <div class="row">
-    <%= simple_form_for(@registration, wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
-      <%= f.error_notification %>
+    <div class="col-sm-4">
+      <div class="panel panel-success panel-hover">
+          <!-- Default panel contents -->
+          <div class="panel-heading">
+            <div class="panel-title">
+                Mohon Diperhatikan!
+            </div>
+          </div>
+          <div class="panel-body">
+            <p>Syarat Pendaftaran ulang sebagai berikut:</p>
+          </div>
 
-          <%= f.input :nama, label: "Nama" %>
-          <%= f.input :tempat_lahir, label: "Tempat Lahir"%>
-          <%= f.input :tanggal_lahir, label: "Tanggal Lahir"%>
-          <%= f.input :jenis_kelamin, label: "Jenis Kelamin"%>
-          <%= f.input :alamat, label: "Alamat"%>
-          <%= f.input :kontak_person, label: "Nomor Handphone", wrapper: :horizontal_form  %>
-          <%= f.input :asal_sekolah, label: "Asal Sekolah"%>
-          <%= f.input :tahun_lulus, label: "Tahun Lulus"%>
-          <%= f.input :fakultas_peminat, label: "Fakultas Yang Diminati"%>
-          <%= f.input :jurusan_peminat, label: "Jurusan Yang Diminati"%>
+          <!-- List group -->
+          <ul class="list-group">
+            <li class="list-group-item">Biaya Pendaftaran Sebesar Rp. 250.000,-</li>
+            <li class="list-group-item">Biaya SPP persemester Rp. 1.500.000,-</li>
+            <li class="list-group-item">Fotocopy Ijazah SMU/Sederajat legalisir</li>
+            <li class="list-group-item">Fotocopy Transkrip Nilai SMU/Sederajat legalisir</li>
+            <li class="list-group-item">Pas Photo 3x4 warna/hitam putih 2 lembar</li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-sm-8">
+      <%= simple_form_for(@registration, wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
+        <%= f.error_notification %>
 
-      <div class="col-sm-offset-3">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
-
+            <%= f.input :nama, label: "Nama" %>
+            <%= f.input :tempat_lahir, label: "Tempat Lahir"%>
+            <%= f.input :tanggal_lahir, label: "Tanggal Lahir"%>
+            <%= f.input :jenis_kelamin, label: "Jenis Kelamin"%>
+            <%= f.input :alamat, label: "Alamat"%>
+            <%= f.input :kontak_person, label: "Nomor Handphone", wrapper: :horizontal_form  %>
+            <%= f.input :asal_sekolah, label: "Asal Sekolah"%>
+            <%= f.input :tahun_lulus, label: "Tahun Lulus"%>
+            <%#= f.input :fakultas_peminat, label: "Fakultas Yang Diminati"%>
+            <%= f.input :jurusan_peminat, label: "Pilih Program Studi", collection: ["Teknik Sipil", "Teknik Elektro"]%>
+            <%= f.input :referal, label: "Referal"%>
+        <div class="col-sm-offset-3">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
