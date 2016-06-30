@@ -17,3 +17,7 @@ class CreateRegistrations < ActiveRecord::Migration
     end
   end
 end
+
+
+# A simple, small, and beauty, Brooch Wolfis Bow. Handmade from AR souvenir. You can mix the color for combination and the amount of the pearl too.
+#Hello all, nice to see you again, we wish all the best for you and full of happiness. This time AR souvenir will give you a free tutorial for making simple, small and beantuy brooch wolfish bow. Please check out the video, and subscribe our page. Thank you... :)
