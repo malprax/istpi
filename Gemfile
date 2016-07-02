@@ -177,3 +177,6 @@ gem 'roo-xls'
 gem 'spreadsheet'
 # gem 'active_importer'
 # gem 'active_importer_doc'
+
+#using react
+# gem 'react-rails'
