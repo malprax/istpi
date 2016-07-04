@@ -1,0 +1,14 @@
+<%= simple_form_for(@functional_structural) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: "Nama" %>
+    <%= f.input :jabatan, label: "Jabatan", collection: ["Rektor", "Pembantu Rektor I", "Pembantu Rektor II", "Pembantu Rektor III", "Dekan Teknik", "Dekan MIPA", "Ketua Jurusan Elektro", "Ketua Jurusan Sipil", "Biro Akademik", "Biro Umum"] %>
+    <%= f.input :nip, label: "NIP" %>
+    <%= f.input :nidn, label: "NIDN" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

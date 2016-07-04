@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :lectures
+  resources :functional_structurals
   namespace :admin do
    resources :registrations
   end

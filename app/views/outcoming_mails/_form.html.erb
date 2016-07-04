@@ -4,10 +4,22 @@
   <div class="form-inputs">
     <%= f.input :address, label: "Alamat" %>
     <%= f.input :date, label: "Tanggal" %>
+    <%= f.input :nomor_petunjuk, label: "Nomor Petunjuk", collection:['1. Akademik','2.Keuangan','3. Kemahasiswaan','4.Administrasi','5.Keputusan','6.Materil', '7. Dan Lain-Lain'] %>
     <%= f.input :abouts, label: "Perihal" %>
-    <%= f.input :nomor_petunjuk, label: "Nomor Petunjuk", collection:['1. Akademik','2.Keuangan','3. Kemahasiswaan','4.Administrasi','5. Materil', '6. Keputusan', '7. Dan Lain-Lain'] %>
+    <%= f.input :to, label: "Kepada" %>
+    <%= f.input :lampiran, label: "Lampiran" %>
+    <%= f.cktext_area :isi_surat, label: "Isi Surat" %>
+    <%= f.input :tanda_tangan_1, label: "Tanda Tangan 1" %>
+    <%= f.input :jabatan_tanda_tangan_1, label: "Jabatan Tanda Tangan 1", collection:['Rektor', 'Pembantu Rektor I', 'Pembantu Rektor II', 'Pembantu Rekrot III'] %>
+    <%= f.input :tanda_tangan_2, label: "Tanda Tangan 2" %>
+    <%= f.input :jabatan_tanda_tangan_2, label: "Jabatan Tanda Tangan 2" %>
+    <%= f.input :tanda_tangan_3, label: "Tanda Tangan 3" %>
+    <%= f.input :jabatan_tanda_tangan_3, label: "Jabatan Tanda Tangan 3" %>
+    <%= f.input :tanda_tangan_4, label: "Tanda Tangan 4" %>
+    <%= f.input :jabatan_tanda_tangan_4, label: "Jabatan Tanda Tangan 4" %>
+    <%= f.input :catatan, label: "Catatan" %>
+    <%= f.input :tembusan, label: "Tembusan" %>
   </div>
-
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

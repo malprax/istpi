@@ -1,0 +1,17 @@
+<%= simple_form_for(@lecture, wrapper: :horizontal_form) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: "Nama" %>
+    <%= f.input :nidn, label: "NIDN" %>
+    <%= f.input :fakultas, label: "Fakultas", collection:["Teknik", "MIPA"] %>
+    <%= f.input :jurusan, label: "Jurusan", collection:["Sipil", "Elektro", "Mesin", "Lingkungan", "Statistika"] %>
+    <%= f.input :alamat, label: "Alamat" %>
+    <%= f.input :no_kontak, label: "No Kontak" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+  <br>
+<% end %>

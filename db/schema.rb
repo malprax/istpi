@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627082428) do
+ActiveRecord::Schema.define(version: 20160704201542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 20160627082428) do
     t.datetime "updated_at",              null: false
   end
 
+  create_table "functional_structurals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "jabatan"
+    t.string   "nip"
+    t.string   "nidn"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "incoming_mails", force: :cascade do |t|
     t.string   "address"
     t.string   "date"
@@ -47,13 +56,37 @@ ActiveRecord::Schema.define(version: 20160627082428) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "lectures", force: :cascade do |t|
+    t.string   "name"
+    t.string   "nidn"
+    t.string   "fakultas"
+    t.string   "jurusan"
+    t.string   "alamat"
+    t.string   "no_kontak"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "outcoming_mails", force: :cascade do |t|
     t.string   "address"
     t.string   "date"
     t.string   "abouts"
     t.string   "nomor_petunjuk"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "isi_surat"
+    t.string   "to"
+    t.string   "lampiran"
+    t.string   "tanda_tangan_1"
+    t.string   "jabatan_tanda_tangan_1"
+    t.string   "tanda_tangan_2"
+    t.string   "jabatan_tanda_tangan_2"
+    t.string   "tanda_tangan_3"
+    t.string   "jabatan_tanda_tangan_3"
+    t.string   "tanda_tangan_4"
+    t.string   "jabatan_tanda_tangan_4"
+    t.string   "catatan"
+    t.string   "tembusan"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "registrations", force: :cascade do |t|

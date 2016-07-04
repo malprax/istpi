@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lecture.name %>
+</p>
+
+<p>
+  <strong>Nidn:</strong>
+  <%= @lecture.nidn %>
+</p>
+
+<p>
+  <strong>Fakultas:</strong>
+  <%= @lecture.fakultas %>
+</p>
+
+<p>
+  <strong>Jurusan:</strong>
+  <%= @lecture.jurusan %>
+</p>
+
+<p>
+  <strong>Alamat:</strong>
+  <%= @lecture.alamat %>
+</p>
+
+<p>
+  <strong>No kontak:</strong>
+  <%= @lecture.no_kontak %>
+</p>
+
+<%= link_to 'Edit', edit_lecture_path(@lecture) %> |
+<%= link_to 'Back', lectures_path %>

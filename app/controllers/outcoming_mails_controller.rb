@@ -69,6 +69,6 @@ class OutcomingMailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def outcoming_mail_params
-      params.require(:outcoming_mail).permit(:address, :date, :abouts, :nomor_petunjuk)
+      params.require(:outcoming_mail).permit(:address, :date, :abouts, :nomor_petunjuk, :isi_surat, :to, :lampiran, :tanda_tangan_1, :jabatan_tanda_tangan_1, :tanda_tangan_2, :jabatan_tanda_tangan_2, :tanda_tangan_3, :jabatan_tanda_tangan_3, :tanda_tangan_4, :jabatan_tanda_tangan_4, :catatan, :tembusan)
     end
 end
