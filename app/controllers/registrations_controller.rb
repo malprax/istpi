@@ -5,11 +5,22 @@ class RegistrationsController < ApplicationController
   # GET /registrations.json
   def index
     @registrations = Registration.all
+
   end
 
   # GET /registrations/1
   # GET /registrations/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = RegistrationPdf.new(@registration)
+        send_data pdf.render,
+        type: "application/pdf",
+        disposition: "inline",
+        filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.full_name}.pdf"
+      end
+    end
   end
 
   # GET /registrations/new
@@ -69,6 +80,6 @@ class RegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
-      params.require(:registration).permit(:nama, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :alamat, :kontak_person, :asal_sekolah, :tahun_lulus, :fakultas_peminat, :jurusan_peminat, :referal)
+      params.require(:registration).permit(:nama, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :alamat, :kontak_person, :asal_sekolah, :tahun_lulus, :fakultas_peminat, :jurusan_peminat, :referal, :kode_formulir)
     end
 end
