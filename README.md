@@ -7,3 +7,5 @@ teknik mesin
 fakultas MIPA
 statistika
 lingkungan hidup
+
+#internet lagi slowdown
