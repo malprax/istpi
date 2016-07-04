@@ -11,6 +11,7 @@ class CreateRegistrations < ActiveRecord::Migration
       t.string :tahun_lulus
       t.string :fakultas_peminat
       t.string :jurusan_peminat
+      t.string :kode_formulir
       t.string :referal
 
       t.timestamps null: false

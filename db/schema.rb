@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160627082428) do
     t.string   "tahun_lulus"
     t.string   "fakultas_peminat"
     t.string   "jurusan_peminat"
+    t.string   "kode_formulir"
     t.string   "referal"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

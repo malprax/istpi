@@ -29,7 +29,7 @@
             <%= f.input :nama, label: "Nama" %>
             <%= f.input :tempat_lahir, label: "Tempat Lahir"%>
             <%= f.input :tanggal_lahir, label: "Tanggal Lahir"%>
-            <%= f.input :jenis_kelamin, label: "Jenis Kelamin"%>
+            <%= f.input :jenis_kelamin, label: "Jenis Kelamin", collection: ["Laki-laki", "Perempuan"]%>
             <%= f.input :alamat, label: "Alamat"%>
             <%= f.input :kontak_person, label: "Nomor Handphone", wrapper: :horizontal_form  %>
             <%= f.input :asal_sekolah, label: "Asal Sekolah"%>
