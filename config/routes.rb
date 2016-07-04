@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  resources :incoming_mails
-  resources :outcoming_mails
-  resources :students_biographies
-  resources :index
-  resources :registrations
-  resources :buku_induks
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  namespace :admin do
+   resources :registrations
+  end
 
-  # You can have the root of your site routed with "root"
+  resources :incoming_mails, :outcoming_mails, :students_biographies, :buku_induks
+  resources :registrations do
+    collection do
+      get 'cetak' => 'registration#cetak'
+    end
+  end
   root 'pages#index'
 
   # Example of regular route:
