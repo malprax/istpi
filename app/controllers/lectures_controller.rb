@@ -4,7 +4,7 @@ class LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
   def index
-    @lectures = Lecture.all
+    @lectures = Lecture.all.order("created_at ASC")
   end
 
   # GET /lectures/1
@@ -28,7 +28,7 @@ class LecturesController < ApplicationController
 
     respond_to do |format|
       if @lecture.save
-        format.html { redirect_to @lecture, notice: 'Lecture was successfully created.' }
+        format.html { redirect_to @lecture, notice: 'Data Dosen Berhasil Dibuat.' }
         format.json { render :show, status: :created, location: @lecture }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class LecturesController < ApplicationController
   def update
     respond_to do |format|
       if @lecture.update(lecture_params)
-        format.html { redirect_to @lecture, notice: 'Lecture was successfully updated.' }
+        format.html { redirect_to @lecture, notice: 'Data Dosen Berhasil Diperbarui.' }
         format.json { render :show, status: :ok, location: @lecture }
       else
         format.html { render :edit }

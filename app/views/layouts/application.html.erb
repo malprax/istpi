@@ -15,7 +15,7 @@
   <div class="container">
     <div class="row">
       <div class = "col-sm-1" id="image_logo">
-        <%= image_tag('logo_istpi.svg') %>
+        <%= image_tag('logo_istpi_copy.png') %>
       </div>
       <div class="col-sm-8" id="text_logo">
           <p>YAYASAN PEMBANGUNAN INDONESIA</p>
@@ -34,6 +34,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
+          <% if flash[:notice] %>
+            <div class= "alert alert-success">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+          <% if flash[:alert] %>
+            <div class= "alert alert-success">
+              <%= flash[:alert] %>
+            </div>
+          <% end %>
           <%= yield %>
       </div>
     </div>
