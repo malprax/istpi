@@ -44,6 +44,7 @@ $colHighlight   : #f0f691;
   .navbar-default .navbar-nav .open .dropdown-menu {
     > li > a {
       color: $colDefault;
+      background-color: #transparent;
       &:hover, &:focus {
         color: $colHighlight; }}
     > .active {
