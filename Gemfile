@@ -68,7 +68,7 @@ group :development do
 end
 
 #user_authentication
-gem 'devise'
+# gem 'devise'
 
 #to activate devise gem
 # gem 'strong_parameters'
