@@ -1,30 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/destroy'
 
   namespace :admin do
     get "login" => 'sessions#new', :as => "login"
   end
 
-  namespace :admin do
-  get 'sessions/create'
-  end
-
-  get 'sessions/new'
-
-  get 'sessions/edit'
-
   resources :lectures
   resources :functional_structurals
   namespace :admin do
-   resources :registrations
+   resources :registrations, :users, :sessions
   end
 
   resources :incoming_mails, :outcoming_mails, :students_biographies, :buku_induks
