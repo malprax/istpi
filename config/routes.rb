@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :admin do
+  get 'sessions/new'
+  end
+
+  namespace :admin do
+  get 'sessions/create'
+  end
+
   get 'sessions/new'
 
   get 'sessions/edit'
