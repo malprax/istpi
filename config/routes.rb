@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
+  get 'users/create'
+
+  get 'users/edit'
+
+  get 'users/update'
+
+  get 'users/destroy'
+
   namespace :admin do
     get "login" => 'sessions#new', :as => "login"
   end

@@ -94,6 +94,7 @@ GEM
     autoprefixer-rails (6.3.6.2)
       execjs
     barby (0.6.4)
+    bcrypt (3.1.11)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -479,6 +480,7 @@ DEPENDENCIES
   annotate
   autoprefixer-rails
   barby
+  bcrypt (~> 3.1.7)
   better_errors (~> 1.0.1)
   binding_of_caller (~> 0.7.2)
   bootstrap-datepicker-rails
