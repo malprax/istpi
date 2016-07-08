@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'sessions/edit'
+
   resources :lectures
   resources :functional_structurals
   namespace :admin do

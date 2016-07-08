@@ -46,7 +46,7 @@
 
             <%= f.input :nama, label: "Nama" %>
             <%= f.input :tempat_lahir, label: "Tempat Lahir"%>
-            <%= f.input :tanggal_lahir, label: "Tanggal Lahir"%>
+            <%= f.input :tanggal_lahir, label: "Tanggal Lahir", as: :datepicker, required: false, :placeholder => 'select date', input_html:{class: "form-control"}%>
             <%= f.input :jenis_kelamin, label: "Jenis Kelamin", collection: ["Laki-laki", "Perempuan"]%>
             <%= f.input :alamat, label: "Alamat"%>
             <%= f.input :kontak_person, label: "Nomor Handphone", wrapper: :horizontal_form  %>
@@ -66,3 +66,18 @@
     </div>
   </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $('.datepicker').datepicker({
+    format: "DD, dd MM yyyy",
+    todayBtn: "linked",
+    language: "id",
+    calendarWeeks: true,
+    autoclose: true,
+    todayHighlight: true
+  });
+
+  });
+
+</script>
