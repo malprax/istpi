@@ -1,4 +1,7 @@
-class Admin::RegistrationsController < ApplicationController
+class Admin::RegistrationsController < Admin::ApplicationController
+def index
+  #code
+end
   def new
   end
 
