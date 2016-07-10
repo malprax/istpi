@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ISTPI</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="description" content="ISTPI">
+  <meta name="author" content="Admin ISTPI">
+  <meta name="keywords" content="istpi, institut sains dan teknologi pembangunan indonesia makassar">
+  <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<section id="head_body">
+  <div class="container">
+    <div class="row">
+      <div class = "col-sm-1" id="image_logo">
+        <%= image_tag('logo_istpi_copy.png') %>
+      </div>
+      <div class="col-sm-8" id="text_logo">
+          <p>YAYASAN PEMBANGUNAN INDONESIA</p>
+          <p>INSTITUT SAINS DAN TEKNOLOGI PEMBANGUNAN INDONESIA</p>
+          <p>Jln. Andi Pangeran Pettarani No.99 B, Makassar</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="navigasi">
+  <%= render 'shared/navigation' %>
+</section>
+<section class="body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+          <% if flash[:notice] %>
+            <div class= "alert alert-success">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+          <% if flash[:alert] %>
+            <div class= "alert alert-success">
+              <%= flash[:alert] %>
+            </div>
+          <% end %>
+          <%= yield %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</body>
+</html>
