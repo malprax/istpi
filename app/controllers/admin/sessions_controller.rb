@@ -15,7 +15,7 @@ class Admin::SessionsController < Admin::ApplicationController
     end
   end
 
-  def destroy
+  def logout
     #code
     session[:user_id] = nil
     redirect_to admin_login_path, :notice => "Anda Telah Keluar"

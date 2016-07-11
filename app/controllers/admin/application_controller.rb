@@ -15,7 +15,7 @@ class Admin::ApplicationController < ActionController::Base
   def verify_logged_in
     #code
     unless current_user
-        redirect_to admin_login_path
+        redirect_to admin_login_path, notice: "Anda Tidak Punya Akses, Silahkan Login Dulu"
     end
   end
 end

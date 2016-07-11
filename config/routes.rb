@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "login" => 'sessions#new', :as => "login"
-    get "logout" => 'sessions#destroy', :as => "logout"
+    get "logout" => 'sessions#logout', :as => "logout"
   end
 
   resources :lectures
