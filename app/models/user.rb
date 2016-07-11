@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
-    attr_accessor :password
+    attr_accessor :password, :password_confirmation
+
     before_save :encrypt_password
     validates :name, presence: true
     validates :email, presence: true
     validates :password, presence: true
-    validates :passwod, confirmation: true
+    validates :password, confirmation: true
 
     def self.authenticate(email, password)
         #code
