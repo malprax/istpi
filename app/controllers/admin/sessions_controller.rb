@@ -19,6 +19,5 @@ class Admin::SessionsController < Admin::ApplicationController
     #code
     session[:user_id] = nil
     redirect_to admin_login_path, :notice => "Anda Telah Keluar"
-
   end
 end
