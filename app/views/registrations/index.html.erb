@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h3 class="lead">Daftar Calon Mahasiswa Baru</h3>
 
 <table class= "table table-hover table-striped">
@@ -7,9 +5,10 @@
     <tr>
       <th>Kode Formulir</th>
       <th>Nama</th>
+      <th>Jenis Kelamin</th>
       <th>TTL</th>
-      <th>No.Kontak</th>
-      <th>Referal</th>
+      <th>Program Studi Pilihan</th>
+
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -17,13 +16,12 @@
   <tbody>
     <% @registrations.each do |registration| %>
       <tr>
-        <td><%= link_to "MABA#{registration.kode_formulir}", registration %></td>
+        <td><%= "MABA#{registration.kode_formulir}"%></td>
         <td><%= registration.nama %></td>
+        <td><%= registration.gender %></td>
         <td><%= registration.tempat_lahir %>, &nbsp;<%= registration.tanggal_lahir %></td>
         <td><%= registration.kontak_person %></td>
         <td><%= registration.referal %></td>
-        <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
-        <td><%= link_to 'Hapus', registration, method: :delete, data: { confirm: 'Anda Yakin?' } %></td>
       </tr>
     <% end %>
   </tbody>

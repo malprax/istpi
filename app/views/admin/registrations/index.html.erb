@@ -1,1 +1,32 @@
-<h3>This is Index Registrations</h3>
+<h3 class="lead">Daftar Calon Mahasiswa Baru</h3>
+
+<table class= "table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Kode Formulir</th>
+      <th>Nama</th>
+      <th>Jenis Kelamin</th>
+      <th>TTL</th>
+      <th>Program Studi Pilihan</th>
+
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registrations.each do |registration| %>
+      <tr>
+        <td><%= "MABA#{registration.kode_formulir}"%></td>
+        <td><%= registration.nama %></td>
+        <td><%= registration.gender %></td>
+        <td><%= registration.tempat_lahir %>, &nbsp;<%= registration.tanggal_lahir %></td>
+        <td><%= registration.kontak_person %></td>
+        <td><%= registration.referal %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Registration', new_registration_path, class: "btn btn-success" %>

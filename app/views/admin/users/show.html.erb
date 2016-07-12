@@ -1,2 +1,15 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h3 class="lead">Profil <%= current_user.name %> </h3>
+<table class="table table-hover table-stripped">
+  <tr>
+    <th>Email</th>
+    <th>Dibuat Tanggal</th>
+  </tr>
+  <tr>
+    <td><%= current_user.email %></td>
+    <td><%= current_user.created_at %></td>
+  </tr>
+</table>
+
+<p>
+  <%= link_to "Edit Profil", edit_admin_user_path(current_user), class: "btn btn-success" %>
+</p>
