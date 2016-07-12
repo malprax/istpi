@@ -1,5 +1,6 @@
+<% if @registrations.present? %>
 <div class="well">
-  <h3 class="lead">Daftar Calon Mahasiswa Baru &nbsp; <%= link_to 'Buat Calon Mahasiswa', new_registration_path, class: "btn btn-success" %></h3>
+  <h3 class="lead">Daftar Calon Mahasiswa Baru &nbsp; <%= link_to 'Buat', new_admin_registration_path, class: "btn btn-success" %></h3>
 
   <table class= "table table-hover table-striped">
     <thead>
@@ -7,8 +8,8 @@
         <th>Kode Formulir</th>
         <th>Nama</th>
         <th>Jenis Kelamin</th>
-        <th>TTL</th>
-        <th>Program Studi Pilihan</th>
+        <th>Nomor Kontak</th>
+        <th>Referal</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -19,19 +20,19 @@
           <td><%= "MABA#{registration.kode_formulir}"%></td>
           <td><%= registration.nama %></td>
           <td><%= registration.jenis_kelamin %></td>
-          <td><%= registration.tempat_lahir %>, &nbsp;<%= registration.tanggal_lahir %></td>
           <td><%= registration.kontak_person %></td>
           <td><%= registration.referal %></td>
           <td><%= link_to "Edit", edit_admin_registration_path(registration) %></td>
-          <td><%=  link_to "Cetak", "#"%></td>
+          <td><%=  link_to "Cetak", admin_registration_path(@registration, format:"pdf", target:"_blank") %></td>
           <td><%= link_to "Hapus", admin_registration_path(registration), method: :delete, data:{confirm: "Hapus Calon Mahasiswa?"} %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-
   <br>
-
-
-
 </div>
+<% else %>
+<div class="col-md-12">
+	<h3>Calon Mahasiswa Hari Ini Belum Ada, Silahkan Menunggu.. </h3>
+</div>
+<% end %>

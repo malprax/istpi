@@ -1,47 +1,8 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4">
-      <div class="row">
-        <div class="panel panel-success panel-hover">
-            <!-- Default panel contents -->
-            <div class="panel-heading">
-              <div class="panel-title">
-                  Syarat Pendaftaran!
-              </div>
-            </div>
-            <!-- List group -->
-            <ul class="list-group">
-              <li class="list-group-item">Biaya Pendaftaran Sebesar Rp. 250.000,-</li>
-              <li class="list-group-item">Biaya SPP persemester Rp. 1.500.000,-</li>
-              <li class="list-group-item">Fotocopy Ijazah SMU/Sederajat legalisir</li>
-              <li class="list-group-item">Fotocopy Transkrip Nilai SMU/Sederajat legalisir</li>
-              <li class="list-group-item">Pas Photo 3x4 warna/hitam putih 2 lembar</li>
-            </ul>
-          </div>
-      </div>
-
-      <div class="row">
-        <div class="panel panel-warning panel-hover">
-            <!-- Default panel contents -->
-            <div class="panel-heading">
-              <div class="panel-title">
-                  Waktu Pendaftaran!
-              </div>
-            </div>
-            <!-- List group -->
-            <ul class="list-group">
-              <li class="list-group-item">Pendaftaran Dari 2 Mei - 30 Agustus 2016</li>
-              <li class="list-group-item">Ujian Masuk 5 September 2016</li>
-              <li class="list-group-item">Pengumuman Kelulusan 7 September 2016</li>
-              <li class="list-group-item">Pendaftaran Ulang 7 - 20 September 2016</li>
-              <li class="list-group-item">Kuliah Perdana 26 September 2016</li>
-            </ul>
-          </div>
-      </div>
-
-    </div>
+    <%= render 'info_registrations' %>
     <div class="col-sm-8">
-      <%= simple_form_for(@registration, wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
+      <%= simple_form_for([:admin, @registration], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
         <%= f.error_notification %>
 
             <%= f.input :nama, label: "Nama" %>
@@ -56,10 +17,10 @@
             <%= f.input :jurusan_peminat, label: "Pilih Program Studi", collection: ["Teknik Sipil", "Teknik Elektro"]%>
             <%= f.input :referal, label: "Referal"%>
         <div class="col-sm-offset-3">
-          <% if params[:controller] == 'registrations' && params[:action] == 'new' %>
-          <%= f.button :submit, "Daftar Baru", class: "btn btn-success" %>
-          <% else %>
-          <%= f.button :submit, "Edit Daftar", class: "btn btn-success" %>
+          <% if params[:controller] == 'admin/registrations' && params[:action] == 'new' %>
+          <%= f.button :submit, "Daftar Calon", class: "btn btn-success" %>
+          <% elsif params[:controller] == 'admin/registrations' && params[:action] == 'edit'  %>
+          <%= f.button :submit, "Edit Calon", class: "btn btn-success" %>
           <% end %>
         </div>
       <% end %>

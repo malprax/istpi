@@ -1,5 +1,6 @@
 class Registration < ActiveRecord::Base
   before_create {generate_token(:kode_formulir)}
+  scope :current, -> {order('name DESC')}
   def to_param
     #code
     "#{kode_formulir}"

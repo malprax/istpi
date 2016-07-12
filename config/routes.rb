@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
   namespace :admin do
+   resources :registrations, :users, :sessions
+  end
+  
+  namespace :admin do
     get "login" => 'sessions#new', :as => "login"
     get "logout" => 'sessions#destroy', :as => "logout"
   end
 
-  resources :lectures
-  resources :functional_structurals
   namespace :admin do
-   resources :registrations, :users, :sessions
+   resources :registrations do
+     get "cetak"
+   end
   end
 
-  resources :incoming_mails, :outcoming_mails, :students_biographies, :buku_induks
+  resources :incoming_mails, :outcoming_mails, :students_biographies, :buku_induks, :functional_structurals, :lectures
   resources :registrations
   get "calon_mahasiswa" => 'registrations#index', :as => "calon_mahasiswa"
   root 'pages#index'

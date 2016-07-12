@@ -6,7 +6,18 @@ class Admin::RegistrationsController < Admin::ApplicationController
   # GET /registrations.json
   def index
     @registrations = Registration.all
-
+    @registration = Registration.current unless @registrations.nil?
+    respond_to do |format|
+      format.html
+      format.json { render :index, location: @registration }
+      format.pdf do
+        pdf = RegistrationPdf.new(@registration)
+        send_data pdf.render,
+        type: "application/pdf",
+        disposition: "inline",
+        filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.full_name}.pdf"
+      end
+    end
   end
 
   # GET /registrations/1
@@ -40,7 +51,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
 
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
+        format.html { redirect_to admin_registrations_path, notice: 'Registration was successfully created.' }
         format.json { render :show, status: :created, location: @registration }
       else
         format.html { render :new }
@@ -54,7 +65,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @registration.update(registration_params)
-        format.html { redirect_to @registration, notice: 'Registration was successfully updated.' }
+        format.html { redirect_to admin_registrations_path, notice: 'Registration was successfully updated.' }
         format.json { render :show, status: :ok, location: @registration }
       else
         format.html { render :edit }
