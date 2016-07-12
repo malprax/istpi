@@ -1,1 +1,0 @@
-json.extract! @registration, :id, :nama, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :alamat, :kontak_person, :asal_sekolah, :tahun_lulus, :fakultas_peminat, :jurusan_peminat, :created_at, :updated_at

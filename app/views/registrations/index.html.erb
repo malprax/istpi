@@ -18,15 +18,13 @@
       <tr>
         <td><%= "MABA#{registration.kode_formulir}"%></td>
         <td><%= registration.nama %></td>
-        <td><%= registration.gender %></td>
+        <td><%= registration.jenis_kelamin %></td>
         <td><%= registration.tempat_lahir %>, &nbsp;<%= registration.tanggal_lahir %></td>
         <td><%= registration.kontak_person %></td>
-        <td><%= registration.referal %></td>
+        <td><%= registration.jurusan_peminat %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Registration', new_registration_path, class: "btn btn-success" %>

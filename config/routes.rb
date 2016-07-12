@@ -11,11 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :incoming_mails, :outcoming_mails, :students_biographies, :buku_induks
-  resources :registrations do
-    collection do
-      get 'cetak' => 'registration#cetak'
-    end
-  end
+  resources :registrations
+  get "calon_mahasiswa" => 'registrations#index', :as => "calon_mahasiswa"
   root 'pages#index'
 
   # Example of regular route:
