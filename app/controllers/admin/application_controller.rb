@@ -18,4 +18,16 @@ class Admin::ApplicationController < ActionController::Base
         redirect_to admin_login_path, notice: "Anda Tidak Punya Akses, Silahkan Login Dulu"
     end
   end
+
+  def superadmin
+    #code
+    current_user.role == "superadmin"
+  end
+
+  def verify_role
+    #code
+    unless superadmin
+      redirect_to admin_registrations_path, notice: "Anda Tidak Memiliki Akses Superadmin"
+    end
+  end
 end
