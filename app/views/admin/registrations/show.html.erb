@@ -1,58 +1,20 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Kode Formulir:</strong>
-  <%= "MABA#{@registration.kode_formulir}" %>
-</p>
-
-<p>
-  <strong>Nama:</strong>
-  <%= @registration.nama %>
-</p>
-
-<p>
-  <strong>Tempat lahir:</strong>
-  <%= @registration.tempat_lahir %>
-</p>
-
-<p>
-  <strong>Tanggal lahir:</strong>
-  <%= @registration.tanggal_lahir %>
-</p>
-
-<p>
-  <strong>Jenis kelamin:</strong>
-  <%= @registration.jenis_kelamin %>
-</p>
-
-<p>
-  <strong>Alamat:</strong>
-  <%= @registration.alamat %>
-</p>
-
-<p>
-  <strong>Kontak person:</strong>
-  <%= @registration.kontak_person %>
-</p>
-
-<p>
-  <strong>Asal sekolah:</strong>
-  <%= @registration.asal_sekolah %>
-</p>
-
-<p>
-  <strong>Tahun lulus:</strong>
-  <%= @registration.tahun_lulus %>
-</p>
-
-<p>
-  <strong>Fakultas peminat:</strong>
-  <%= @registration.fakultas_peminat %>
-</p>
-
-<p>
-  <strong>Jurusan peminat:</strong>
-  <%= @registration.jurusan_peminat %>
-</p>
-
-<%= link_to 'Edit', edit_registration_path(@registration) %> |
-<%= link_to 'Back', registrations_path %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Info Calon Mahasiswa</h3>
+  </div>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Kode Formulir</strong>&nbsp;:&nbsp;<%= "MABA#{@registration.kode_formulir}" %></li>
+        <li class="list-group-item"><strong>Nama</strong>&nbsp;:&nbsp;<%= raw(@registration.nama) %></li>
+        <li class="list-group-item"><strong>TTL</strong>&nbsp;:&nbsp;<%= raw(@registration.tempat_lahir) %>,&nbsp;<%= @registration.tanggal_lahir %></li>
+        <li class="list-group-item"><strong>Alamat</strong>&nbsp;:&nbsp;<%= @registration.alamat %></li>
+        <li class="list-group-item"><strong>Kontak Person</strong>&nbsp;:&nbsp;<%= @registration.kontak_person %></li>
+        <li class="list-group-item"><strong>Asal Sekolah</strong>&nbsp;:&nbsp;<%= @registration.asal_sekolah %></li>
+        <li class="list-group-item"><strong>Tahun Lulus</strong>&nbsp;:&nbsp;<%= @registration.tahun_lulus %></li>
+        <li class="list-group-item"><strong>Jurusan Pilhan</strong>&nbsp;:&nbsp;<%= @registration.jurusan_peminat %></li>
+    </ul>
+  <div class="panel-footer">
+    <%= link_to 'Edit', edit_admin_registration_path(@registration), class: "btn btn-default" %>
+    <%= link_to 'Kembali', admin_registrations_path, class:"btn btn-success" %>
+    <%= link_to 'Cetak', admin_registration_path(@registration, format:"pdf"), class:"btn btn-primary", target:"_blank" %>
+  </div>
+</div>

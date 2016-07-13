@@ -5,18 +5,10 @@ class Admin::RegistrationsController < Admin::ApplicationController
   # GET /registrations
   # GET /registrations.json
   def index
-    @registrations = Registration.all
-    @registration = Registration.current unless @registrations.nil?
-    respond_to do |format|
-      format.html
-      format.json { render :index, location: @registration }
-      format.pdf do
-        pdf = RegistrationPdf.new(@registration)
-        send_data pdf.render,
-        type: "application/pdf",
-        disposition: "inline",
-        filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.full_name}.pdf"
-      end
+    if params[:search]
+        @registrations = Registration.search(params[:search]).order('created_at DESC')
+    else
+        @registrations = Registration.all.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     end
   end
 
@@ -51,7 +43,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
 
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to admin_registrations_path, notice: 'Registration was successfully created.' }
+        format.html { redirect_to admin_registrations_path, notice: 'Data Calon Berhasil Di Buat.' }
         format.json { render :show, status: :created, location: @registration }
       else
         format.html { render :new }
@@ -65,7 +57,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @registration.update(registration_params)
-        format.html { redirect_to admin_registrations_path, notice: 'Registration was successfully updated.' }
+        format.html { redirect_to admin_registrations_path, notice: 'Data Calon Berhasil Di Update.' }
         format.json { render :show, status: :ok, location: @registration }
       else
         format.html { render :edit }
@@ -79,7 +71,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
   def destroy
     @registration.destroy
     respond_to do |format|
-      format.html { redirect_to registrations_url, notice: 'Registration was successfully destroyed.' }
+      format.html { redirect_to registrations_url, notice: 'Data Calon Berhasil Di Hapus.' }
       format.json { head :no_content }
     end
   end

@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: registrations
+#
+#  id               :integer          not null, primary key
+#  nama             :string
+#  tempat_lahir     :string
+#  tanggal_lahir    :string
+#  jenis_kelamin    :string
+#  alamat           :string
+#  kontak_person    :string
+#  asal_sekolah     :string
+#  tahun_lulus      :string
+#  fakultas_peminat :string
+#  jurusan_peminat  :string
+#  kode_formulir    :string
+#  referal          :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

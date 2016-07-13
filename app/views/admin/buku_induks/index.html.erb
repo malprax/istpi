@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="well">
+      <h3 class="lead">Daftar Buku Induk &nbsp;&nbsp;<%= link_to 'Buat', new_admin_buku_induk_path, class: "btn btn-success" %></h3>
+
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Stambuk</th>
+            <th>Nama</th>
+            <th>Jenis kelamin</th>
+            <th>Tempat, Tanggal Lahir</th>
+            <th>Tanggal akademik</th>
+            <th>Status akademik</th>
+            <th>Semester akademik</th>
+            <th>Foto</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @buku_induks.each do |buku_induk| %>
+            <tr>
+              <td><%= link_to buku_induk.no_stambuk, buku_induk %></td>
+              <td><%= buku_induk.nama %></td>
+              <td><%= buku_induk.jenis_kelamin %></td>
+              <td><%= buku_induk.tempat_lahir %>&nbsp;&nbsp;&nbsp;<%= buku_induk.tanggal_lahir %></td>
+              <td><%= buku_induk.tanggal_akademik %></td>
+              <td><%= buku_induk.status_akademik %></td>
+              <td><%= buku_induk.semester_akademik %></td>
+              <td><%= buku_induk.foto %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+
+
+
+    </div>
+  </div>
+</div>

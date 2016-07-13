@@ -1,11 +1,29 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id            :integer          not null, primary key
+#  name          :string
+#  email         :string
+#  password_hash :string
+#  password_salt :string
+#  role          :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 class User < ActiveRecord::Base
     attr_accessor :password, :password_confirmation, :login
 
     before_save :encrypt_password
     validates :name, presence: true
-    validates :email, presence: true
     validates :password, presence: true
     validates :password, confirmation: true
+
+    #validasi email
+    validates :email, presence: true
+    validates_uniqueness_of :email, :case_sensitive => false
+    validates :email, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create}
 
     def login=(login)
       #code
@@ -37,6 +55,6 @@ class User < ActiveRecord::Base
 
     def self.search(query)
       #code
-      where("name like ? OR email like ?", "%#{query}%", "%#{query}%")
+      where("lower(name) like lower(?) OR lower(email) like lower(?)", "%#{query}%", "%#{query}%")
     end
 end

@@ -10,26 +10,26 @@
         <th>Jenis Kelamin</th>
         <th>Nomor Kontak</th>
         <th>Referal</th>
-        <th colspan="3"></th>
+        <th colspan="2"></th>
       </tr>
     </thead>
 
     <tbody>
       <% @registrations.each do |registration| %>
         <tr>
-          <td><%= "MABA#{registration.kode_formulir}"%></td>
+          <td><%= link_to "MABA#{registration.kode_formulir}", admin_registration_path(registration) %></td>
           <td><%= registration.nama %></td>
           <td><%= registration.jenis_kelamin %></td>
           <td><%= registration.kontak_person %></td>
           <td><%= registration.referal %></td>
           <td><%= link_to "Edit", edit_admin_registration_path(registration) %></td>
-          <td><%=  link_to "Cetak", admin_registration_path(@registration, format:"pdf", target:"_blank") %></td>
           <td><%= link_to "Hapus", admin_registration_path(registration), method: :delete, data:{confirm: "Hapus Calon Mahasiswa?"} %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
   <br>
+  <%#= will_paginate @registrations %>
 </div>
 <% else %>
 <div class="col-md-12">

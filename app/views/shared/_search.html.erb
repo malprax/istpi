@@ -1,0 +1,22 @@
+<% if params[:controller] == 'admin/users' %>
+    <%= form_tag(admin_users_path, method: "get", id: "search-form", class:"search-form") do %>
+        <div class="form-group">
+            <%= text_field_tag :search, params[:search], placeholder: "Cari..", class:"form-control" %>
+        </div>
+        <%= submit_tag "Cari", name: nil, class: "btn btn-success" %>
+    <% end %>
+<% elsif params[:controller] == 'admin/registrations' %>
+    <%= form_tag(admin_registrations_path, method: "get", id: "search-form", class:"search-form") do %>
+        <div class="form-group">
+            <%= text_field_tag :search, params[:search], placeholder: "Cari..", class:"form-control" %>
+        </div>
+        <%= submit_tag "Cari", name: nil, class: "btn btn-success" %>
+    <% end %>
+<% elsif params[:controller] == 'admin/buku_induks' %>
+    <%= form_tag(admin_buku_induks_path, method: "get", id: "search-form", class:"search-form") do %>
+        <div class="form-group">
+            <%= text_field_tag :search, params[:search], placeholder: "Cari..", class:"form-control" %>
+        </div>
+        <%= submit_tag "Cari", name: nil, class: "btn btn-success" %>
+    <% end %>
+<% end %>
