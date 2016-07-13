@@ -1,5 +1,5 @@
 class Admin::RegistrationsController < Admin::ApplicationController
-  before_action :verify_logged_in
+  before_action :verify_logged_in, except: [:new]
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
 
   # GET /registrations

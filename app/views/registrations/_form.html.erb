@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'info_registrations' %>
+    <div class="col-sm-8">
+      <%= simple_form_for(@registration, wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
+        <%= f.error_notification %>
+
+            <%= f.input :nama, label: "Nama" %>
+            <%= f.input :tempat_lahir, label: "Tempat Lahir"%>
+            <%= f.input :tanggal_lahir, label: "Tanggal Lahir", as: :date_time_picker %>
+            <%= f.input :jenis_kelamin, label: "Jenis Kelamin", collection: ["Laki-laki", "Perempuan"]%>
+            <%= f.input :alamat, label: "Alamat"%>
+            <%= f.input :kontak_person, label: "Nomor Handphone", wrapper: :horizontal_form  %>
+            <%= f.input :asal_sekolah, label: "Asal Sekolah"%>
+            <%= f.input :tahun_lulus, label: "Tahun Lulus"%>
+            <%#= f.input :fakultas_peminat, label: "Fakultas Yang Diminati"%>
+            <%= f.input :jurusan_peminat, label: "Pilih Program Studi", collection: ["Teknik Sipil", "Teknik Elektro"]%>
+            <%= f.input :referal, label: "Referal"%>
+        <div class="col-sm-offset-3">
+          <% if params[:controller] == 'admin/registrations' && params[:action] == 'new' %>
+          <%= f.button :submit, "Daftar Calon", class: "btn btn-success" %>
+          <% elsif params[:controller] == 'admin/registrations' && params[:action] == 'edit'  %>
+          <%= f.button :submit, "Edit Calon", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.datepicker').datepicker({
+    format: "DD, dd MM yyyy",
+    todayBtn: "linked",
+    language: "id",
+    calendarWeeks: true,
+    autoclose: true,
+    todayHighlight: true
+  });
+
+  });
+
+</script>
