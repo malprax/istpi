@@ -7,6 +7,7 @@
         <th>Nama</th>
         <th>Email</th>
         <th>Tanggal Dibuat</th>
+        <th>Role</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -17,6 +18,7 @@
           <td><%= user.name %></td>
           <td><%= user.email %></td>
           <td><%= user.created_at %></td>
+          <td><%= user.role %></td>
           <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
           <td><%= link_to 'Hapus', admin_user_path(user), method: :delete, data: { confirm: 'Anda Yakin?' } %></td>
         </tr>
@@ -25,7 +27,5 @@
   </table>
 
   <br>
-
   <%= link_to 'Buat User', new_admin_user_path, class: "btn btn-success" %>
-
 </div>

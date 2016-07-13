@@ -6,6 +6,12 @@ class Admin::UsersController < Admin::ApplicationController
 
   def create
     @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = 'User Created'
+      redirect_to admin_users_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -40,6 +46,6 @@ class Admin::UsersController < Admin::ApplicationController
   private
   def user_params
     #code
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :role)
   end
 end

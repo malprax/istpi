@@ -76,7 +76,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Admin</a>
+      <% if current_user.role == "superadmin" %>
+      <%= link_to "Admin", admin_users_path, class: "navbar-brand" %>
+      <% else %>
+      <%= link_to "Admin", "#", class: "navbar-brand" %>
+      <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

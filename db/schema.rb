@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 20160708100323) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.string   "role"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
