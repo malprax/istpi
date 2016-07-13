@@ -17,9 +17,9 @@ class User < ActiveRecord::Base
       @login || self.name || self.email
     end
 
-    def self.authenticate(email, password)
+    def self.authenticate(login, password)
         #code
-        user = find_by_email(email)
+        user = find_by_name(login)
         if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt )
           user
         else
@@ -33,5 +33,10 @@ class User < ActiveRecord::Base
         self.password_salt = BCrypt::Engine.generate_salt
         self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
       end
+    end
+
+    def self.search(query)
+      #code
+      where("name like ? OR email like ?", "%#{query}%", "%#{query}%")
     end
 end

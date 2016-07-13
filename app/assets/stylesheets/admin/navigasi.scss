@@ -52,3 +52,22 @@ $colHighlight   : #f0f691;
         color: $colHighlight;
         background-color: $bgHighlight; }}}
 }
+
+.search-form input[type='text']{
+  border-radius:0px;
+  margin-top: 9px;
+  height: 34px;
+}
+.search-form .form-group{
+  display:inline-block;
+  margin-bottom:0;
+  vertical-align: middle;
+}
+
+.search-form .btn{
+  border: 0px;
+  border-radius:0px;
+  margin-left:-5px;
+  margin-top: 9px;
+  height: 34px;
+}

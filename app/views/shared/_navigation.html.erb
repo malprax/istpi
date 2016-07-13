@@ -122,8 +122,17 @@
         </li>
         <li ><%= link_to "Perpustakaan", '#' %></li>
         <li ><%= link_to "Keuangan", '#' %></li>
+        <li>
+          <%= form_tag(admin_users_path, method: "get", id: "search-form", class:"search-form") do %>
+              <div class="form-group">
+                  <%= text_field_tag :search, params[:search], placeholder: "Cari..", class:"form-control" %>
+              </div>
+              <%= submit_tag  "Cari", name: nil, class: "btn btn-primary" %>
+          <% end %>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+
         <% if current_user %>
           <li><%= link_to current_user.name, admin_user_path(current_user) %></li>
           <li><%= link_to "Log out", admin_logout_path %></li>
