@@ -28,4 +28,6 @@
   <strong>No kontak:</strong>
   <%= @lecture.no_kontak %>
 </p>
-<%= link_to 'Back', lectures_path %>
+
+<%= link_to 'Edit', admin_edit_dosen_path(@lecture) %> |
+<%= link_to 'Kembali', admin_dosen_path %>

@@ -14,4 +14,8 @@
 #
 
 class Lecture < ActiveRecord::Base
+  def self.search(query)
+    #code
+    where("lower(name) like lower(?) OR lower(nidn) like lower(?)", "%#{query}%", "%#{query}%")
+  end
 end

@@ -19,4 +19,12 @@
         </div>
         <%= submit_tag "Cari", name: nil, class: "btn btn-success" %>
     <% end %>
+<% elsif params[:controller] == 'admin/lectures' %>
+    <%= form_tag(admin_lectures_path, method: "get", id: "search-form", class:"search-form") do %>
+        <div class="form-group">
+            <%= text_field_tag :search, params[:search], placeholder: "Cari..", class:"form-control" %>
+        </div>
+        <%= submit_tag "Cari", name: nil, class: "btn btn-success" %>
+    <% end %>
+
 <% end %>

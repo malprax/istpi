@@ -1,0 +1,35 @@
+<div class="well">
+  <h3 class="lead">Daftar Pengajar ISTPI&nbsp;&nbsp;<%= link_to 'Buat', admin_new_dosen_path, class: "btn btn-success" %><br></h3>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>NIDN</th>
+        <th>Fakultas</th>
+        <th>Jurusan</th>
+        <th>Alamat</th>
+        <th>No kontak</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @lectures.each do |lecture| %>
+        <tr>
+          <td><%= link_to lecture.name, lecture %></td>
+          <td><%= lecture.nidn %></td>
+          <td><%= lecture.fakultas %></td>
+          <td><%= lecture.jurusan %></td>
+          <td><%= lecture.alamat %></td>
+          <td><%= lecture.no_kontak %></td>
+          <td><%= link_to 'Edit', admin_edit_dosen_path(lecture) %></td>
+          <td><%= link_to 'Hapus', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <%#= will_paginate @lectures %>
+</div>
