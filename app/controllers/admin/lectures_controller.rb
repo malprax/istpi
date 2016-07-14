@@ -32,7 +32,7 @@ class Admin::LecturesController < Admin::ApplicationController
 
     respond_to do |format|
       if @lecture.save
-        format.html { redirect_to admin_dosen_path(@lecture), notice: 'Data Dosen Berhasil Dibuat.' }
+        format.html { redirect_to admin_dosen_index_path, notice: 'Data Dosen Berhasil Dibuat.' }
         format.json { render :show, status: :created, location: @lecture }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class Admin::LecturesController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @lecture.update(lecture_params)
-        format.html { redirect_to admin_dosen_path(@lecture), notice: 'Data Dosen Berhasil Di Update.' }
+        format.html { redirect_to admin_dosen_index_path, notice: 'Data Dosen Berhasil Di Update.' }
         format.json { render :show, status: :ok, location: @lecture }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class Admin::LecturesController < Admin::ApplicationController
   def destroy
     @lecture.destroy
     respond_to do |format|
-      format.html { redirect_to admin_dosen_path, notice: 'Data Dosen Berhasil Dihapus.' }
+      format.html { redirect_to admin_dosen_index_path, notice: 'Data Dosen Berhasil Dihapus.' }
       format.json { head :no_content }
     end
   end

@@ -43,7 +43,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
 
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to admin_registrations_path, notice: 'Data Calon Berhasil Di Buat.' }
+        format.html { redirect_to admin_calon_mahasiswa_index_path, notice: 'Data Calon Berhasil Di Buat.' }
         format.json { render :show, status: :created, location: @registration }
       else
         format.html { render :new }
@@ -57,7 +57,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @registration.update(registration_params)
-        format.html { redirect_to admin_registrations_path, notice: 'Data Calon Berhasil Di Update.' }
+        format.html { redirect_to admin_calon_mahasiswa_index_path, notice: 'Data Calon Berhasil Di Update.' }
         format.json { render :show, status: :ok, location: @registration }
       else
         format.html { render :edit }
@@ -71,7 +71,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
   def destroy
     @registration.destroy
     respond_to do |format|
-      format.html { redirect_to registrations_url, notice: 'Data Calon Berhasil Di Hapus.' }
+      format.html { redirect_to admin_calon_mahasiswa_index_path, notice: 'Data Calon Berhasil Di Hapus.' }
       format.json { head :no_content }
     end
   end
