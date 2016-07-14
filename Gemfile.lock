@@ -321,7 +321,6 @@ GEM
       addressable
       faraday
       multi_json
-    lightbox-bootstrap-rails (3.3.0.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -503,7 +502,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   koala
-  lightbox-bootstrap-rails
   mini_magick
   nested_form
   newrelic_rpm

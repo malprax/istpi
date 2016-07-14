@@ -1,16 +1,26 @@
-#   Table Structure
-#   t.string :full_name
-#   t.string :makassar_address
-#   t.string :makassar_phone
-#   t.string :country_address
-#   t.string :country_phone
-#   t.string :school_camefrom
-#   t.date :pass_year_school
-#   t.string :faculty, default: "teknik"
-#   t.string :sub_faculty, default: "mesin"
-#   t.string :concentrate_id
+# == Schema Information
+#
+# Table name: registrations
+#
+#  id               :integer          not null, primary key
+#  nama             :string
+#  tempat_lahir     :string
+#  tanggal_lahir    :string
+#  jenis_kelamin    :string
+#  alamat           :string
+#  kontak_person    :string
+#  asal_sekolah     :string
+#  tahun_lulus      :string
+#  fakultas_peminat :string
+#  jurusan_peminat  :string
+#  kode_formulir    :string
+#  referal          :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
 
-class RegistrationPdf < Prawn::Document
+
+class Admin::RegistrationPdf < Prawn::Document
   def initialize(registration)
     super(top_margin: 30, left_margin: 50, :page_size  => 'A4')
     @registration = registration
@@ -31,17 +41,9 @@ class RegistrationPdf < Prawn::Document
     line_items
     nama
     line_items
-    makassar
+    alamat
     line_items
-    alamat_makassar
-    line_items
-    telepon_makassar
-    line_items
-    daerah
-    line_items
-    alamat_daerah
-    line_items
-    telepon_daerah
+    kontak_person
     line_items
     asal_sekolah
     line_items
@@ -50,8 +52,6 @@ class RegistrationPdf < Prawn::Document
     fakultas
     line_items
     jurusan
-    line_items
-    konsentrasi
     line_items_2
     catatan_penting
     line_items
@@ -93,39 +93,20 @@ class RegistrationPdf < Prawn::Document
     move_down 10
   end
   def nama
-    text "nama                     :   #{@registration.full_name}".upcase
+    text "nama                     :   #{@registration.nama}".upcase
   end
 
-  def makassar
-    text "makassar".upcase
-  end
-
-  def alamat_makassar
-    text_box "alamat            :   #{@registration.mks_address}".upcase, :at  => [20,cursor]
+  def alamat
+    text_box "alamat            :   #{@registration.alamat}".upcase, :at  => [20,cursor]
     move_down 10
   end
 
-  def telepon_makassar
-    text_box "no telepon   :   #{@registration.mks_phone}".upcase, :at  => [20,cursor]
+  def kontak_person
+    text_box "no telepon   :   #{@registration.kontak_person}".upcase, :at  => [20,cursor]
     move_down 20
 
   end
 
-  def daerah
-    text "daerah".upcase
-  end
-
-  def alamat_daerah
-    text_box "alamat            :   #{@registration.country_address}".upcase, :at  => [20,cursor]
-    move_down 10
-  end
-
-  def telepon_daerah
-
-     text_box "no telepon   :   #{@registration.country_phone}".upcase, :at  => [20,cursor]
-     move_down 20
-
-  end
 
   def line_items
     move_down 10
@@ -136,24 +117,21 @@ class RegistrationPdf < Prawn::Document
   end
 
   def asal_sekolah
-    text "asal sekolah     :   #{@registration.school_camefrom}".upcase
+    text "asal sekolah     :   #{@registration.asal_sekolah}".upcase
   end
 
   def tahun_lulus
-      text "tahun lulus       :   #{@registration.pass_year_school}".upcase
+      text "tahun lulus       :   #{@registration.tahun_lulus}".upcase
   end
 
   def fakultas
-      text "fakultas              :   #{@registration.faculty}".upcase
+      text "fakultas              :   #{@registration.fakultas_peminat}".upcase
   end
 
   def jurusan
-      text "jurusan               :   #{@registration.sub_faculty}".upcase
+      text "jurusan               :   #{@registration.jurusan_peminat}".upcase
   end
 
-  def konsentrasi
-      text "konsentrasi      :   #{@registration.concentrate}".upcase
-  end
 
   def catatan_penting
     text "Catatan Penting :"

@@ -152,7 +152,7 @@ gem 'spinjs-rails'
 #gem for facebook posting
 
 #gem bootstrap-lightbox, for show picture
-gem 'lightbox-bootstrap-rails'
+# gem 'lightbox-bootstrap-rails'
 
 #localserver
 gem 'puma'

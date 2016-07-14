@@ -17,15 +17,15 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="<%= params[:controller]== 'pages' && params[:action]== 'index' ? 'active' : '' %>"><%= link_to "Beranda", root_url %></li>
-        <li class="<%= params[:controller]== 'students_biographies' ? 'active' : '' %>"><%= link_to "Mahasiswa", students_biographies_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Perkuliahan <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "Aturan", "#" %></li>
             <li><%= link_to "Jadwal", "#" %></li>
             <li><%= link_to "Nilai", "#" %></li>
-            <li><%= link_to "Penasehat Akademik", "#" %></li>
+            <li class="<%= params[:controller]== 'students_biographies' ? 'active' : '' %>"><%= link_to "Mahasiswa", students_biographies_path %></li>
             <li><%= link_to "Dosen", dosen_path %></li>
+            <li><%= link_to "Penasehat Akademik", "#" %></li>
             <li ><%= link_to "Kalender Akademik", '#' %></li>
           </ul>
         </li>
@@ -51,7 +51,17 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-          <li><%= link_to current_user.name, admin_user_path(current_user) %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= link_to current_user.name, admin_user_path(current_user) %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li ><%= link_to "Edit Profil", '#' %></li>
+              <li ><%= link_to "Ganti Password", '#' %></li>
+              <li ><%= link_to "KRS", '#' %></li>
+              <li ><%= link_to "Jadwal Kuliah", '#' %></li>
+              <li ><%= link_to "Nilai", '#' %></li>
+
+            </ul>
+          </li>
           <li><%= link_to "Log out", admin_logout_path %></li>
         <% else %>
           <li><%= link_to "Log in", admin_login_path %></li>
@@ -83,15 +93,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="<%= params[:controller]== 'students_biographies' ? 'active' : '' %>"><%= link_to "Mahasiswa", students_biographies_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Perkuliahan <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "Aturan", "#" %></li>
             <li><%= link_to "Jadwal", "#" %></li>
             <li><%= link_to "Nilai", "#" %></li>
+            <li class="<%= params[:controller]== 'students_biographies' ? 'active' : '' %>"><%= link_to "Mahasiswa", students_biographies_path %></li>
+            <li><%= link_to "Dosen", dosen_path %></li>
             <li><%= link_to "Penasehat Akademik", "#" %></li>
-            <li><%= link_to "Dosen", admin_dosen_index_path %></li>
             <li ><%= link_to "Kalender Akademik", '#' %></li>
           </ul>
         </li>

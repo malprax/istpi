@@ -22,7 +22,6 @@
 //= require bootstrap-wysihtml5
 //= require bootstrap-datepicker
 //= require message_flash
-//= require lightbox-bootstrap
 //= require turbolinks
 //= require_tree .
 
