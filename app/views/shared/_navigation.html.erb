@@ -102,7 +102,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Biro Umum<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li ><%= link_to "Program Kerja", '#' %></li>
-            <li class="<%= params[:controller] == 'functional_structurals' ? 'active' : '' %>"><%= link_to "Struktural", functional_structurals_path %></li>
+            <li class="<%= params[:controller] == 'functional_structurals' ? 'active' : '' %>"><%= link_to "Struktural", admin_functional_structurals_path %></li>
             <li class="<%= params[:controller]== 'incomings' ? 'active' : '' %>"><%= link_to "Surat Masuk", incoming_mails_path %></li>
             <li class="<%= params[:controller]== 'outcomings' ? 'active' : '' %>"><%= link_to "Surat Keluar", outcoming_mails_path %></li>
           </ul>

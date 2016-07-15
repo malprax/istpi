@@ -4,7 +4,11 @@ class Admin::FunctionalStructuralsController < Admin::ApplicationController
   # GET /functional_structurals
   # GET /functional_structurals.json
   def index
-    @functional_structurals = FunctionalStructural.all.order('created_at ASC')
+    if params[:search]
+        @functional_structurals = FunctionalStructural.search(params[:search]).order('created_at DESC')
+    else
+        @functional_structurals = FunctionalStructural.all.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    end
   end
 
   # GET /functional_structurals/1
@@ -28,7 +32,7 @@ class Admin::FunctionalStructuralsController < Admin::ApplicationController
 
     respond_to do |format|
       if @functional_structural.save
-        format.html { redirect_to @functional_structural, notice: 'Functional structural was successfully created.' }
+        format.html { redirect_to admin_struktural_index_path, notice: 'Functional structural was successfully created.' }
         format.json { render :show, status: :created, location: @functional_structural }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class Admin::FunctionalStructuralsController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @functional_structural.update(functional_structural_params)
-        format.html { redirect_to @functional_structural, notice: 'Functional structural was successfully updated.' }
+        format.html { redirect_to admin_struktural_index_path, notice: 'Functional structural was successfully updated.' }
         format.json { render :show, status: :ok, location: @functional_structural }
       else
         format.html { render :edit }
@@ -56,7 +60,7 @@ class Admin::FunctionalStructuralsController < Admin::ApplicationController
   def destroy
     @functional_structural.destroy
     respond_to do |format|
-      format.html { redirect_to functional_structurals_url, notice: 'Functional structural was successfully destroyed.' }
+      format.html { redirect_to admin_struktural_index_path, notice: 'Functional structural was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

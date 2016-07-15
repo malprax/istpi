@@ -1,4 +1,4 @@
-<%= simple_form_for(@functional_structural) do |f| %>
+<%= simple_form_for([:admin,@functional_structural], wrapper: :horizontal_form) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

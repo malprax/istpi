@@ -1,0 +1,23 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @functional_structural.name %>
+</p>
+
+<p>
+  <strong>Jabatan:</strong>
+  <%= @functional_structural.jabatan %>
+</p>
+
+<p>
+  <strong>Nip:</strong>
+  <%= @functional_structural.nip %>
+</p>
+
+<p>
+  <strong>Nidn:</strong>
+  <%= @functional_structural.nidn %>
+</p>
+
+<%= link_to 'Edit', admin_edit_struktural_path(@functional_structural) %> |
+<%= link_to 'Kembali', admin_struktural_index_path %>
