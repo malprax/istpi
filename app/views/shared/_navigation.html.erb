@@ -86,7 +86,7 @@
             <li><%= link_to "Jadwal", "#" %></li>
             <li><%= link_to "Nilai", "#" %></li>
             <li class="<%= params[:controller]== 'students_biographies' ? 'active' : '' %>"><%= link_to "Mahasiswa", students_biographies_path %></li>
-            <li class="<%= params[:controller] == 'lectures' ? 'active' : '' %>"><%= link_to "Dosen", dosen_path %></li>
+            <li class="<%= params[:controller] == 'lectures' ? 'active' : '' %>"><%= link_to "Dosen", admin_dosen_index_path %></li>
             <li><%= link_to "Penasehat Akademik", "#" %></li>
             <li ><%= link_to "Kalender Akademik", '#' %></li>
           </ul>
