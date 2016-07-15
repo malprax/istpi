@@ -32,7 +32,7 @@ class Admin::FunctionalStructuralsController < Admin::ApplicationController
 
     respond_to do |format|
       if @functional_structural.save
-        format.html { redirect_to admin_struktural_index_path, notice: 'Functional structural was successfully created.' }
+        format.html { redirect_to admin_struktural_index_path, notice: 'Data Berhasil Dibuat.' }
         format.json { render :show, status: :created, location: @functional_structural }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class Admin::FunctionalStructuralsController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @functional_structural.update(functional_structural_params)
-        format.html { redirect_to admin_struktural_index_path, notice: 'Functional structural was successfully updated.' }
+        format.html { redirect_to admin_struktural_index_path, notice: 'Data Berhasil Diupdate.' }
         format.json { render :show, status: :ok, location: @functional_structural }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class Admin::FunctionalStructuralsController < Admin::ApplicationController
   def destroy
     @functional_structural.destroy
     respond_to do |format|
-      format.html { redirect_to admin_struktural_index_path, notice: 'Functional structural was successfully destroyed.' }
+      format.html { redirect_to admin_struktural_index_path, notice: 'Data Berhasil Dihapus.' }
       format.json { head :no_content }
     end
   end

@@ -12,4 +12,8 @@
 #
 
 class FunctionalStructural < ActiveRecord::Base
+  def self.search(query)
+    #code
+    where("lower(name) like lower(?) OR lower(jabatan) like lower(?)", "%#{query}%", "%#{query}%")
+  end
 end
