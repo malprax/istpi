@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <div class="row">
+
+    <% if @buku_induks.present? %>
     <h3>Daftar Buku Induk</h3>
 
     <table class="table table-hover table-striped">
@@ -32,6 +32,6 @@
       </tbody>
     </table>
     <br>
-
-  </div>
-</div>
+    <% else %>
+    <h3 class="lead">Maaf, Belum Ada Data Buku Induk Silahkan Kembali Lain Waktu..</h3>
+    <% end %>

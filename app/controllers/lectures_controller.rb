@@ -4,7 +4,7 @@ class LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
   def index
-    @lectures = Lecture.all.order("created_at ASC")
+    @lectures = Lecture.all.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
   end
 
   def show
