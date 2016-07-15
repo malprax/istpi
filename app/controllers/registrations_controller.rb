@@ -8,10 +8,7 @@ class RegistrationsController < ApplicationController
     @registration = Registration.new
   end
 
-  # GET /registrations/1/edit
-  def edit
-  end
-
+  
   # POST /registrations
   # POST /registrations.json
   def create
