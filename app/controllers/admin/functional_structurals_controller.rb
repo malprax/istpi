@@ -5,9 +5,9 @@ class Admin::FunctionalStructuralsController < Admin::ApplicationController
   # GET /functional_structurals.json
   def index
     if params[:search]
-        @functional_structurals = FunctionalStructural.search(params[:search]).order('created_at DESC')
+        @functional_structurals = FunctionalStructural.search(params[:search]).order('created_at ASC')
     else
-        @functional_structurals = FunctionalStructural.all.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+        @functional_structurals = FunctionalStructural.all.paginate(:page => params[:page], per_page: 10).order('created_at ASC')
     end
   end
 

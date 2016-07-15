@@ -1,33 +1,40 @@
 <% if @registrations.present? %>
 <div class="well">
-  <h3 class="lead">Daftar Calon Mahasiswa Baru &nbsp; <%= link_to 'Buat', admin_new_calon_mahasiswa_path, class: "btn btn-success" %></h3>
+  <h3 class="lead">Daftar Calon Mahasiswa Baru &nbsp; <%= link_to 'Buat', admin_new_calon_mahasiswa_path, class: "btn btn-primary" %></h3>
+  <div class="panel panel-default">
+    <div class="panel-head pull-right">
+      <%= render 'shared/search' %>
+    </div>
+    <div class="panel-body">
+      <table class= "table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Kode Formulir</th>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>Nomor Kontak</th>
+            <th>Referal</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
 
-  <table class= "table table-hover table-striped">
-    <thead>
-      <tr>
-        <th>Kode Formulir</th>
-        <th>Nama</th>
-        <th>Jenis Kelamin</th>
-        <th>Nomor Kontak</th>
-        <th>Referal</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
+        <tbody>
+          <% @registrations.each do |registration| %>
+            <tr>
+              <td><%= link_to "MABA#{registration.kode_formulir}", admin_calon_mahasiswa_path(registration) %></td>
+              <td><%= registration.nama %></td>
+              <td><%= registration.jenis_kelamin %></td>
+              <td><%= registration.kontak_person %></td>
+              <td><%= registration.referal %></td>
+              <td><%= link_to "Edit", admin_edit_calon_mahasiswa_path(registration) %></td>
+              <td><%= link_to "Hapus", admin_delete_calon_mahasiswa_path(registration), method: :delete, data:{confirm: "Hapus Calon Mahasiswa?"} %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-    <tbody>
-      <% @registrations.each do |registration| %>
-        <tr>
-          <td><%= link_to "MABA#{registration.kode_formulir}", admin_calon_mahasiswa_path(registration) %></td>
-          <td><%= registration.nama %></td>
-          <td><%= registration.jenis_kelamin %></td>
-          <td><%= registration.kontak_person %></td>
-          <td><%= registration.referal %></td>
-          <td><%= link_to "Edit", admin_edit_calon_mahasiswa_path(registration) %></td>
-          <td><%= link_to "Hapus", admin_delete_calon_mahasiswa_path(registration), method: :delete, data:{confirm: "Hapus Calon Mahasiswa?"} %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
   <br>
   <%#= will_paginate @registrations %>
 </div>

@@ -1,30 +1,38 @@
-<div class="wrapper">
-  <h3 class="lead">Struktural ISTPI&nbsp;&nbsp;<%= link_to 'Buat', admin_new_struktural_path, class: "btn btn-success" %></h1>
+<div class="well">
+  <h3 class="lead">Struktural ISTPI&nbsp;&nbsp;<%= link_to 'Buat', admin_new_struktural_path, class: "btn btn-primary" %></h1>
+  <div class="panel panel-default">
+    <div class="panel-title pull-right">
+        <%= render 'shared/search' %>
+    </div>
+    <div class="panel-body">
+      <table class="table table-stripped table-hover">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>NIP</th>
+            <th>NIDN</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
 
-  <table class="table table-stripped table-hover">
-    <thead>
-      <tr>
-        <th>Nama</th>
-        <th>Jabatan</th>
-        <th>NIP</th>
-        <th>NIDN</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
+        <tbody>
+          <% @functional_structurals.each do |functional_structural| %>
+            <tr>
+              <td><%= link_to functional_structural.name, functional_structural %></td>
+              <td><%= functional_structural.jabatan %></td>
+              <td><%= functional_structural.nip %></td>
+              <td><%= functional_structural.nidn %></td>
+              <td><%= link_to 'Edit', admin_edit_struktural_path(functional_structural) %></td>
+              <td><%= link_to 'Hapus', admin_struktural_path(functional_structural), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-    <tbody>
-      <% @functional_structurals.each do |functional_structural| %>
-        <tr>
-          <td><%= link_to functional_structural.name, functional_structural %></td>
-          <td><%= functional_structural.jabatan %></td>
-          <td><%= functional_structural.nip %></td>
-          <td><%= functional_structural.nidn %></td>
-          <td><%= link_to 'Edit', admin_edit_struktural_path(functional_structural) %></td>
-          <td><%= link_to 'Hapus', admin_struktural_path(functional_structural), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
 
-  <br>
-</div>
+    <br>
+  </div>
+
+  </div>
