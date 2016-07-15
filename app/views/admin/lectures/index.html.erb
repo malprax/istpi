@@ -30,5 +30,6 @@
   </table>
 
   <br>
+  <%= will_paginate @lectures, :previous_label => '&laquo;', :next_label => '&raquo;', renderer: BootstrapPagination::Rails %>
   <%#= will_paginate @lectures %>
 </div>
