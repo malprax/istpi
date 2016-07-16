@@ -20,7 +20,7 @@
 #
 
 
-class Admin::RegistrationPdf < Prawn::Document
+class RegisterPdf < Prawn::Document
   def initialize(registration)
     super(top_margin: 30, left_margin: 50, :page_size  => 'A4')
     @registration = registration

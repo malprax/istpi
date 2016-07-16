@@ -15,6 +15,6 @@
   <div class="panel-footer">
     <%= link_to 'Edit', admin_edit_calon_mahasiswa_path(@registration), class: "btn btn-default" %>
     <%= link_to 'Kembali', admin_calon_mahasiswa_index_path, class:"btn btn-success" %>
-    <%= link_to 'Cetak', admin_registration_path(@registration, format: 'pdf'), class:"btn btn-primary", target:"_blank" %>
+    <%= link_to 'Cetak', registration_path(@registration, format: 'pdf'), class:"btn btn-primary", target:"_blank" %>
   </div>
 </div>

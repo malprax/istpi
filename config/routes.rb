@@ -11,7 +11,8 @@ Rails.application.routes.draw do
    get 'calon_mahasiswa/:id/edit' => 'registrations#edit', :as => "edit_calon_mahasiswa"
    get 'calon_mahasiswa/:id' => 'registrations#show', :as => "calon_mahasiswa"
    delete 'calon_mahasiswa/:id' => 'registrations#destroy', :as => "delete_calon_mahasiswa"
-   
+   get 'download_pdf' => 'registrations#download_pdf', :as => "download_pdf"
+
   #  dosen
    get 'dosen_index' => 'lectures#index', :as => "dosen_index"
    get 'dosen_index/new' => 'lectures#new', :as => "new_dosen"
