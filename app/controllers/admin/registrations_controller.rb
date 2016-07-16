@@ -23,7 +23,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
         send_data pdf.render,
         type: "application/pdf",
         disposition: "inline",
-        filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.full_name}.pdf"
+        filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.nama}.pdf"
       end
     end
   end
