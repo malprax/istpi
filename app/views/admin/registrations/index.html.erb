@@ -14,20 +14,21 @@
             <th>Jenis Kelamin</th>
             <th>Nomor Kontak</th>
             <th>Referal</th>
-            <th colspan="2"></th>
+            <th colspan="3"></th>
           </tr>
         </thead>
 
         <tbody>
           <% @registrations.each do |registration| %>
             <tr>
-              <td><%= link_to "MABA#{registration.kode_formulir}", admin_calon_mahasiswa_path(registration) %></td>
+              <td><%= registration.angka_bulan %></td>
               <td><%= registration.nama %></td>
               <td><%= registration.jenis_kelamin %></td>
               <td><%= registration.kontak_person %></td>
               <td><%= registration.referal %></td>
               <td><%= link_to "Edit", admin_edit_calon_mahasiswa_path(registration) %></td>
               <td><%= link_to "Hapus", admin_delete_calon_mahasiswa_path(registration), method: :delete, data:{confirm: "Hapus Calon Mahasiswa?"} %></td>
+              <td><%= link_to "cetak", download_pdf_path(:kode_formulir => registration.kode_formulir, format: 'pdf'), target: '_blank' %></td>
             </tr>
           <% end %>
         </tbody>
