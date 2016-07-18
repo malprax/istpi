@@ -77,21 +77,21 @@ class Admin::RegistrationsController < Admin::ApplicationController
     end
   end
 
-  def download_pdf
+  # def download_pdf
     #code
-    @registration = Registration.find_by_kode_formulir(params[:id])
-    respond_to do |format|
-      format.html
-      format.pdf do
-        pdf = RegistrationPdf.new(@registration)
-        send_data pdf.render,
-        type: "application/pdf",
-        disposition: "inline",
-        filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.full_name}.pdf"
-      end
-    end
-
-  end
+  #   @registration = Registration.find_by_kode_formulir(params[:id])
+  #   respond_to do |format|
+  #     format.html
+  #     format.pdf do
+  #       pdf = RegistrationPdf.new(@registration)
+  #       send_data pdf.render,
+  #       type: "application/pdf",
+  #       disposition: "inline",
+  #       filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.full_name}.pdf"
+  #     end
+  #   end
+  #
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

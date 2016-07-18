@@ -35,9 +35,9 @@ class RegisterPdf < Prawn::Document
       horizontal_line(0, 509)
     end
 
-    move_down 10
-    kode_formulir
     move_down 20
+    kode_formulir
+    move_down 10
     line_items
     nama
     line_items
@@ -48,8 +48,6 @@ class RegisterPdf < Prawn::Document
     asal_sekolah
     line_items
     tahun_lulus
-    line_items
-    fakultas
     line_items
     jurusan
     line_items_2
@@ -75,16 +73,16 @@ class RegisterPdf < Prawn::Document
 
   def header
     logo = "#{Rails.root}/app/assets/images/logo_istpi_copy.png"
-    image "#{logo}", scale: 0.08, :at => [0, cursor+14]
+    image "#{logo}", scale: 0.12, :at => [0, cursor-1]
 
-    text_box "YAYASAN PEMBANGUNAN INDONESIA", :at  => [70,cursor], :size  => 10
+    text_box "YAYASAN PEMBANGUNAN INDONESIA", :at  => [70,cursor-6], :size  => 10
 
-    text_box "INSTITUS SAINS DAN TEKNOLOGI PEMBANGUNAN INDONESIA", :at  => [70,cursor-14], :size  => 12, :style  => :bold
+    text_box "INSTITUS SAINS DAN TEKNOLOGI PEMBANGUNAN INDONESIA", :at  => [70,cursor-24], :size  => 12, :style  => :bold
 
     # text_box "FAKULTAS TEKNIK", :at  => [70,cursor-30], :size  => 25, :style  => :bold
     # text_box "Jurusan Teknik Pertambangan, Jurusan Teknik Mesin, Jurusan Teknik Informatika", :at  => [70,cursor-55], :size  => 8, :style  => :bold
 
-    text_box "Jl. Andi Pangerang Pettarani No.99B Makassar, 90222, www.istpi.ac.id", :at  => [70,cursor-64], :size  => 8, :style  => :bold
+    text_box "Jl. Andi Pangerang Pettarani No.99B Makassar, 90222, www.istpi.ac.id", :at  => [70,cursor-44], :size  => 8, :style  => :bold
 
   end
 
@@ -97,12 +95,12 @@ class RegisterPdf < Prawn::Document
   end
 
   def alamat
-    text_box "alamat            :   #{@registration.alamat}".upcase, :at  => [20,cursor]
+    text_box "alamat                 :   #{@registration.alamat}".upcase , :at  => [0,cursor]
     move_down 10
   end
 
   def kontak_person
-    text_box "no telepon   :   #{@registration.kontak_person}".upcase, :at  => [20,cursor]
+    text_box "no telepon        :   #{@registration.kontak_person}".upcase, :at  => [0,cursor]
     move_down 20
 
   end
@@ -113,7 +111,7 @@ class RegisterPdf < Prawn::Document
   end
 
   def line_items_2
-    move_down 20
+    move_down 80
   end
 
   def asal_sekolah
@@ -151,7 +149,7 @@ class RegisterPdf < Prawn::Document
   end
 
   def foto
-    text "    3. Foto berwarna 3x4 sebanyak 2 lembar"
+    text "    3. Phasfoto berwarna 3x4 sebanyak 2 lembar"
   end
 
   def ktp

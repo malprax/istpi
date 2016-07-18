@@ -1,6 +1,6 @@
 require 'prawn'
 class RegistrationsController < ApplicationController
-  # before_action :verify_logged_in
+  before_action :verify_logged_in, except:[:index, :show, :new, :download_pdf]
   before_action :set_registration, only: [:show]
 
   # GET /registrations
@@ -11,6 +11,7 @@ class RegistrationsController < ApplicationController
     else
         @registrations = Registration.all.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     end
+
   end
 
   # GET /registrations/1
@@ -39,7 +40,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to admin_calon_mahasiswa_index_path, notice: 'Data Calon Berhasil Di Buat.' }
+        format.html { redirect_to calon_mahasiswa_index_path, notice: 'Data Calon Berhasil Di Buat.' }
         format.json { render :show, status: :created, location: @registration }
       else
         format.html { render :new }
@@ -50,21 +51,21 @@ class RegistrationsController < ApplicationController
 
 
 
-  def download_pdf
+  # def download_pdf
     #code
-    @registration = Registration.find_by_kode_formulir(params[:id])
-    respond_to do |format|
-      format.html
-      format.pdf do
-        pdf = RegistrationPdf.new(@registration)
-        send_data pdf.render,
-        type: "application/pdf",
-        disposition: "inline",
-        filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.full_name}.pdf"
-      end
-    end
-
-  end
+  #   @registration = Registration.where(params[:kode_formulir])
+  #   respond_to do |format|
+  #     format.html
+  #     format.pdf do
+  #       pdf = RegisterPdf.new(@registration)
+  #       send_data pdf.render,
+  #       type: "application/pdf",
+  #       disposition: "inline",
+  #       filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.nama}.pdf"
+  #     end
+  #   end
+  #
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

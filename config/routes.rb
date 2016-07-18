@@ -11,7 +11,7 @@ Rails.application.routes.draw do
    get 'calon_mahasiswa/:id/edit' => 'registrations#edit', :as => "edit_calon_mahasiswa"
    get 'calon_mahasiswa/:id' => 'registrations#show', :as => "calon_mahasiswa"
    delete 'calon_mahasiswa/:id' => 'registrations#destroy', :as => "delete_calon_mahasiswa"
-   get 'download_pdf' => 'registrations#download_pdf', :as => "download_pdf"
+  #  get 'download_pdf' => 'registrations#download_pdf', :as => "download_pdf"
 
   #  dosen
    get 'dosen_index' => 'lectures#index', :as => "dosen_index"
@@ -30,8 +30,15 @@ Rails.application.routes.draw do
   end
 
   resources :incoming_mails, :outcoming_mails, :students_biographies, :buku_induks, :functional_structurals, :lectures, :registrations
-  get "calon_mahasiswa" => 'registrations#index', :as => "calon_mahasiswa"
-  get "daftar_calon_mahasiswa" => 'registrations#new', :as => "daftar_calon_mahasiswa"
+  #registrations
+  get 'calon_mahasiswa_index' => 'registrations#index', :as => "calon_mahasiswa_index"
+  get 'calon_mahasiswa_index/new' => 'registrations#new', :as => "new_calon_mahasiswa"
+  get 'calon_mahasiswa/:id/edit' => 'registrations#edit', :as => "edit_calon_mahasiswa"
+  get 'calon_mahasiswa/:id' => 'registrations#show', :as => "calon_mahasiswa"
+  delete 'calon_mahasiswa/:id' => 'registrations#destroy', :as => "delete_calon_mahasiswa"
+  # get 'download_pdf' => 'registrations#download_pdf', :as => "download_pdf"
+
+  #lectures
   get 'dosen' => 'lectures#index', :as => "dosen"
   #beranda
   root 'pages#index'
