@@ -1,6 +1,6 @@
 require 'prawn'
 class RegistrationsController < ApplicationController
-  before_action :verify_logged_in, except:[:index, :show, :new, :download_pdf]
+  before_action :verify_logged_in, except:[:index, :show, :new, :download_pdf, :create]
   before_action :set_registration, only: [:show]
 
   # GET /registrations
@@ -75,6 +75,6 @@ class RegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
-      params.require(:registration).permit(:nama, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :alamat, :kontak_person, :asal_sekolah, :tahun_lulus, :fakultas_peminat, :jurusan_peminat, :referal, :kode_formulir)
+      params.require(:registration).permit(:nama, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :alamat, :kontak_person, :asal_sekolah, :tahun_lulus, :fakultas_peminat, :jurusan_peminat, :referal, :kode_jurusan)
     end
 end
