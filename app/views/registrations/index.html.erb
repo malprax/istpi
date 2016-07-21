@@ -1,3 +1,4 @@
+<% if @registrations.present? %>
 <h3 class="lead">Daftar Calon Mahasiswa Baru</h3>
 
 <table class= "table table-hover table-striped">
@@ -15,7 +16,7 @@
   <tbody>
     <% @registrations.each do |registration| %>
       <tr>
-        <td><%= link_to "#{registration.kode_formulir}", registration %></td>
+        <td><%= link_to registration.kode_formulir, registration %></td>
         <td><%= registration.nama %></td>
         <td><%= registration.jenis_kelamin %></td>
         <td><%= registration.tempat_lahir %>, &nbsp;<%= registration.tanggal_lahir %></td>
@@ -28,3 +29,6 @@
 </table>
 
 <br>
+<% else %>
+<h3 class="lead">Maaf Tidak Ada Data Yang Bisa Ditampilkan, Silahkan Cek Kembali Lain Waktu..</h3>
+<% end %>

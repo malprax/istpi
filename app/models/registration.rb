@@ -23,12 +23,12 @@
 
 class Registration < ActiveRecord::Base
   # before_create {generate_token(:kode_formulir)}
-  before_create :romawi, :kode_jurusan, {:buat_kode(:kode_formulir)}
-  scope :current, -> {order('name DESC')}
+  after_create  :buat_kode
+  # scope :current, -> {order('name DESC')}
   attr_accessor :romawi, :kode_jurusan
   def buat_kode
     #code
-    "#{id}/#{kode_jurusan}/#{romawi}/#{created_at.strftime("%Y")}"
+    self.update_attributes(kode_formulir: "#{id}/#{kode_jurusan}/#{romawi}/#{created_at.strftime("%Y")}")
   end
 
   # def generate_token(column)
@@ -50,39 +50,41 @@ class Registration < ActiveRecord::Base
 
   def romawi
     #code
-    if angka_bulan == 1
-      romawi = 'I'
-    elsif angka_bulan == 2
-      romawi = 'II'
-    elsif angka_bulan == 3
-      romawi = 'III'
-    elsif angka_bulan == 4
-      romawi = 'IV'
-    elsif angka_bulan == 5
-      romawi = 'V'
-    elsif angka_bulan == 6
-      romawi = 'VI'
-    elsif angka_bulan == 7
-      romawi = 'VII'
-    elsif angka_bulan == 8
-      romawi = 'VIII'
-    elsif angka_bulan == 9
-      romawi = 'IX'
-    elsif angka_bulan == 10
-      romawi = 'X'
-    elsif angka_bulan == 11
-      romawi = 'XI'
-    elsif angka_bulan == 12
-      romawi = 'XII'
+    if self.angka_bulan == 1
+      self.romawi = 'I'
+    elsif self.angka_bulan == 2
+      self.romawi = 'II'
+    elsif self.angka_bulan == 3
+      self.romawi = 'III'
+    elsif self.angka_bulan == 4
+      self.romawi = 'IV'
+    elsif self.angka_bulan == 5
+      self.romawi = 'V'
+    elsif self.angka_bulan == 6
+      self.romawi = 'VI'
+    elsif self.angka_bulan == 7
+      self.romawi = 'VII'
+    elsif self.angka_bulan == 8
+      self.romawi = 'VIII'
+    elsif self.angka_bulan == 9
+      self.romawi = 'IX'
+    elsif self.angka_bulan == 10
+      self.romawi = 'X'
+    elsif self.angka_bulan == 11
+      self.romawi = 'XI'
+    elsif self.angka_bulan == 12
+      self.romawi = 'XII'
     end
   end
 
   def kode_jurusan
     #code
-    if jurusan_peminat == "teknik sipil"
-      kode_jurusan = 11
-    elsif kode_jurusan == "teknik elektro"
-      kode_jurusan = 21
+    if self.jurusan_peminat == "teknik sipil"
+      self.kode_jurusan = 11
+    elsif self.jurusan_peminat == "teknik elektro"
+      self.kode_jurusan = 21
+    else self.jurusan_peminat == nil
+      self.kode_jurusan = 31
     end
   end
 

@@ -53,7 +53,7 @@ class RegistrationsController < ApplicationController
 
   def download_pdf
     #code
-    @registration = Registration.find(params[:kode_formulir])
+    @registration = Registration.find(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
@@ -70,11 +70,11 @@ class RegistrationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registration
-      @registration = Registration.find_by_kode_formulir(params[:id])
+      @registration = Registration.find_by_kode_formuli(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
-      params.require(:registration).permit(:nama, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :alamat, :kontak_person, :asal_sekolah, :tahun_lulus, :fakultas_peminat, :jurusan_peminat, :referal, :kode_jurusan)
+      params.require(:registration).permit(:nama, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :alamat, :kontak_person, :asal_sekolah, :tahun_lulus, :fakultas_peminat, :jurusan_peminat, :referal, :kode_formulir)
     end
 end

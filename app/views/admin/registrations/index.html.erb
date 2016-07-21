@@ -28,7 +28,7 @@
               <td><%= registration.referal %></td>
               <td><%= link_to "Edit", admin_edit_calon_mahasiswa_path(registration) %></td>
               <td><%= link_to "Hapus", admin_delete_calon_mahasiswa_path(registration), method: :delete, data:{confirm: "Hapus Calon Mahasiswa?"} %></td>
-              <td><%= link_to "cetak", download_pdf_path(:kode_formulir => registration.kode_formulir, format: 'pdf'), target: '_blank' %></td>
+              <td><%= link_to "cetak", download_pdf_path(:id => registration.id, format: 'pdf'), target: '_blank' %></td>
             </tr>
           <% end %>
         </tbody>
