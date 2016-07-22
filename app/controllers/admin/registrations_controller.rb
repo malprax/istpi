@@ -87,7 +87,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
         send_data pdf.render,
         type: "application/pdf",
         disposition: "inline",
-        filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.full_name}.pdf"
+        filename: "Formulir Calon Mahasiswa ISTPI atas nama #{@registration.nama}.pdf"
       end
     end
 
@@ -96,7 +96,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registration
-      @registration = Registration.find_by_kode_formulir(params[:id])
+      @registration = Registration.find_by(params[:nama])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

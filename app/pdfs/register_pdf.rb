@@ -87,7 +87,7 @@ class RegisterPdf < Prawn::Document
   end
 
   def kode_formulir
-    text_box "Kode Formulir :   MABA09-#{@registration.kode_formulir}", :at  => [290,cursor]
+    text_box "Kode Formulir :   #{@registration.kode_formulir}", :at  => [290,cursor]
     move_down 10
   end
   def nama
