@@ -3,7 +3,7 @@
     <h3 class="panel-title">Info Calon Mahasiswa</h3>
   </div>
     <ul class="list-group">
-        <li class="list-group-item"><strong>Kode Formulir</strong>&nbsp;:&nbsp;<%= "MABA#{@registration.kode_formulir}" %></li>
+        <li class="list-group-item"><strong>Kode Formulir</strong>&nbsp;:&nbsp;<%= "#{@registration.kode_formulir}" %></li>
         <li class="list-group-item"><strong>Nama</strong>&nbsp;:&nbsp;<%= raw(@registration.nama) %></li>
         <li class="list-group-item"><strong>TTL</strong>&nbsp;:&nbsp;<%= raw(@registration.tempat_lahir) %>,&nbsp;<%= @registration.tanggal_lahir %></li>
         <li class="list-group-item"><strong>Alamat</strong>&nbsp;:&nbsp;<%= @registration.alamat %></li>
