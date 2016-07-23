@@ -7,9 +7,9 @@ class RegistrationsController < ApplicationController
   # GET /registrations.json
   def index
     if params[:search]
-        @registrations = Registration.search(params[:search]).order('created_at DESC')
+        @registrations = Registration.search(params[:search]).paginate(:page => params[:page], per_page: 10).order('created_at ASC')
     else
-        @registrations = Registration.all.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+        @registrations = Registration.all.paginate(:page => params[:page], per_page: 10).order('created_at ASC')
     end
 
   end

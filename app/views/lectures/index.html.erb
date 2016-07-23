@@ -1,32 +1,35 @@
-<% if @lectures.present? %>
+
 <h3 class="lead">Daftar Pengajar ISTPI</h3>
+<div class="panel panel-default">
+  <div class="panel-title pull-right">
+    <%= render 'shared/search' %>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>NIDN</th>
+          <th>Fakultas</th>
+          <th>Jurusan</th>
+          <th>Alamat</th>
+          <th>No kontak</th>
+        </tr>
+      </thead>
 
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Nama</th>
-      <th>NIDN</th>
-      <th>Fakultas</th>
-      <th>Jurusan</th>
-      <th>Alamat</th>
-      <th>No kontak</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lectures.each do |lecture| %>
-      <tr>
-        <td><%= link_to lecture.name, lecture %></td>
-        <td><%= lecture.nidn %></td>
-        <td><%= lecture.fakultas %></td>
-        <td><%= lecture.jurusan %></td>
-        <td><%= lecture.alamat %></td>
-        <td><%= lecture.no_kontak %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<% else %>
-<h3 class="lead">Maaf, Belum Ada Data Dosen Silahkan Kembali Lain Waktu..</h3>
-<% end %>
+      <tbody>
+        <% @lectures.each do |lecture| %>
+          <tr>
+            <td><%= link_to lecture.name, admin_dosen_path(lecture) %></td>
+            <td><%= lecture.nidn %></td>
+            <td><%= lecture.fakultas %></td>
+            <td><%= lecture.jurusan %></td>
+            <td><%= lecture.alamat %></td>
+            <td><%= lecture.no_kontak %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+      <%= will_paginate @lectures, :previous_label => '&laquo;', :next_label => '&raquo;', renderer: BootstrapPagination::Rails %>
+  </div>
+</div>
