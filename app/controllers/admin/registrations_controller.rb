@@ -1,7 +1,7 @@
 require 'prawn'
 class Admin::RegistrationsController < Admin::ApplicationController
   before_action :verify_logged_in
-  before_action :set_registration, only: [:show, :edit, :update, :destroy]
+  before_action :set_registration, only: [:show, :edit, :destroy]
 
   # GET /registrations
   # GET /registrations.json
@@ -56,6 +56,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
   # PATCH/PUT /registrations/1
   # PATCH/PUT /registrations/1.json
   def update
+    @registration = Registration.find_by_nama(params[:id])
     respond_to do |format|
       if @registration.update(registration_params)
         format.html { redirect_to admin_calon_mahasiswa_index_path, notice: 'Data Calon Berhasil Di Update.' }
@@ -79,7 +80,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
 
   def download_pdf
     #code
-    @registration = Registration.find(params[:id])
+    @registration = Registration.find(params[:nama])
     respond_to do |format|
       format.html
       format.pdf do
@@ -96,7 +97,7 @@ class Admin::RegistrationsController < Admin::ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registration
-      @registration = Registration.find_by(params[:nama])
+      @registration = Registration.find_by_nama(params[:nama])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
