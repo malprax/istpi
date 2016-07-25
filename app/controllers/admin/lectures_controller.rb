@@ -1,4 +1,5 @@
 class Admin::LecturesController < Admin::ApplicationController
+  before_action :verify_logged_in
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
 
   # GET /lectures

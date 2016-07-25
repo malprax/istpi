@@ -1,4 +1,5 @@
 class Admin::FunctionalStructuralsController < Admin::ApplicationController
+  before_action :verify_logged_in
   before_action :set_functional_structural, only: [:show, :edit, :update, :destroy]
 
   # GET /functional_structurals

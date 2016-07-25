@@ -1,4 +1,5 @@
 class Admin::StudentsBiographiesController < Admin::ApplicationController
+  before_action :verify_logged_in
   before_action :set_students_biography, only: [:show, :edit, :update, :destroy]
 
   # GET /students_biographies

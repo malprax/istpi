@@ -1,4 +1,5 @@
 class Admin::BukuInduksController < Admin::ApplicationController
+  before_action :verify_logged_in
   before_action :set_buku_induk, only: [:show, :edit, :update, :destroy]
 
   # GET /buku_induks
