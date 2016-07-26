@@ -1,7 +1,7 @@
 require 'prawn'
 class RegistrationsController < ApplicationController
-  before_action :verify_logged_in, except:[:index, :show, :new, :download_pdf, :create]
-  before_action :set_registration, only: [:show]
+  # before_action :verify_logged_in, except:[:index, :show, :new, :download_pdf, :create]
+  # before_action :set_registration, only: [:show]
 
   # GET /registrations
   # GET /registrations.json
@@ -9,7 +9,7 @@ class RegistrationsController < ApplicationController
     if params[:search]
         @registrations = Registration.search(params[:search]).order('created_at ASC')
     else
-        @registrations = Registration.paginate(:all, :page => params[:page], per_page: 10).order('created_at ASC')
+        @registrations = Registration.paginate(:page => params[:page], per_page: 10).order('created_at ASC')
     end
 
   end
@@ -17,6 +17,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations/1
   # GET /registrations/1.json
   def show
+    @registration = Registration.find_by_nama(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
@@ -53,7 +54,9 @@ class RegistrationsController < ApplicationController
 
   def download_pdf
     #code
-    @registration = Registration.find(params[:id])
+    @registration = Registration.find(params[:nama])
+    # @registration = Registration.find(params[:id])
+    # @registration = Registration.find_by_nama(params[:id])
     respond_to do |format|
       format.html
       format.pdf do

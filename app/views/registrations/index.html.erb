@@ -16,13 +16,13 @@
   <tbody>
     <% @registrations.each do |registration| %>
       <tr>
-        <td><%= link_to registration.kode_formulir, registration %></td>
+        <td><%= link_to registration.kode_formulir, calon_mahasiswa_path(registration) %></td>
         <td><%= registration.nama %></td>
         <td><%= registration.jenis_kelamin %></td>
         <td><%= registration.tempat_lahir %>, &nbsp;<%= registration.tanggal_lahir %></td>
         <td><%= registration.kontak_person %></td>
         <td><%= registration.jurusan_peminat %></td>
-        <td><%= link_to "cetak", download_pdf_path(:id => registration.id, format: 'pdf'), target: '_blank' %></td>
+        <td><%= link_to "cetak", calon_mahasiswa_download_pdf_path(:nama => registration.nama, format: 'pdf'), target: '_blank' %></td>
       </tr>
     <% end %>
   </tbody>
