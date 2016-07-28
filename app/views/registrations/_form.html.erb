@@ -5,17 +5,17 @@
       <%= simple_form_for(@registration, wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
         <%= f.error_notification %>
 
-            <%= f.input :nama, label: "Nama" %>
-            <%= f.input :tempat_lahir, label: "Tempat Lahir"%>
-            <%= f.input :tanggal_lahir, label: "Tanggal Lahir", as: :string, input_html: { class: "datepicker"} %>
-            <%= f.input :jenis_kelamin, label: "Jenis Kelamin", collection: ["Laki-laki", "Perempuan"]%>
-            <%= f.input :alamat, label: "Alamat"%>
-            <%= f.input :kontak_person, label: "Nomor Handphone", wrapper: :horizontal_form  %>
-            <%= f.input :asal_sekolah, label: "Asal Sekolah"%>
-            <%= f.input :tahun_lulus, label: "Tahun Lulus"%>
+            <%= f.input :nama, label: "Nama", placeholder: "Tulis Nama Lengkap Anda" %>
+            <%= f.input :tempat_lahir, label: "Tempat Lahir", placeholder: "Tempat Lahir Anda" %>
+            <%= f.input :tanggal_lahir, label: "Tanggal Lahir", as: :string, input_html: { class: "datepicker"}, placeholder: "Tanggal Lahir Anda" %>
+            <%= f.input :jenis_kelamin, label: "Jenis Kelamin", collection: ["Laki-laki", "Perempuan"], placeholder: "Jenis Kelamin" %>
+            <%= f.input :alamat, label: "Alamat", placeholder: "Tulis Alamat Lengkap Anda" %>
+            <%= f.input :kontak_person, label: "Nomor Handphone", wrapper: :horizontal_form, placeholder: "Nomor Yang Bisa Dihubungi"  %>
+            <%= f.input :asal_sekolah, label: "Asal Sekolah", placeholder: "Asal Sekolah Anda" %>
+            <%= f.input :tahun_lulus, label: "Tahun Lulus", placeholder: "Tahun Lulus Anda Dari Sekolah Asal" %>
             <%#= f.input :fakultas_peminat, label: "Fakultas Yang Diminati"%>
-            <%= f.input :jurusan_peminat, label: "Pilih Program Studi", collection: ["Teknik Sipil", "Teknik Elektro"]%>
-            <%= f.input :referal, label: "Referal"%>
+            <%= f.input :jurusan_peminat, label: "Pilih Program Studi", collection: ["Teknik Sipil", "Teknik Elektro"], placeholder: "Pilih Jurusan Anda"%>
+            <%= f.input :referal, label: "Referal", placeholder: "Tulis Nama Referal Jika Ada"%>
         <div class="col-sm-offset-3">
           <%= f.button :submit, "Daftar", class: "btn btn-success" %>
         </div>

@@ -39,12 +39,13 @@ ActiveRecord::Schema.define(version: 20160708100323) do
   end
 
   create_table "functional_structurals", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name_to_list"
+    t.integer  "lecture_id"
     t.string   "jabatan"
     t.string   "nip"
     t.string   "nidn"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "incoming_mails", force: :cascade do |t|

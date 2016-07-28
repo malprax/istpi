@@ -26,7 +26,7 @@ class Registration < ActiveRecord::Base
   after_create  :buat_kode
   # scope :current, -> {order('name DESC')}
   attr_accessor :romawi, :kode_jurusan
-  # validates_presence_of :nama, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :alamat, :kontak_person, :jurusan_peminat
+  validates_presence_of :nama, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :alamat, :kontak_person, :jurusan_peminat
 
   def to_param
     #code

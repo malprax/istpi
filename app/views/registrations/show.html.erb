@@ -3,7 +3,7 @@
     <h3 class="panel-title">Info Calon Mahasiswa</h3>
   </div>
     <ul class="list-group">
-        <li class="list-group-item"><strong>Kode Formulir</strong>&nbsp;:&nbsp;<%#= "#{@registration.kode_formulir}" %></li>
+        <li class="list-group-item"><strong>Kode Formulir</strong>&nbsp;:&nbsp;<%= "#{@registration.kode_formulir}" %></li>
         <li class="list-group-item"><strong>Nama</strong>&nbsp;:&nbsp;<%= raw(@registration.nama) %></li>
         <li class="list-group-item"><strong>TTL</strong>&nbsp;:&nbsp;<%= raw(@registration.tempat_lahir) %>,&nbsp;<%= @registration.tanggal_lahir %></li>
         <li class="list-group-item"><strong>Alamat</strong>&nbsp;:&nbsp;<%= @registration.alamat %></li>
@@ -16,7 +16,7 @@
     <%= link_to 'Kembali', calon_mahasiswa_index_path, class:"btn btn-success" %>
     <td>
       <%#= link_to "cetak", calon_mahasiswa_download_pdf_path(:nama => @registration.nama, format: 'pdf'), target: '_blank', class: "btn btn-primary" %>
-      <%= link_to 'Cetak', calon_mahasiswa_download_pdf_path(:id => @registration.id, format: 'pdf'), class:"btn btn-primary", target:"_blank" %>
+      <%= link_to 'Cetak', calon_mahasiswa_download_pdf_path(:nama => @registration.nama, format: 'pdf'), class:"btn btn-primary", target:"_blank" %>
     </td>
 
   </div>

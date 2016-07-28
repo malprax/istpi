@@ -2,7 +2,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, label: "Nama" %>
+    <%= f.input :lecture_id, label:"Nama Staf", collection: [|x| x.id, x.name] %>
+    <%= f.input :name_to_List, label: "Nama Baru Jika tidak Terdaftar" %>
     <%= f.input :jabatan, label: "Jabatan", collection: ["Rektor", "Pembantu Rektor I", "Pembantu Rektor II", "Pembantu Rektor III", "Dekan Teknik", "Dekan MIPA", "Ketua Jurusan Elektro", "Ketua Jurusan Sipil", "Biro Akademik", "Biro Umum"] %>
     <%= f.input :nip, label: "NIP" %>
     <%= f.input :nidn, label: "NIDN" %>
