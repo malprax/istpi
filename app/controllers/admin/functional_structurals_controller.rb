@@ -74,6 +74,6 @@ class Admin::FunctionalStructuralsController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def functional_structural_params
-      params.require(:functional_structural).permit(:name, :jabatan, :nip, :nidn)
+      params.require(:functional_structural).permit(:lecture_id, :name_to_list, :jabatan, :nip, :nidn)
     end
 end

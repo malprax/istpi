@@ -1,8 +1,11 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @functional_structural.name %>
-</p>
+  <% if @functional_structural.present? %>
+    <%= @functional_structural.lecture.name %>
+  <% else %>
+    <%= @functional_structural.name_to_list %>
+  <% end %>
 
 <p>
   <strong>Jabatan:</strong>
