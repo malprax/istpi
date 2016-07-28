@@ -20,10 +20,10 @@
           <% @functional_structurals.each do |functional_structural| %>
             <tr>
               <td>
-                <% if functional_structural.present? %>
-                  <%#= link_to functional_structural.lecture.nama, functional_structural %>
+                <% if functional_structural.lecture.present? %>
+                  <%= link_to functional_structural.lecture.name, admin_struktural_path(functional_structural) %>
                 <% else %>
-                  <%= link_to functional_structural.name_to_list, functional_structural %>
+                  <%= link_to functional_structural.name_to_list, admin_struktural_path(functional_structural) %>
                 <% end %>
               </td>
               <td><%= functional_structural.jabatan %></td>

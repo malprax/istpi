@@ -2,7 +2,11 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @functional_structural.name %>
+  <% if @functional_structural.lecture.present? %>
+    <%= @functional_structural.lecture.name %>
+  <% else %>
+    <%= @functional_structural.name_to_list %>
+  <% end %>
 </p>
 
 <p>
@@ -20,5 +24,5 @@
   <%= @functional_structural.nidn %>
 </p>
 
-<%= link_to 'Edit', edit_functional_structural_path(@functional_structural) %> |
+
 <%= link_to 'Kembali', functional_structurals_path %>

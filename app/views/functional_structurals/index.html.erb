@@ -14,7 +14,13 @@
   <tbody>
     <% @functional_structurals.each do |functional_structural| %>
       <tr>
-        <td><%= link_to functional_structural.name, functional_structural %></td>
+        <td>
+          <% if functional_structural.lecture.present? %>
+            <%= link_to functional_structural.lecture.name, functional_structural %>
+          <% else %>
+            <%= link_to functional_structural.name_to_list, functional_structural %>
+          <% end %>
+        </td>
         <td><%= functional_structural.jabatan %></td>
         <td><%= functional_structural.nip %></td>
         <td><%= functional_structural.nidn %></td>
