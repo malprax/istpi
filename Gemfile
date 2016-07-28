@@ -20,7 +20,7 @@ gem 'bootstrap-sass' , '~> 3.3.6'
 gem 'autoprefixer-rails'
 
 #add paginate
- gem 'will_paginate'
+ # gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
 gem 'bootstrap_form'

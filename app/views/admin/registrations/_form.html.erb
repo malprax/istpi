@@ -19,7 +19,7 @@
         <div class="col-sm-offset-3">
           <% if params[:controller] == 'admin/registrations' && params[:action] == 'new' %>
           <%= f.button :submit, "Daftar Calon", class: "btn btn-success" %>
-          <% elsif params[:controller] == 'admin/registrations' && params[:action] == 'edit'  %>
+          <% else %>
           <%= f.button :submit, "Edit Calon", class: "btn btn-success" %>
           <% end %>
         </div>

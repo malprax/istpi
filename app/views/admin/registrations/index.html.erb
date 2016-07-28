@@ -18,7 +18,7 @@
     <% @registrations.each do |registration| %>
       <tr>
         <td><%= link_to registration.kode_formulir, admin_calon_mahasiswa_path(registration) %></td>
-        <td><%= registration.nama %></td>
+        <td><%= registration.nama.titlecase %></td>
         <td><%= registration.jenis_kelamin %></td>
         <td><%= registration.tempat_lahir %>, &nbsp;<%= registration.tanggal_lahir %></td>
         <td><%= registration.kontak_person %></td>
