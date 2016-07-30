@@ -1,4 +1,4 @@
-require 'will_paginate/array' 
+
 class Admin::LecturesController < Admin::ApplicationController
   before_action :verify_logged_in
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
@@ -9,7 +9,7 @@ class Admin::LecturesController < Admin::ApplicationController
     if params[:search]
         @lectures = Lecture.search(params[:search]).order('created_at DESC')
     else
-        @lectures = Lecture.all.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+        @lectures = Lecture.paginate.order('created_at DESC')
     end
   end
 

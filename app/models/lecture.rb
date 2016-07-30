@@ -17,6 +17,6 @@ class Lecture < ActiveRecord::Base
   has_many :functional_structurals
   def self.search(query)
     #code
-    where("lower(name) like lower(?) OR lower(nidn) like lower(?)", "%#{query}%", "%#{query}%")
+    where("lower(name) LIKE lower(?) OR lower(nidn) LIKE lower(?)", "%#{query}%", "%#{query}%")
   end
 end
