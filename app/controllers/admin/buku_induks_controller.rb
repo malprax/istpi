@@ -6,7 +6,7 @@ class Admin::BukuInduksController < Admin::ApplicationController
   # GET /buku_induks.json
   def index
     if params[:search]
-        @buku_induks = BukuInduk.search(params[:search]).order('created_at DESC')
+        @buku_induks = BukuInduk.paginate(:page => params[:page], per_page: 10).search(params[:search]).order('created_at DESC')
     else
         @buku_induks = BukuInduk.all.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     end
