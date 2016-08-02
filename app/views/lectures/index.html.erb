@@ -30,8 +30,6 @@
         <% end %>
       </tbody>
     </table>
-    <% unless @lectures.empty? %>
       <%= will_paginate @lectures, :previous_label => '&laquo;', :next_label => '&raquo;', renderer: BootstrapPagination::Rails %>
-    <% end %>
   </div>
 </div>

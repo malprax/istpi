@@ -30,7 +30,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @registrations, :previous_label => '&laquo;', :next_label => '&raquo;', renderer: BootstrapPagination::Rails %>
 <br>
 <% else %>
 <h3 class="lead">Maaf Tidak Ada Data Yang Bisa Ditampilkan, Silahkan Cek Kembali Lain Waktu..</h3>

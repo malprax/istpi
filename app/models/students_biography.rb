@@ -62,4 +62,8 @@
 #
 
 class StudentsBiography < ActiveRecord::Base
+  def self.search(query)
+    #code
+    where("lower(name) LIKE lower(?) OR lower(stambuk) LIKE lower(?)", "%#{query}%", "%#{query}%")
+  end
 end
