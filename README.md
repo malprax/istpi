@@ -10,6 +10,7 @@ lingkungan hidup
 
 #internet lagi slowdown
 #coba buat flowchart sampe jadi mahasiswa
+#cob buat anggaran buat biaya antena
 
 kode_formulir: index/jurusan(1 sipil, 2 elektro)/istpi/bulan(romawi)/tahun(2016)
 
