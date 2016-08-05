@@ -14,6 +14,8 @@ lingkungan hidup
 
 kode_formulir: index/jurusan(1 sipil, 2 elektro)/istpi/bulan(romawi)/tahun(2016)
 
+kode mahasiswa : tahun_masuk+kode jurusan+no urut == 216111001
+
 ActiveRecord::Base.connection.reset_pk_sequence!('registrations')
 
 Sambutan Dari Rektor IST-PI
