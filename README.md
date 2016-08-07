@@ -533,3 +533,6 @@ aavalue.com
 101soho.com
 
 Daftar nomor telepon :
+
+
+youtube-dl -u syaiful.sabril@gmail.com -p Passw0rd -o '%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.udemy.com/make-money-with-simple-youtube-videos/learn/v4/t/lecture/1570030
