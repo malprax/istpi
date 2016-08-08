@@ -94,6 +94,14 @@ class Admin::RegistrationsController < Admin::ApplicationController
 
   end
 
+  def ok_mahasiswa
+    #code
+    @registration = Registration.find_by_nama(params[:id])
+    @mahasiswa = StudentsBiography.create(:name => "#{@registration.nama}")
+    # @registration.destroy
+    redirect_to admin_students_biographies_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registration

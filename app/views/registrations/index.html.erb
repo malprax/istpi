@@ -6,9 +6,9 @@
     <tr>
       <th>Kode Formulir</th>
       <th>Nama</th>
-      <th>Jenis Kelamin</th>
-      <th>TTL</th>
-      <th>Program Studi Pilihan</th>
+      <th>Gender</th>
+      <th>Tempat, Tanggal Lahir</th>
+      <th>No. Kontak</th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -19,10 +19,13 @@
         <td><%= link_to registration.kode_formulir, calon_mahasiswa_path(registration) %></td>
         <td><%= registration.nama.titlecase %></td>
         <td><%= registration.jenis_kelamin %></td>
-        <td><%= registration.tempat_lahir %>, &nbsp;<%= registration.tanggal_lahir %></td>
+        <td><%= registration.tempat_lahir.titleize %>, &nbsp;<%= registration.tanggal_lahir %></td>
         <td><%= registration.kontak_person %></td>
         <td><%= registration.jurusan_peminat %></td>
-        <td><%= link_to "cetak", calon_mahasiswa_download_pdf_path(:nama => registration.nama, format: 'pdf'), target: '_blank' %></td>
+        <td>
+          <%= link_to "cetak", calon_mahasiswa_download_pdf_path(:nama => registration.nama, format: 'pdf'), target: '_blank', class: 'btn btn-default' %>
+        </td>
+
       </tr>
     <% end %>
   </tbody>

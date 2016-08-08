@@ -24,8 +24,8 @@
         <td><%= students_biography.tempat_lahir %>&nbsp; <%= students_biography.tanggal_lahir %></td>
         <td><%= students_biography.fakultas %></td>
         <td><%= students_biography.jurusan %></td>
-        <td><%= link_to 'Edit', edit_students_biography_path(students_biography) %></td>
-        <td><%= link_to 'Hapus', students_biography, method: :delete, data: { confirm: 'Anda yakin?' } %></td>
+        <td><%= link_to 'Edit', edit_admin_students_biography_path(students_biography) %></td>
+        <td><%= link_to 'Hapus', admin_students_biography_path(students_biography), method: :delete, data: { confirm: 'Anda yakin?' } %></td>
       </tr>
     <% end %>
   </tbody>

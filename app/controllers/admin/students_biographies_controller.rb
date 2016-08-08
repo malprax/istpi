@@ -33,7 +33,7 @@ class Admin::StudentsBiographiesController < Admin::ApplicationController
 
     respond_to do |format|
       if @students_biography.save
-        format.html { redirect_to @students_biography, notice: 'Students biography was successfully created.' }
+        format.html { redirect_to admin_students_biographies_path, notice: 'Students biography was successfully created.' }
         format.json { render :show, status: :created, location: @students_biography }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class Admin::StudentsBiographiesController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @students_biography.update(students_biography_params)
-        format.html { redirect_to @students_biography, notice: 'Students biography was successfully updated.' }
+        format.html { redirect_to admin_students_biographies_path, notice: 'Students biography was successfully updated.' }
         format.json { render :show, status: :ok, location: @students_biography }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class Admin::StudentsBiographiesController < Admin::ApplicationController
   def destroy
     @students_biography.destroy
     respond_to do |format|
-      format.html { redirect_to students_biographies_url, notice: 'Students biography was successfully destroyed.' }
+      format.html { redirect_to admin_students_biographies_url, notice: 'Students biography was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

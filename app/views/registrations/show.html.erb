@@ -4,11 +4,11 @@
   </div>
     <ul class="list-group">
         <li class="list-group-item"><strong>Kode Formulir</strong>&nbsp;:&nbsp;<%= "#{@registration.kode_formulir}" %></li>
-        <li class="list-group-item"><strong>Nama</strong>&nbsp;:&nbsp;<%= @registration.nama.titlecase %></li>
-        <li class="list-group-item"><strong>TTL</strong>&nbsp;:&nbsp;<%= @registration.tempat_lahir %>,&nbsp;<%= @registration.tanggal_lahir %></li>
+        <li class="list-group-item"><strong>Nama</strong>&nbsp;:&nbsp;<%= @registration.nama.titleize %></li>
+        <li class="list-group-item"><strong>Tempat, Tanggal Lahir</strong>&nbsp;:&nbsp;<%= @registration.tempat_lahir.titleize %>,&nbsp;<%= @registration.tanggal_lahir %></li>
         <li class="list-group-item"><strong>Alamat</strong>&nbsp;:&nbsp;<%= @registration.alamat %></li>
         <li class="list-group-item"><strong>Kontak Person</strong>&nbsp;:&nbsp;<%= @registration.kontak_person %></li>
-        <li class="list-group-item"><strong>Asal Sekolah</strong>&nbsp;:&nbsp;<%= @registration.asal_sekolah %></li>
+        <li class="list-group-item"><strong>Asal Sekolah</strong>&nbsp;:&nbsp;<%= @registration.asal_sekolah.titleize %></li>
         <li class="list-group-item"><strong>Tahun Lulus</strong>&nbsp;:&nbsp;<%= @registration.tahun_lulus %></li>
         <li class="list-group-item"><strong>Jurusan Pilhan</strong>&nbsp;:&nbsp;<%= @registration.jurusan_peminat %></li>
     </ul>

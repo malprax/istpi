@@ -535,4 +535,11 @@ aavalue.com
 Daftar nomor telepon :
 
 
-youtube-dl -u syaiful.sabril@gmail.com -p Passw0rd -o '%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.udemy.com/make-money-with-simple-youtube-videos/learn/v4/t/lecture/1570030
+youtube-dl -u syaiful.sabril@gmail.com -p Passw0rd -o '%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/watch?v=j425s937Xew
+
+
+youtube-dl -o '%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/watch?v=j425s937Xew
+
+ARsouvenir#with beads#ribbon flower tutorial#brooch tutorial#how to make#broche de#diy accesories#souvenir#brooch
+
+ARsouvenir,with beads,ribbon flower tutorial,brooch tutorial,how to make,broche de,diy accesories,souvenir,brooch
