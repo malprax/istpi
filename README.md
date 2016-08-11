@@ -542,4 +542,4 @@ youtube-dl -o '%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'
 
 ARsouvenir#with beads#ribbon flower tutorial#brooch tutorial#how to make#broche de#diy accesories#souvenir#brooch
 
-ARsouvenir,with beads,ribbon flower tutorial,brooch tutorial,how to make,broche de,diy accesories,souvenir,brooch
+ARsouvenir,with beads,ribbon flower tutorial,brooch tutorial,how to make,broche de,diy accesories,souvenir,brooch, ribbon flowers, ribbon flower making, satin ribbon flower, bros, bros pita satin, cara buat bros, fashion, tutorial, diy, pin
