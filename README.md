@@ -535,14 +535,65 @@ aavalue.com
 Daftar nomor telepon :
 
 
-youtube-dl -u syaiful.sabril@gmail.com -p Passw0rd -o '%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/watch?v=j425s937Xew
+
+
+
+
+
+youtube-dl -u syaiful.sabril@gmail.com -p Passw0rd -o ' %(title)s.%(ext)s' https://www.udemy.com/make-money-with-simple-youtube-videos/learn/v4/t/lecture/1569696
+
+pass word udemy youtube  YCSP : 5h7DF6#!
+
 
 
 youtube-dl -o '%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/watch?v=j425s937Xew
 
 ARsouvenir#with beads#ribbon flower tutorial#brooch tutorial#how to make#broche de#diy accesories#souvenir#brooch
 
-ARsouvenir,with beads,ribbon flower tutorial,brooch tutorial,how to make,broche de,diy accesories,souvenir,brooch, ribbon flowers, ribbon flower making, satin ribbon flower, bros, bros pita satin, cara buat bros, fashion, tutorial, diy, pin
+ARsouvenir,with beads,ribbon flower tutorial, broche de,diy accesories,souvenir,brooch, ribbon flowers, ribbon flower making, satin ribbon flower, bros, bros pita satin, cara buat bros, fashion, tutorial, diy, pin
+
+arsouvenir,
+suvenir,
+souvenir,
+kanzashi,
+diy,
+satin,
+pita satin,
+satin ribbon,
+brooch,
+bros,
+broch,
+broche,
+bros murah,
+cheap brooch,
+bros bunga,
+flower brooch,
+cara buat,
+how to make,
+cara buat bros,
+how to make brooch,
+membuat bros,
+making brooch,
+tutorial,
+bros tutorial,
+brooch tutorial,
+bros dari pita,
+ribbon brooch,
+bros dari pita satin,
+satin ribbon brooch,
+aksesoris,
+accesories,
+aksesoris baju,
+dress accesories,
+hijab,
+aksesoris hijab,
+hijab accesories,
+kerajinan tangan,
+handmade
+
+
+
+
 
 
 tulis semua progress
