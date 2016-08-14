@@ -541,6 +541,7 @@ pass word udemy youtube  YCSP : 5h7DF6#!
 
 youtube-dl -o '%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/watch?v=j425s937Xew
 
+tag research 1
 ARsouvenir#with beads#ribbon flower tutorial#brooch tutorial#how to make#broche de#diy accesories#souvenir#brooch
 
 ARsouvenir,with beads,ribbon flower tutorial, broche de,diy accesories,souvenir,brooch, ribbon flowers, ribbon flower making, satin ribbon flower, bros, bros pita satin, cara buat bros, fashion, tutorial, diy, pin
