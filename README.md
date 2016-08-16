@@ -588,6 +588,20 @@ hijab accesories,
 kerajinan tangan,
 handmade
 
+description tag example
+Time to armor up! Join http://www.WatchMojo.com as we counting the Top 10 Iron Man Armors. Check us out at http://www.Twitter.com/WatchMojo, http://instagram.com/watchmojo and http://www.Facebook.com/WatchMojo
+
+Special thanks to our user Shakib Ahmed for submitting the idea on our WatchMojo.com/suggest page!
+
+Check out the voting page here,
+http://watchmojo.com/suggest/Top+10+I...
+If you want to suggest an idea for a WatchMojo video, check out our interactive Suggestion Tool at http://www.WatchMojo.com/suggest :)
+
+We have T-Shirts! Be sure to check out http://www.WatchMojo.com/store for more info.
+
+WatchMojo is a leading producer of reference online video content, covering the People, Places and Trends you care about.
+We update DAILY with 2-3 Top 10 lists, Origins, Biographies, Versus clips on movies, video games, music, pop culture and more!
+
 
 
 
