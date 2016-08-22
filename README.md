@@ -636,68 +636,6 @@ Follow me:
 Hi everyone and welcome to my channel !!!
 My name is Katrina and I want to share with you everything I know about making Kanzashi and other fabric flowers. We are going to use them in all sorts of projects like hair accessories and home decor items. I will try to answer all of your questions, so...Whether you already know something about this craft or only thinking about starting, subscribe my channel and let's get creative together.
 
-anastasia kulikova
-Hello! My name is Anastasia ッ
-In this video tutorial I will show you how to make a headband of different flowers in style Kanzashi. I called it "Gems Kanzashi".
-
-The main petals of the composition:
-❀ round petal Kanzashi
-❀ turned sharp petal Kanzashi
-❀ round in a fold petal Ganassi
-❀ sharp with hollow-petal Kanzashi
-
-Materials and tools:
-☑ REP tape 4 cm in four shades:
-▻ white 84 cm,
-▻ pink 36 cm
-▻ purple 80 cm,
-▻ turquoise 1 m;
-☑ white satin ribbon width of 12 mm (1.5 m) for Platania headband;
-☑ the decor for the center piece 11;
-☑ hair band width 1-1,5 cm
-☑ glue gun;
-☑ scissors;
-☑ tweezers;
-☑ candle.
-
-Pleasant viewing and Creative inspiration.
-If you liked this video tutorial, share it with your friends.
-If while watching video master class you have any questions, write them in the comments, I will try to answer them.
-
-You want to say $THANK$ ?
-My unique gifts:
-✔ author magnet http://vk.com/market-40119191?w=produ...
-✔ greeting card http://vk.com/market-40119191?w=produ...
-
-Subscribe to the channel KANZASHI
-https://www.youtube.com/user/tupashka
-
-Subscribe to channel Foam and FELT https://www.youtube.com/channel/UCiGl...
-
-SUBSCRIBE SCRAPBOOKING https://www.youtube.com/channel/UCgi1...
-
-My WEBSITE http://kanzashimk.com
-
-✄I in social networks ✄
-✔ twitter https://twitter.com/handmade_k
-✔ vk.com http://vk.com/kanzashi_diy
-✔ odnoklassniki http://www.odnoklassniki.ru/videokanz...
-✔ facebook https://www.facebook.com/Kanzashimk
-✔ instagram http://instagram.com/kulikova_handmade#
-✔ stranamasterov http://stranamasterov.ru/user/123406
-
-✄Playlists with interesting video✄
-
-✔ALL lessons Kanzashi https://goo.gl/FG7T4Q
-
-✔Fabric FLOWERS https://goo.gl/OXpx6B
-
-✔Opletenii bases https://goo.gl/oo5Du3
-
-✔Basic kanzashi PETALS https://goo.gl/Kx5i8i
-
-✾ Photo sets - Julia Kulikova http://vk.com/public59929553
-✾ Photo sets - Anna Klimashevsky https://vk.com/club43572627
 
 My name is Nastya, and I am pleased to welcome you on my creative channel, which shows a video master class on kanzashi. I'm trying to create a different complexity to lessons and novice master in the art of Kanzashi was able to create beautiful handmade products. Create a petal Kanzashi requires patience and perseverance, but at the same time, it's a great hobby which every year attracts more and more mistresses from all over the world.
 Also on my channel you will find video tutorials lessons on how to create exclusive colors of the fabric with your hands. To create beautiful flowers, you do not need special costly tools, we will use the usual fabric, a needle and thread and a candle.
