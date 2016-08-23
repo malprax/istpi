@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :registrations, :users, :sessions, :buku_induks, :lectures, :functional_structurals, :students_biographies
+    resources :users, :sessions, :buku_induks, :lectures, :functional_structurals, :students_biographies
       #  sessions
        get "login" => 'sessions#new', :as => "login"
        get "logout" => 'sessions#destroy', :as => "logout"
@@ -12,7 +12,6 @@ Rails.application.routes.draw do
        get 'calon_mahasiswa/:nama' => 'registrations#show', :as => "calon_mahasiswa"
        delete 'calon_mahasiswa/:nama' => 'registrations#destroy', :as => "delete_calon_mahasiswa"
        get 'calon_mahasiswa/:nama' => 'registrations#download_pdf', :as => "calon_mahasiswa_download_pdf"
-       get 'ok' => 'registrations#ok_mahasiswa', :as => "ok_mahasiswa"
 
       #  dosen
        get 'dosen_index' => 'lectures#index', :as => "dosen_index"
@@ -27,6 +26,12 @@ Rails.application.routes.draw do
        get 'struktural/:id/edit' => 'functional_structurals#edit', :as => "edit_struktural"
        get 'struktural/:id' => 'functional_structurals#show', :as => "struktural"
        delete 'struktural/:id' => 'functional_structurals#destroy', :as => "delete_struktural"
+
+    resources :registrations do
+       collection do
+         get 'ok' => 'registrations#ok_mahasiswa', :as => "ok_mahasiswa"
+       end
+    end
 
   end
 

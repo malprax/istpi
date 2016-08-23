@@ -96,7 +96,8 @@ class Admin::RegistrationsController < Admin::ApplicationController
 
   def ok_mahasiswa
     #code
-    @registration = Registration.find_by_nama(params[:id])
+    # @registration = Registration.find_by(params[:nama])
+    @registration = Registration.find_by_nama(params[:nama])
     @mahasiswa = StudentsBiography.create(:name => "#{@registration.nama}")
     # @registration.destroy
     redirect_to admin_students_biographies_path
