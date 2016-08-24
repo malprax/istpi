@@ -1,0 +1,14 @@
+<%= simple_form_for(@incoming_mail) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :address %>
+    <%= f.input :date %>
+    <%= f.input :abouts %>
+    <%= f.input :nomor_petunjuk %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
