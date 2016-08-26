@@ -8,15 +8,9 @@ fakultas MIPA
 statistika
 lingkungan hidup
 
-#internet lagi slowdown
-#coba buat flowchart sampe jadi mahasiswa
-#cob buat anggaran buat biaya antena
-
 kode_formulir: index/jurusan(1 sipil, 2 elektro)/istpi/bulan(romawi)/tahun(2016)
 
 kode mahasiswa : tahun_masuk+kode jurusan+no urut == 216111001
-
-ActiveRecord::Base.connection.reset_pk_sequence!('registrations')
 
 Sambutan Dari Rektor IST-PI
 Realitas menunjukkan bahwa teknologi terbukti memberikan nilai tambah pada semua sektor kehidupan. Mudah melakukan pelayanan menggunakan program komputer dan tentunya lebih efisien dibandingkan melalui sistem manual.
