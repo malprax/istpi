@@ -1,0 +1,2 @@
+module CivilSubjectsHelper
+end

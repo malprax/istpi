@@ -45,6 +45,23 @@
             <li class="<%= params[:controller]== 'outcomings' ? 'active' : '' %>"><%= link_to "Surat Keluar", outcoming_mails_path %></li>
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sipil<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ><%= link_to "Aturan Kuliah", '#' %></li>
+            <li ><%= link_to "Kurikulum", '#' %></li>
+            <li ><%= link_to "Jadwal Kuliah", '#' %></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Elektro<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ><%= link_to "Aturan Kuliah", '#' %></li>
+            <li ><%= link_to "Kurikulum", '#' %></li>
+            <li ><%= link_to "Jadwal Kuliah", '#' %></li>
+          </ul>
+        </li>
 
         <li ><%= link_to "Perpustakaan", '#' %></li>
         <li ><%= link_to "Keuangan", '#' %></li>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :civil_subjects
   namespace :admin do
     resources :users, :sessions, :buku_induks, :lectures, :functional_structurals, :students_biographies
       #  sessions
