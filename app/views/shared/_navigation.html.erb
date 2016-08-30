@@ -20,9 +20,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Perkuliahan <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Aturan", "#" %></li>
-            <li><%= link_to "Jadwal", "#" %></li>
-            <li><%= link_to "Nilai", "#" %></li>
+
             <li class="<%= params[:controller]== 'students_biographies' ? 'active' : '' %>"><%= link_to "Mahasiswa", students_biographies_path %></li>
             <li><%= link_to "Dosen", dosen_path %></li>
             <li><%= link_to "Penasehat Akademik", "#" %></li>
@@ -34,6 +32,8 @@
           <ul class="dropdown-menu">
             <li class="<%= params[:controller] == 'registrations' ? 'active' : '' %>"><%= link_to "Calon Mahasiswa", calon_mahasiswa_index_path %></li>
             <li ><%= link_to "Buku Induk", buku_induks_path %></li>
+            <li><%= link_to "SK Mengajar", "#" %></li>
+            <li><%= link_to "SK Menguji", "#" %></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -43,6 +43,7 @@
             <li class="<%= params[:controller] == 'functional_structurals' ? 'active' : '' %>"><%= link_to "Struktural", functional_structurals_path %></li>
             <li class="<%= params[:controller]== 'incomings' ? 'active' : '' %>"><%= link_to "Surat Masuk", incoming_mails_path %></li>
             <li class="<%= params[:controller]== 'outcomings' ? 'active' : '' %>"><%= link_to "Surat Keluar", outcoming_mails_path %></li>
+            <li class="<%= params[:controller]== 'outcomings' ? 'active' : '' %>"><%= link_to "SK Kegiatan", outcoming_mails_path %></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -51,6 +52,7 @@
             <li ><%= link_to "Aturan Kuliah", '#' %></li>
             <li ><%= link_to "Kurikulum", civil_subjects_path %></li>
             <li ><%= link_to "Jadwal Kuliah", '#' %></li>
+            <li><%= link_to "Nilai", "#" %></li>
           </ul>
         </li>
 
@@ -58,7 +60,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Elektro<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li ><%= link_to "Aturan Kuliah", '#' %></li>
-            <li ><%= link_to "Kurikulum", '#' %></li>
+            <li ><%= link_to "Kurikulum", electrical_subjects_path %></li>
             <li ><%= link_to "Jadwal Kuliah", '#' %></li>
           </ul>
         </li>
@@ -126,6 +128,24 @@
           </ul>
         </li>
 
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sipil<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ><%= link_to "Aturan Kuliah", '#' %></li>
+            <li ><%= link_to "Kurikulum", admin_civil_subjects_path %></li>
+            <li ><%= link_to "Jadwal Kuliah", '#' %></li>
+            <li><%= link_to "Nilai", "#" %></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Elektro<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ><%= link_to "Aturan Kuliah", '#' %></li>
+            <li ><%= link_to "Kurikulum", admin_electrical_subjects_path %></li>
+            <li ><%= link_to "Jadwal Kuliah", '#' %></li>
+          </ul>
+        </li>
         <li ><%= link_to "Perpustakaan", '#' %></li>
         <li ><%= link_to "Keuangan", '#' %></li>
       </ul>

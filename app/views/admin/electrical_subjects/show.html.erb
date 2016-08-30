@@ -1,0 +1,27 @@
+<p>
+  <strong>Name:</strong>
+  <%= @electrical_subject.name %>
+</p>
+
+<p>
+  <strong>Credit:</strong>
+  <%= @electrical_subject.credit %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @electrical_subject.code %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @electrical_subject.category %>
+</p>
+
+<p>
+  <strong>Semester:</strong>
+  <%= @electrical_subject.semester %>
+</p>
+
+<%= link_to 'Edit', edit_electrical_subject_path(@electrical_subject) %> |
+<%= link_to 'Back', electrical_subjects_path %>

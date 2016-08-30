@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @civil_subject.name %>
+</p>
+
+<p>
+  <strong>Credit:</strong>
+  <%= @civil_subject.credit %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @civil_subject.code %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @civil_subject.category %>
+</p>
+
+<p>
+  <strong>Semester:</strong>
+  <%= @civil_subject.semester %>
+</p>
+
+<%= link_to 'Edit', edit_civil_subject_path(@civil_subject) %> |
+<%= link_to 'Back', civil_subjects_path %>
