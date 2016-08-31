@@ -69,5 +69,6 @@ Rails.application.routes.draw do
 
   #beranda
   root 'pages#index'
+  get 'aturan_kuliah' => 'pages#aturan_kuliah', :as => 'aturan_kuliah'
 
 end

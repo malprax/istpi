@@ -1,29 +1,40 @@
-<h1 class="lead">Kurikulum Teknik Elektro ISTPI&nbsp;&nbsp;<%= link_to 'Buat Mata Kuliah', new_electrical_subject_path, class: 'btn btn-default' %></h1>
 
-<table class="table table-hover table-striped">
-  <thead>
-    <tr>
-      <th>Kode</th>
-      <th>Nama</th>
-      <th>SKS</th>
-      <th>Semester</th>
-      <th>Kategori</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
+<% if @electrical_subjects.present?  %>
+<h1 class="lead">Kurikulum Teknik Elektro ISTPI</h1>
+<div class="panel panel-default">
+  <div class="panel-title pull-right">
+    <%= render 'shared/search' %>
+  </div>
+  <div class="panel-body">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Nama</th>
+              <th>SKS</th>
+              <th>Semester</th>
+              <th>Kategori</th>
 
-  <tbody>
-    <% @electrical_subjects.each do |electrical_subject| %>
-      <tr>
-        <td><%= electrical_subject.code %></td>
-        <td><%= electrical_subject.name.titleize if civil_subject %></td>
-        <td><%= electrical_subject.credit %></td>
-        <td><%= electrical_subject.semester %></td>
-        <td><%= electrical_subject.category %></td>
-        <td><%= link_to 'Edit', edit_civil_subject_path(civil_subject), class: 'btn btn-warning' %>&nbsp;<%= link_to 'Hapus', civil_subject, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            </tr>
+          </thead>
 
-<br>
+          <tbody>
+            <% @electrical_subjects.each do |electrical_subject| %>
+              <tr>
+                <td><%= electrical_subject.code %></td>
+                <td><%= electrical_subject.name.titleize if electrical_subject %></td>
+                <td><%= electrical_subject.credit %></td>
+                <td><%= electrical_subject.semester %></td>
+                <td><%= electrical_subject.category %></td>
+
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <br>
+      </div>
+    </div>
+<% else %>
+<h3 class="lead">Maaf Data Belum Ada, Silahkan Datang Kembali</h3>
+<% end %>

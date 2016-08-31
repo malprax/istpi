@@ -1,3 +1,4 @@
+<% if @civil_subjects.present?  %>
 <h1 class="lead">Kurikulum Teknik Sipil ISTPI&nbsp;&nbsp;<%= link_to 'Buat Mata Kuliah', new_admin_civil_subject_path, class: "btn btn-default" %></h1>
 
 <table class="table table-hover table-striped">
@@ -27,3 +28,6 @@
 </table>
 
 <br>
+<% else %>
+<h3 class="lead">Maaf Data Belum Ada, &nbsp;&nbsp;<%= link_to 'Buat Mata Kuliah', new_admin_civil_subject_path, class: 'btn btn-default' %></h3>
+<% end %>

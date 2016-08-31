@@ -17,7 +17,8 @@
             <%= f.input :jurusan_peminat, label: "Pilih Program Studi", collection: ["Teknik Sipil", "Teknik Elektro"], placeholder: "Pilih Jurusan Anda"%>
             <%= f.input :referal, label: "Referal", placeholder: "Tulis Nama Referal Jika Ada"%>
         <div class="col-sm-offset-3">
-          <%= f.button :submit, "Daftar", class: "btn btn-success" %>
+          <%= f.button :submit, "Daftar", class: "btn btn-danger" %>&nbsp;
+          <%= link_to "Kembali", root_url, class: "btn btn-success" %>
         </div>
       <% end %>
     </div>
