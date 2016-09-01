@@ -11,6 +11,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if params[:controller]=='pages' && params[:action]=='index' %>
 <section id="head_body">
   <div class="container">
     <div class="row">
@@ -26,6 +27,7 @@
   </div>
 
 </section>
+<% end %>
 
 <section class="navigasi">
   <%= render 'shared/navigation' %>

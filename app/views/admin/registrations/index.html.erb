@@ -37,7 +37,7 @@
   <%= will_paginate @registrations, :previous_label => '&laquo;', :next_label => '&raquo;', renderer: BootstrapPagination::Rails %>
   <br>
   <% else %>
-  <h3 class="lead">Maaf Tidak Ada Data Yang Bisa Ditampilkan, Silahkan Cek Kembali Lain Waktu..</h3>
+  <h3 class="lead">Maaf Tidak Ada Data Yang Bisa Ditampilkan, Silahkan Cek Kembali Lain Waktu..&nbsp;&nbsp;<%= link_to 'Buat', admin_new_calon_mahasiswa_path, class: 'btn btn-success' %></h3>
   <% end %>
 
 </div>

@@ -4,7 +4,6 @@
     <div class="col-sm-8">
       <%= simple_form_for([:admin, @registration], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
         <%= f.error_notification %>
-
             <%= f.input :nama, label: "Nama" %>
             <%= f.input :tempat_lahir, label: "Tempat Lahir"%>
             <%= f.input :tanggal_lahir, label: "Tanggal Lahir", as: :string, input_html: { class: "datepicker" } %>
@@ -18,9 +17,9 @@
             <%= f.input :referal, label: "Referal"%>
         <div class="col-sm-offset-3">
           <% if params[:controller] == 'admin/registrations' && params[:action] == 'new' %>
-          <%= f.button :submit, "Daftar Calon", class: "btn btn-success" %>
+          <%= f.button :submit, "Daftar Calon", class: "btn btn-success" %>&nbsp;&nbsp;<%= link_to "Kembali", admin_calon_mahasiswa_index_path, class: "btn btn-primary" %>
           <% else %>
-          <%= f.button :submit, "Edit Calon", class: "btn btn-success" %>
+          <%= f.button :submit, "Edit Calon", class: "btn btn-success" %>&nbsp;&nbsp;<%= link_to "Kembali", admin_calon_mahasiswa_index_path, class: "btn btn-primary" %>
           <% end %>
         </div>
       <% end %>
