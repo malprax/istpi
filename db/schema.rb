@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20160902124217) do
     t.string   "credit"
     t.string   "code"
     t.string   "category"
-    t.string   "semester"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "semester_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "electrical_subjects", force: :cascade do |t|
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 20160902124217) do
     t.string   "credit"
     t.string   "code"
     t.string   "category"
-    t.string   "semester"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "semester_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

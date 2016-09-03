@@ -5,7 +5,7 @@ class CreateElectricalSubjects < ActiveRecord::Migration
       t.string :credit
       t.string :code
       t.string :category
-      t.string :semester
+      t.integer :semester_id
 
       t.timestamps null: false
     end

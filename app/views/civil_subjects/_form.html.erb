@@ -5,7 +5,7 @@
     <%= f.input :code, label: 'Kode' %>
     <%= f.input :name, label: 'Mata Kuliah' %>
     <%= f.input :credit, label: 'Jumlah Kredit', collection:['1','2','3','4'] %>
-    <%= f.input :semester, label: 'Semester', collection: ['I','II','III','IV','V','VI','VII','VIII'] %>
+    <%= f.association :semester, label: 'Semester'%>
     <%= f.input :category, label: 'Kategori', collection: ['Umum', 'Pilihan'] %>
 
   </div>

@@ -2,11 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :credit %>
-    <%= f.input :code %>
-    <%= f.input :category %>
-    <%= f.input :semester %>
+    <%= f.input :code, label: 'Kode' %>
+    <%= f.input :name, label: 'Mata Kuliah' %>
+    <%= f.input :credit, label: 'Jumlah Kredit', collection:['1','2','3','4'] %>
+    <%= f.association :semester, label: 'Semester'%>
+    <%= f.input :category, label: 'Kategori', collection: ['Umum', 'Pilihan'] %>
   </div>
 
   <div class="form-actions">
