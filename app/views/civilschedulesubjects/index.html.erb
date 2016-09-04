@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Civilschedulesubjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Civil subject</th>
+      <th>Lecture1</th>
+      <th>Lecture2</th>
+      <th>Lecture3</th>
+      <th>Day</th>
+      <th>Time</th>
+      <th>Year</th>
+      <th>Room</th>
+      <th>Count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @civilschedulesubjects.each do |civilschedulesubject| %>
+      <tr>
+        <td><%= civilschedulesubject.civil_subject_id %></td>
+        <td><%= civilschedulesubject.lecture1_id %></td>
+        <td><%= civilschedulesubject.lecture2_id %></td>
+        <td><%= civilschedulesubject.lecture3_id %></td>
+        <td><%= civilschedulesubject.day %></td>
+        <td><%= civilschedulesubject.time_id %></td>
+        <td><%= civilschedulesubject.year_id %></td>
+        <td><%= civilschedulesubject.room_id %></td>
+        <td><%= civilschedulesubject.count %></td>
+        <td><%= link_to 'Show', civilschedulesubject %></td>
+        <td><%= link_to 'Edit', edit_civilschedulesubject_path(civilschedulesubject) %></td>
+        <td><%= link_to 'Destroy', civilschedulesubject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Civilschedulesubject', new_civilschedulesubject_path %>
