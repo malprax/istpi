@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :studiyears
+  resources :rooms
+  resources :clocks
   resources :electricalschedulesubjects
   resources :civilschedulesubjects
   resources :semesters
