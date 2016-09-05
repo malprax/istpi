@@ -5,10 +5,10 @@
     <%= f.input :code, label: 'Kode' %>
     <%= f.input :name, label: 'Mata Kuliah' %>
     <%= f.input :credit, label: 'Jumlah Kredit', collection:['1','2','3','4'] %>
-    <%= f.input :semester, label: 'Semester', collection: ['I','II','III','IV','V','VI','VII','VIII'] %>
-    <%= f.input :category, label: 'Kategori', collection: ['Umum', 'Pilihan'] %>
+    <%= f.association :semester, label: 'Semester', collection: ['I','II','III','IV','V','VI','VII','VIII'] %>
+    <%= f.input :category, label: 'Kategori', collection: ['Umum','Jurusan','Pilihan'] %>
   </div>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Kembali', admin_electrical_subjects_path, class: 'btn btn-success' %>
   </div>
 <% end %>

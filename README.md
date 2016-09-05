@@ -655,3 +655,5 @@ For correspondence: Anastasia Mikhailovna Kulikova, General post office, St. Ale
 
 
 tulis semua progress
+
+#buka aplikasi server pangkalan data dan baca dokumentasinya

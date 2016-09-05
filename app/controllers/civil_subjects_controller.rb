@@ -5,6 +5,7 @@ class CivilSubjectsController < ApplicationController
   # GET /civil_subjects.json
   def index
     @civil_subjects = CivilSubject.all
+    @semesters = Semester.all
   end
 
   # GET /civil_subjects/1

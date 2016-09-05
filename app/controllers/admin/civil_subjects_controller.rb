@@ -5,6 +5,7 @@ class Admin::CivilSubjectsController < ApplicationController
     # GET /civil_subjects.json
     def index
       @civil_subjects = CivilSubject.all
+      @semesters = Semester.all
     end
 
     # GET /civil_subjects/1
@@ -28,7 +29,7 @@ class Admin::CivilSubjectsController < ApplicationController
 
       respond_to do |format|
         if @civil_subject.save
-          format.html { redirect_to civil_subjects_path, notice: 'Civil subject was successfully created.' }
+          format.html { redirect_to admin_civil_subjects_path, notice: 'Civil subject was successfully created.' }
           format.json { render :show, status: :created, location: @civil_subject }
         else
           format.html { render :new }
@@ -42,7 +43,7 @@ class Admin::CivilSubjectsController < ApplicationController
     def update
       respond_to do |format|
         if @civil_subject.update(civil_subject_params)
-          format.html { redirect_to civil_subjects_path, notice: 'Civil subject was successfully updated.' }
+          format.html { redirect_to admin_civil_subjects_path, notice: 'Civil subject was successfully updated.' }
           format.json { render :show, status: :ok, location: @civil_subject }
         else
           format.html { render :edit }
@@ -69,6 +70,6 @@ class Admin::CivilSubjectsController < ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def civil_subject_params
-        params.require(:civil_subject).permit(:name, :credit, :code, :category, :semester)
+        params.require(:civil_subject).permit(:name, :credit, :code, :category, :semester_id)
       end
 end

@@ -19,7 +19,7 @@
         <td><%= civil_subject.code %></td>
         <td><%= civil_subject.name.titleize if civil_subject %></td>
         <td><%= civil_subject.credit %></td>
-        <td><%= civil_subject.semester %></td>
+        <td><%= civil_subject.semester.name %></td>
         <td><%= civil_subject.category %></td>
         <td><%= link_to 'Edit', edit_admin_civil_subject_path(civil_subject), class: 'btn btn-warning' %>&nbsp;<%= link_to 'Hapus', admin_civil_subject_path(civil_subject), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>

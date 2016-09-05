@@ -25,7 +25,7 @@
                 <td><%= civil_subject.code %></td>
                 <td><%= civil_subject.name.titleize if civil_subject %></td>
                 <td><%= civil_subject.credit %></td>
-                <td><%= civil_subject.semester %></td>
+                <td><%= civil_subject.semester.name if semester %></td>
                 <td><%= civil_subject.category %></td>
 
               </tr>
