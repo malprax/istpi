@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Electricalschedulesubjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Civil subject</th>
+      <th>Lecture1</th>
+      <th>Lecture2</th>
+      <th>Lecture3</th>
+      <th>Day</th>
+      <th>Time</th>
+      <th>Year</th>
+      <th>Room</th>
+      <th>Count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @electricalschedulesubjects.each do |electricalschedulesubject| %>
+      <tr>
+        <td><%= electricalschedulesubject.civil_subject_id %></td>
+        <td><%= electricalschedulesubject.lecture1_id %></td>
+        <td><%= electricalschedulesubject.lecture2_id %></td>
+        <td><%= electricalschedulesubject.lecture3_id %></td>
+        <td><%= electricalschedulesubject.day %></td>
+        <td><%= electricalschedulesubject.time_id %></td>
+        <td><%= electricalschedulesubject.year_id %></td>
+        <td><%= electricalschedulesubject.room_id %></td>
+        <td><%= electricalschedulesubject.count %></td>
+        <td><%= link_to 'Show', electricalschedulesubject %></td>
+        <td><%= link_to 'Edit', edit_electricalschedulesubject_path(electricalschedulesubject) %></td>
+        <td><%= link_to 'Destroy', electricalschedulesubject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Electricalschedulesubject', new_electricalschedulesubject_path %>

@@ -1,0 +1,19 @@
+<%= simple_form_for([:admin,@civilschedulesubject]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :civil_subject_id %>
+    <%= f.input :lecture1_id %>
+    <%= f.input :lecture2_id %>
+    <%= f.input :lecture3_id %>
+    <%= f.input :day %>
+    <%= f.input :time_id %>
+    <%= f.input :year_id %>
+    <%= f.input :room_id %>
+    <%= f.input :count %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
