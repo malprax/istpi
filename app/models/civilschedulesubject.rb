@@ -8,14 +8,17 @@
 #  lecture2_id      :integer
 #  lecture3_id      :integer
 #  day              :string
-#  time_id          :integer
-#  year_id          :integer
-#  room_id          :integer
+#  classtime_id          :integer
+#  studiyear_id          :integer
+#  classroom_id          :integer
 #  count            :integer
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
 
 class Civilschedulesubject < ActiveRecord::Base
-  belongs_to :civilsubject
+  belongs_to :civil_subject
+  belongs_to :classroom
+  belongs_to :classtime
+  belongs_to :studiyear
 end

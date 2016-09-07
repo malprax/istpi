@@ -24,7 +24,7 @@
         <!-- <td><%#= electricalschedulesubject.lecture1_id %></td>
         <td><%#= electricalschedulesubject.lecture2_id %></td>
         <td><%#= electricalschedulesubject.lecture3_id %></td> -->
-        <td><%= electricalschedulesubject.classroom.classroom %></td>
+        <td><%= electricalschedulesubject.classroom.room %></td>
         <td><%= link_to 'Edit', edit_admin_electricalschedulesubject_path(electricalschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_electricalschedulesubject_path(electricalschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
       </tr>
     <% end %>

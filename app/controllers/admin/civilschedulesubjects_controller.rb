@@ -69,6 +69,6 @@ class Admin::CivilschedulesubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def civilschedulesubject_params
-      params.require(:civilschedulesubject).permit(:civil_subject_id, :lecture1_id, :lecture2_id, :lecture3_id, :day, :time_id, :year_id, :room_id, :count)
+      params.require(:civilschedulesubject).permit(:civil_subject_id, :lecture1_id, :lecture2_id, :lecture3_id, :day, :classtime_id, :studiyear_id, :classroom_id, :count)
     end
 end

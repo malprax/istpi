@@ -10,4 +10,5 @@
 
 class Studiyear < ActiveRecord::Base
   has_many :electricalschedulesubjects
+  has_many :civilschedulesubjects
 end

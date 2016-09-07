@@ -2,14 +2,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :civil_subject_id %>
-    <%= f.input :lecture1_id %>
-    <%= f.input :lecture2_id %>
-    <%= f.input :lecture3_id %>
+    <%= f.association :civil_subject %>
+    <%#= f.input :lecture1_id %>
+    <%#= f.input :lecture2_id %>
+    <%#= f.input :lecture3_id %>
     <%= f.input :day %>
-    <%= f.input :time_id %>
-    <%= f.input :year_id %>
-    <%= f.input :room_id %>
+    <%= f.association :classtime %>
+    <%= f.association :studiyear %>
+    <%= f.association :classroom %>
     <%= f.input :count %>
   </div>
 

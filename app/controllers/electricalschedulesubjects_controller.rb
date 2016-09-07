@@ -69,6 +69,6 @@ class ElectricalschedulesubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def electricalschedulesubject_params
-      params.require(:electricalschedulesubject).permit(:electrical_subject_id, , :classtime_id, :studiyear_id, :classroom_id, :count, :lecture1_id, :lecture2_id, :lecture3_id, :day)
+      params.require(:electricalschedulesubject).permit(:electrical_subject_id, :classtime_id, :studiyear_id, :classroom_id, :count, :lecture1_id, :lecture2_id, :lecture3_id, :day)
     end
 end

@@ -4,7 +4,7 @@ class Admin::ClassroomsController < ApplicationController
   # GET /classrooms
   # GET /classrooms.json
   def index
-    @classrooms = Classroom.order('classroom asc')
+    @classrooms = Classroom.order('room asc')
   end
 
   # GET /classrooms/1
