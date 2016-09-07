@@ -2,13 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :electrical_subject, label: 'Mata Kuliah' %>
+    <%#= f.association :electrical_subject, label: 'Mata Kuliah' %>
+    <%= f.association :classtime %>
+    <%= f.association :classroom %>
+    <%= f.input :day, label: 'Hari', collection: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'] %>
+
     <%#= f.association :lecture1 %>
     <%#= f.association :lecture2 %>
     <%#= f.association :lecture3 %>
-    <%= f.input :day, label: 'Hari', collection: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'] %>
-    <%= f.association :classtime %>
-    <%= f.association :classroom %>
+
   </div>
 
   <div class="form-actions">

@@ -9,5 +9,5 @@
 #
 
 class Classroom < ActiveRecord::Base
-  has_many :electricalschedulesubject
+  has_many :electricalschedulesubjects
 end

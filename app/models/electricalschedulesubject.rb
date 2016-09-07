@@ -17,11 +17,12 @@
 #
 
 class Electricalschedulesubject < ActiveRecord::Base
+  belongs_to :electrical_subject
   belongs_to :classroom
   belongs_to :classtime
   belongs_to :studiyear
   belongs_to :lecture1_id, :class_name => 'Lecture'
   belongs_to :lecture2_id, :class_name => 'Lecture'
   belongs_to :lecture3_id, :class_name => 'Lecture'
-  belongs_to :electrical_subject
+
 end

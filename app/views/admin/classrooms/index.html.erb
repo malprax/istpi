@@ -11,7 +11,7 @@
   <tbody>
     <% @classrooms.each do |classroom| %>
       <tr>
-        <td><%= classroom.classroom %></td>
+        <td><%= classroom.room %></td>
         <td><%= link_to 'Edit', edit_admin_classroom_path(classroom), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Destroy', admin_classroom_path(classroom), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
