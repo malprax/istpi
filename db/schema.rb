@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904085010) do
+ActiveRecord::Schema.define(version: 20160907013231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,8 +62,14 @@ ActiveRecord::Schema.define(version: 20160904085010) do
     t.datetime "updated_at",       null: false
   end
 
-  create_table "clocks", force: :cascade do |t|
-    t.string   "name"
+  create_table "classrooms", force: :cascade do |t|
+    t.string   "classroom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "classtimes", force: :cascade do |t|
+    t.string   "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -79,17 +85,17 @@ ActiveRecord::Schema.define(version: 20160904085010) do
   end
 
   create_table "electricalschedulesubjects", force: :cascade do |t|
-    t.integer  "civil_subject_id"
+    t.integer  "electrical_subject_id"
     t.integer  "lecture1_id"
     t.integer  "lecture2_id"
     t.integer  "lecture3_id"
     t.string   "day"
-    t.integer  "time_id"
-    t.integer  "year_id"
-    t.integer  "room_id"
+    t.integer  "classtime_id"
+    t.integer  "studiyear_id"
+    t.integer  "classroom_id"
     t.integer  "count"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -172,12 +178,6 @@ ActiveRecord::Schema.define(version: 20160904085010) do
     t.string   "referal"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-  end
-
-  create_table "rooms", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "semesters", force: :cascade do |t|

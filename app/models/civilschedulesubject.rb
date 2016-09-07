@@ -17,4 +17,5 @@
 #
 
 class Civilschedulesubject < ActiveRecord::Base
+  belongs_to :civilsubject
 end

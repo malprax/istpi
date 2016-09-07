@@ -14,4 +14,5 @@
 
 class ElectricalSubject < ActiveRecord::Base
   belongs_to :semester
+  has_many :electricalschedulesubjects
 end

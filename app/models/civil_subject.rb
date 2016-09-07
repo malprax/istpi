@@ -14,4 +14,5 @@
 
 class CivilSubject < ActiveRecord::Base
   belongs_to :semester
+  has_many :civilschedulesubjects
 end

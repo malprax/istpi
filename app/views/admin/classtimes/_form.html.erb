@@ -1,0 +1,11 @@
+<%= simple_form_for([:admin, @classtime]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :time, label: 'Waktu Kuliah' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class:'btn btn-success' %>&nbsp;&nbsp;<%= link_to 'Kembali', admin_classtimes_path, class: 'btn btn-default' %>
+  </div>
+<% end %>

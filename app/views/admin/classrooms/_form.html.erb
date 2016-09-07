@@ -1,0 +1,12 @@
+<%= simple_form_for([:admin,@classroom]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :classroom, label:'Ruang Kuliah' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class:'btn btn-success' %>&nbsp;&nbsp;<%= link_to 'Kembali', admin_classrooms_path, class:'btn btn-default' %>
+
+  </div>
+<% end %>

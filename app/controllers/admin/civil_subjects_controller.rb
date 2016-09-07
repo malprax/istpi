@@ -6,6 +6,7 @@ class Admin::CivilSubjectsController < ApplicationController
     def index
       @civil_subjects = CivilSubject.all
       @semesters = Semester.all
+
     end
 
     # GET /civil_subjects/1

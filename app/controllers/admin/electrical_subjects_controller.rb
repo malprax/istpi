@@ -4,7 +4,7 @@ class Admin::ElectricalSubjectsController < ApplicationController
   # GET /electrical_subjects
   # GET /electrical_subjects.json
   def index
-    @electrical_subjects = ElectricalSubject.all
+    @electrical_subjects = ElectricalSubject.order('semester_id desc')
   end
 
   # GET /electrical_subjects/1
@@ -69,6 +69,6 @@ class Admin::ElectricalSubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def electrical_subject_params
-      params.require(:electrical_subject).permit(:name, :credit, :code, :category, :semester)
+      params.require(:electrical_subject).permit(:name, :credit, :code, :category, :semester_id)
     end
 end

@@ -1,43 +1,37 @@
-<p id="notice"><%= notice %></p>
+<% if @electricalschedulesubjects.present? %>
+<h1 class="lead">Jadwal Kuliah Teknik Elektro&nbsp;&nbsp;<%= link_to 'Buat Jadwal', new_admin_electricalschedulesubject_path, class:'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Buat Mata Kuliah', new_admin_electrical_subject_path, class:'btn btn-primary' %></h1>
 
-<h1>Listing Electricalschedulesubjects</h1>
-
-<table>
+<table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th>Civil subject</th>
-      <th>Lecture1</th>
-      <th>Lecture2</th>
-      <th>Lecture3</th>
-      <th>Day</th>
-      <th>Time</th>
-      <th>Year</th>
-      <th>Room</th>
-      <th>Count</th>
-      <th colspan="3"></th>
+      <th>Hari</th>
+      <th>Waktu</th>
+      <th>Mata Kuliah</th>
+      <!-- <th>Dosen 1</th>
+      <th>Dosen 2</th>
+      <th>Dosen 3</th> -->
+      <th>Ruangan</th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @electricalschedulesubjects.each do |electricalschedulesubject| %>
       <tr>
-        <td><%= electricalschedulesubject.civil_subject_id %></td>
-        <td><%= electricalschedulesubject.lecture1_id %></td>
-        <td><%= electricalschedulesubject.lecture2_id %></td>
-        <td><%= electricalschedulesubject.lecture3_id %></td>
         <td><%= electricalschedulesubject.day %></td>
-        <td><%= electricalschedulesubject.time_id %></td>
-        <td><%= electricalschedulesubject.year_id %></td>
-        <td><%= electricalschedulesubject.room_id %></td>
-        <td><%= electricalschedulesubject.count %></td>
-        <td><%= link_to 'Show', electricalschedulesubject %></td>
-        <td><%= link_to 'Edit', edit_electricalschedulesubject_path(electricalschedulesubject) %></td>
-        <td><%= link_to 'Destroy', electricalschedulesubject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= electricalschedulesubject.classtime.time%></td>
+        <td><%= electricalschedulesubject.electrical_subject.name %></td>
+        <!-- <td><%#= electricalschedulesubject.lecture1_id %></td>
+        <td><%#= electricalschedulesubject.lecture2_id %></td>
+        <td><%#= electricalschedulesubject.lecture3_id %></td> -->
+        <td><%= electricalschedulesubject.classroom.classroom %></td>
+        <td><%= link_to 'Edit', edit_admin_electricalschedulesubject_path(electricalschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_electricalschedulesubject_path(electricalschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Electricalschedulesubject', new_electricalschedulesubject_path %>
+<% else %>
+<h3 class="lead">Maaf Data Belum Ada, &nbsp;&nbsp;<%= link_to 'Buat Jadwal', new_admin_electricalschedulesubject_path, class: 'btn btn-default' %></h3>
+<% end %>

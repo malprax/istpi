@@ -28,7 +28,7 @@ class Admin::ElectricalschedulesubjectsController < ApplicationController
 
     respond_to do |format|
       if @electricalschedulesubject.save
-        format.html { redirect_to @electricalschedulesubject, notice: 'Electricalschedulesubject was successfully created.' }
+        format.html { redirect_to admin_electricalschedulesubjects_path, notice: 'Electricalschedulesubject was successfully created.' }
         format.json { render :show, status: :created, location: @electricalschedulesubject }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::ElectricalschedulesubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @electricalschedulesubject.update(electricalschedulesubject_params)
-        format.html { redirect_to @electricalschedulesubject, notice: 'Electricalschedulesubject was successfully updated.' }
+        format.html { redirect_to admin_electricalschedulesubjects_path, notice: 'Electricalschedulesubject was successfully updated.' }
         format.json { render :show, status: :ok, location: @electricalschedulesubject }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::ElectricalschedulesubjectsController < ApplicationController
   def destroy
     @electricalschedulesubject.destroy
     respond_to do |format|
-      format.html { redirect_to electricalschedulesubjects_url, notice: 'Electricalschedulesubject was successfully destroyed.' }
+      format.html { redirect_to admin_electricalschedulesubjects_url, notice: 'Electricalschedulesubject was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class Admin::ElectricalschedulesubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def electricalschedulesubject_params
-      params.require(:electricalschedulesubject).permit(:civil_subject_id, :lecture1_id, :lecture2_id, :lecture3_id, :day, :time_id, :year_id, :room_id, :count)
+      params.require(:electricalschedulesubject).permit(:electrical_subject_id, :lecture1_id, :lecture2_id, :lecture3_id, :day, :classtime_id, :studiyear_id, :classroom_id, :count)
     end
 end

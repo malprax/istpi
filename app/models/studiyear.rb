@@ -9,4 +9,5 @@
 #
 
 class Studiyear < ActiveRecord::Base
+  has_many :electricalschedulesubjects
 end

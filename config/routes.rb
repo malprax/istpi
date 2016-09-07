@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :studiyears
-  resources :rooms
-  resources :clocks
-  resources :electricalschedulesubjects
-  resources :civilschedulesubjects
-  resources :semesters
   namespace :admin do
-    resources :users, :sessions, :buku_induks, :lectures, :functional_structurals, :students_biographies, :civil_subjects, :electrical_subjects
+    resources :users, :sessions, :buku_induks, :lectures, :functional_structurals, :students_biographies, :civil_subjects, :electrical_subjects, :studiyears, :classrooms, :classtimes, :electricalschedulesubjects, :civilschedulesubjects, :semesters
       #  sessions
        get "login" => 'sessions#new', :as => "login"
        get "logout" => 'sessions#destroy', :as => "logout"
@@ -58,7 +52,7 @@ Rails.application.routes.draw do
 
   end
 
-  resources :incoming_mails, :outcoming_mails, :students_biographies, :buku_induks, :functional_structurals, :lectures, :registrations, :electrical_subjects, :civil_subjects
+  resources :incoming_mails, :outcoming_mails, :students_biographies, :buku_induks, :functional_structurals, :lectures, :registrations, :electrical_subjects, :civil_subjects, :studiyears, :classrooms, :classtimes, :electricalschedulesubjects, :civilschedulesubjects, :semesters
   #registrations
   get 'calon_mahasiswa_index' => 'registrations#index', :as => "calon_mahasiswa_index"
   get 'calon_mahasiswa_index/new' => 'registrations#new', :as => "new_calon_mahasiswa"
