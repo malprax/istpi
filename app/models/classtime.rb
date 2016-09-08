@@ -11,9 +11,5 @@
 class Classtime < ActiveRecord::Base
   has_many :electricalschedulesubjects
   has_many :civilschedulesubjects
-  scope :order_waktu, ->{waktu}
-
-  def self.waktu
-      time.to_i
-  end
+  
 end

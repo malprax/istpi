@@ -7,9 +7,9 @@
       <th>Hari</th>
       <th>Waktu</th>
       <th>Mata Kuliah</th>
-      <!-- <th>Dosen 1</th>
+      <th>Dosen 1</th>
       <th>Dosen 2</th>
-      <th>Dosen 3</th> -->
+      <th>Dosen 3</th>
       <th>Ruangan</th>
       <th colspan="1"></th>
     </tr>
@@ -21,10 +21,10 @@
         <td><%= electricalschedulesubject.day %></td>
         <td><%= electricalschedulesubject.classtime.time%></td>
         <td><%= electricalschedulesubject.electrical_subject.name %></td>
-        <!-- <td><%#= electricalschedulesubject.lecture1_id %></td>
-        <td><%#= electricalschedulesubject.lecture2_id %></td>
-        <td><%#= electricalschedulesubject.lecture3_id %></td> -->
-        <td><%= electricalschedulesubject.classroom.room %></td>
+        <td><%= electricalschedulesubject.lecture1.name %></td>
+        <td><%= electricalschedulesubject.lecture2.name %></td>
+        <td><%= electricalschedulesubject.lecture3.name %></td>
+        <td><%= electricalschedulesubject.classroom  %></td>
         <td><%= link_to 'Edit', edit_admin_electricalschedulesubject_path(electricalschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_electricalschedulesubject_path(electricalschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
       </tr>
     <% end %>

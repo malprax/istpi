@@ -15,6 +15,8 @@
 
 class Lecture < ActiveRecord::Base
   has_many :functional_structurals
+  has_many :civilschedulesubjects
+  has_many :electricalschedulesubjects
   def self.search(query)
     #code
     where("lower(name) LIKE lower(?) OR lower(nidn) LIKE lower(?)", "%#{query}%", "%#{query}%")

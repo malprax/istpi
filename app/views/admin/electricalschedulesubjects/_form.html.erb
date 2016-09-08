@@ -2,14 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%#= f.association :electrical_subject, label: 'Mata Kuliah' %>
-    <%= f.association :classtime %>
-    <%= f.association :classroom %>
     <%= f.input :day, label: 'Hari', collection: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'] %>
+    <%= f.association :classtime, label_method: :time, label:'Waktu Kuliah' %>
+    <%= f.association :electrical_subject, label: 'Mata Kuliah' %>
 
-    <%#= f.association :lecture1 %>
-    <%#= f.association :lecture2 %>
-    <%#= f.association :lecture3 %>
+    <%= f.association :classroom, label_method: lambda{ |classroom| "#{classroom.room.upcase}"}, label: 'Ruang Kuliah' %>
+    <%= f.association :lecture1, label: 'Dosen 1' %>
+    <%= f.association :lecture2, label: 'Dosen 2' %>
+    <%= f.association :lecture3, label: 'Dosen 3' %>
+
 
   </div>
 

@@ -18,11 +18,12 @@
 
 class Electricalschedulesubject < ActiveRecord::Base
   belongs_to :electrical_subject
-  belongs_to :classroom
-  belongs_to :classtime
-  belongs_to :studiyear
-  belongs_to :lecture1_id, :class_name => 'Lecture'
-  belongs_to :lecture2_id, :class_name => 'Lecture'
-  belongs_to :lecture3_id, :class_name => 'Lecture'
+  belongs_to :classroom, :class_name => 'Classroom'
+  belongs_to :classtime, :class_name => 'Classtime'
+  belongs_to :studiyear, :class_name => 'Studiyear'
+  belongs_to :lecture1, :class_name => 'Lecture'
+  belongs_to :lecture2, :class_name => 'Lecture'
+  belongs_to :lecture3, :class_name => 'Lecture'
+  
 
 end

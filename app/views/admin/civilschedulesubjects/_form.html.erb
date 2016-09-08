@@ -1,15 +1,15 @@
-<%= simple_form_for([:admin,@civilschedulesubject]) do |f| %>
+<%= simple_form_for([:admin, @civilschedulesubject]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :civil_subject %>
-    <%#= f.input :lecture1_id %>
-    <%#= f.input :lecture2_id %>
-    <%#= f.input :lecture3_id %>
-    <%= f.input :day %>
-    <%= f.association :classtime %>
-    <%= f.association :studiyear %>
-    <%= f.association :classroom %>
+    <%= f.input :day, label: 'Hari', collection: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'] %>
+    <%= f.association :classtime, label_method: :time, label:'Waktu Kuliah' %>
+    <%= f.association :civil_subject, label: 'Mata Kuliah' %>
+
+    <%= f.association :classroom, label_method: lambda{ |classroom| "#{classroom.room.upcase}"}, label: 'Ruang Kuliah' %>
+    <%= f.association :lecture1, label: 'Dosen 1' %>
+    <%= f.association :lecture2, label: 'Dosen 2' %>
+    <%= f.association :lecture3, label: 'Dosen 3' %>
   </div>
 
   <div class="form-actions">

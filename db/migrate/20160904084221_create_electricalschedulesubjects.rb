@@ -11,6 +11,7 @@ class CreateElectricalschedulesubjects < ActiveRecord::Migration
       t.integer :lecture1_id
       t.integer :lecture2_id
       t.integer :lecture3_id
+      t.integer :class_time_id
 
       t.timestamps null: false
     end

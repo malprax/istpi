@@ -69,6 +69,6 @@ class ElectricalSubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def electrical_subject_params
-      params.require(:electrical_subject).permit(:name, :credit, :code, :category, :semester)
+      params.require(:electrical_subject).permit(:name, :credit, :code, :category, :semester_id)
     end
 end

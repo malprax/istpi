@@ -16,7 +16,7 @@
   <tbody>
     <% @electrical_subjects.each do |electrical_subject| %>
       <tr>
-        <td><%= electrical_subject.code %></td>
+        <td><%= electrical_subject.code.upcase %></td>
         <td><%= electrical_subject.name.titleize if electrical_subject %></td>
         <td><%= electrical_subject.credit %></td>
         <td><%= electrical_subject.semester.name %></td>
