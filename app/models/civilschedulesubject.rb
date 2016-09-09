@@ -17,6 +17,7 @@
 #
 
 class Civilschedulesubject < ActiveRecord::Base
+  before_save :set_count
   belongs_to :civil_subject
   belongs_to :classroom, :class_name => 'Classroom'
   belongs_to :classtime, :class_name => 'Classtime'
@@ -24,4 +25,24 @@ class Civilschedulesubject < ActiveRecord::Base
   belongs_to :lecture1, :class_name => 'Lecture'
   belongs_to :lecture2, :class_name => 'Lecture'
   belongs_to :lecture3, :class_name => 'Lecture'
+
+  def set_count
+    #code
+    if self.day == 'Senin'
+      self.count = 1
+    elsif self.day == 'Selasa'
+      self.count = 2
+    elsif self.day == 'Rabu'
+      self.count = 3
+    elsif self.day == 'Kamis'
+      self.count = 4
+    elsif self.day == 'Jumat'
+      self.count = 5
+    elsif self.day == 'Sabtu'
+      self.count = 6
+    elsif self.day == 'Minggu'
+      self.count = 7
+    end
+
+  end
 end

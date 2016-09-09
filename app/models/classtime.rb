@@ -11,5 +11,12 @@
 class Classtime < ActiveRecord::Base
   has_many :electricalschedulesubjects
   has_many :civilschedulesubjects
-  
+
+  # scope :order_waktu, ->{set_integer}
+
+  # def self.set_integer
+  #   #code
+  #   self.time.to_i * 1
+  # end
+
 end

@@ -1,12 +1,12 @@
 
-
-<h1 class="lead">Listing Semesters</h1>
+<% if @semesters.present? %>
+<h1 class="lead">Daftar Semester&nbsp;&nbsp;<%= link_to 'Buat Semester', new_semester_path, class:'btn btn-default' %></h1>
 
 <table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <th>Semester</th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -14,13 +14,14 @@
     <% @semesters.each do |semester| %>
       <tr>
         <td><%= semester.name %></td>
-        <td><%= link_to 'Edit', edit_semester_path(semester) %></td>
-        <td><%= link_to 'Hapus', semester, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_semester_path(semester), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', semester, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+        <td></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Semester', new_semester_path %>
+<% else %>
+<h3 class="lead">Maaf Data Belum Ada, Silahkan Datang Kembali..&nbsp;&nbsp;<%= link_to 'Buat Semester', new_semester_path, class:'btn btn-default' %></h3>
+<% end %>

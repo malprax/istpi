@@ -248,8 +248,9 @@ ActiveRecord::Schema.define(version: 20160907013231) do
 
   create_table "studiyears", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "even_odd",   default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|

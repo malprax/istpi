@@ -1,38 +1,36 @@
 <% if @civilschedulesubjects.present? %>
-<h3 class="lead">Jadwal Kuliah Teknik Sipil&nbsp;&nbsp;<%= link_to 'Buat Jadwal', new_admin_civilschedulesubject_path %></h1>
+<div class="well">
+  <h3 class="lead">Jadwal Kuliah Teknik Sipil&nbsp;&nbsp;<%= link_to 'Buat Jadwal', new_admin_civilschedulesubject_path %></h1>
 
-<table class="table table-hover table-striped">
-  <thead>
-    <tr>
-      <th>Day</th>
-      <th>Time</th>
-      <th>Mata Kuliah</th>
-      <th>Room</th>
-      <th>Dosen 1</th>
-      <th>Dosen 2</th>
-      <th>Dosen 3</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @civilschedulesubjects.each do |civilschedulesubject| %>
+  <table class="table table-hover table-striped">
+    <thead>
       <tr>
-        <td><%= civilschedulesubject.day %></td>
-        <td><%= civilschedulesubject.time_id %></td>
-        <td><%= civilschedulesubject.civil_subject_id %></td>
-        <td><%= civilschedulesubject.room_id %></td>
-        <td><%= civilschedulesubject.lecture1_id %></td>
-        <td><%= civilschedulesubject.lecture2_id %></td>
-        <td><%= civilschedulesubject.lecture3_id %></td>
-        <td><%= link_to 'Edit', edit_civilschedulesubject_path(civilschedulesubject) %></td>
-        <td><%= link_to 'Hapus', civilschedulesubject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Mata Kuliah</th>
+        <th>Room</th>
+        <th>Dosen</th>
+        <th colspan="1"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @civilschedulesubjects.each do |civilschedulesubject| %>
+        <tr>
+          <td><%= civilschedulesubject.day %></td>
+          <td><%= civilschedulesubject.time_id %></td>
+          <td><%= civilschedulesubject.civil_subject_id %></td>
+          <td><%= civilschedulesubject.room_id %></td>
+          <td><%= civilschedulesubject.lecture1_id %></td>
+          <td><%= link_to 'Edit', edit_civilschedulesubject_path(civilschedulesubject, class: 'btn btn-warning') %>&nbsp;&nbsp;<%= link_to 'Hapus', civilschedulesubject, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+</div>
+
 
 <% else %>
 <h3 class="lead">Maaf Data Belum Ada, &nbsp;&nbsp;<%= link_to 'Buat Mata Kuliah', new_admin_civilschedulesubject_path, class: 'btn btn-default' %></h3>

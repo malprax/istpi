@@ -28,7 +28,7 @@ class Admin::ClassroomsController < ApplicationController
 
     respond_to do |format|
       if @classroom.save
-        format.html { redirect_to admin_classrooms_path, notice: 'Classroom was successfully created.' }
+        format.html { redirect_to admin_classrooms_path, notice: 'Ruang kuliah berhasil dibuat' }
         format.json { render :show, status: :created, location: @classroom }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::ClassroomsController < ApplicationController
   def update
     respond_to do |format|
       if @classroom.update(classroom_params)
-        format.html { redirect_to admin_classrooms_path, notice: 'Classroom was successfully updated.' }
+        format.html { redirect_to admin_classrooms_path, notice: 'Ruang kuliah berhasil diperbarui' }
         format.json { render :show, status: :ok, location: @classroom }
       else
         format.html { render :edit }

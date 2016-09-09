@@ -4,7 +4,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
   # GET /civilschedulesubjects
   # GET /civilschedulesubjects.json
   def index
-    @civilschedulesubjects = Civilschedulesubject.all
+    @civilschedulesubjects = Civilschedulesubject.order('count asc')
   end
 
   # GET /civilschedulesubjects/1
@@ -15,10 +15,12 @@ class Admin::CivilschedulesubjectsController < ApplicationController
   # GET /civilschedulesubjects/new
   def new
     @civilschedulesubject = Civilschedulesubject.new
+    @classtime = Classtime.order('time asc')
   end
 
   # GET /civilschedulesubjects/1/edit
   def edit
+    
   end
 
   # POST /civilschedulesubjects
@@ -28,7 +30,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
 
     respond_to do |format|
       if @civilschedulesubject.save
-        format.html { redirect_to @civilschedulesubject, notice: 'Civilschedulesubject was successfully created.' }
+        format.html { redirect_to @civilschedulesubject, notice: 'Jadwal berhasil dibuat' }
         format.json { render :show, status: :created, location: @civilschedulesubject }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @civilschedulesubject.update(civilschedulesubject_params)
-        format.html { redirect_to @civilschedulesubject, notice: 'Civilschedulesubject was successfully updated.' }
+        format.html { redirect_to @civilschedulesubject, notice: 'Jadwal berhasil diperbarui' }
         format.json { render :show, status: :ok, location: @civilschedulesubject }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
   def destroy
     @civilschedulesubject.destroy
     respond_to do |format|
-      format.html { redirect_to civilschedulesubjects_url, notice: 'Civilschedulesubject was successfully destroyed.' }
+      format.html { redirect_to civilschedulesubjects_url, notice: 'Jadwal berhasil dihapus' }
       format.json { head :no_content }
     end
   end

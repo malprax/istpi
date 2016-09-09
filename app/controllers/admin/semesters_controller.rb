@@ -4,7 +4,7 @@ class Admin::SemestersController < ApplicationController
   # GET /semesters
   # GET /semesters.json
   def index
-    @semesters = Semester.all
+    @semesters = Semester.order('name asc')
   end
 
   # GET /semesters/1
@@ -28,7 +28,7 @@ class Admin::SemestersController < ApplicationController
 
     respond_to do |format|
       if @semester.save
-        format.html { redirect_to @semester, notice: 'Semester was successfully created.' }
+        format.html { redirect_to @semester, notice: 'Semester berhasil dibuat' }
         format.json { render :show, status: :created, location: @semester }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::SemestersController < ApplicationController
   def update
     respond_to do |format|
       if @semester.update(semester_params)
-        format.html { redirect_to @semester, notice: 'Semester was successfully updated.' }
+        format.html { redirect_to @semester, notice: 'Semester berhasil diperbarui' }
         format.json { render :show, status: :ok, location: @semester }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::SemestersController < ApplicationController
   def destroy
     @semester.destroy
     respond_to do |format|
-      format.html { redirect_to semesters_url, notice: 'Semester was successfully destroyed.' }
+      format.html { redirect_to semesters_url, notice: 'Semester berhasil dihapus' }
       format.json { head :no_content }
     end
   end

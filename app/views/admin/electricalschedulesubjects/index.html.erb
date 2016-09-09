@@ -1,37 +1,44 @@
 <% if @electricalschedulesubjects.present? %>
-<h1 class="lead">Jadwal Kuliah Teknik Elektro&nbsp;&nbsp;<%= link_to 'Buat Jadwal', new_admin_electricalschedulesubject_path, class:'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Buat Mata Kuliah', new_admin_electrical_subject_path, class:'btn btn-primary' %></h1>
+<div class="well">
+  <h1 class="lead">Jadwal Kuliah Teknik Elektro&nbsp;&nbsp;<%= link_to 'Buat Jadwal', new_admin_electricalschedulesubject_path, class:'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Buat Mata Kuliah', new_admin_electrical_subject_path, class:'btn btn-primary' %></h1>
 
-<table class="table table-hover table-striped">
-  <thead>
-    <tr>
-      <th>Hari</th>
-      <th>Waktu</th>
-      <th>Mata Kuliah</th>
-      <th>Dosen 1</th>
-      <th>Dosen 2</th>
-      <th>Dosen 3</th>
-      <th>Ruangan</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
+  <div class="panel panel-default">
+    <div class="panel-title pull-right">
+      <%#= render 'shared/search' %>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>Hari</th>
+              <th>Waktu</th>
+              <th>Mata Kuliah</th>
+              <th>Dosen</th>
+              <th>Ruangan</th>
+              <th colspan="1"></th>
+            </tr>
+          </thead>
 
-  <tbody>
-    <% @electricalschedulesubjects.each do |electricalschedulesubject| %>
-      <tr>
-        <td><%= electricalschedulesubject.day %></td>
-        <td><%= electricalschedulesubject.classtime.time%></td>
-        <td><%= electricalschedulesubject.electrical_subject.name %></td>
-        <td><%= electricalschedulesubject.lecture1.name %></td>
-        <td><%= electricalschedulesubject.lecture2.name %></td>
-        <td><%= electricalschedulesubject.lecture3.name %></td>
-        <td><%= electricalschedulesubject.classroom  %></td>
-        <td><%= link_to 'Edit', edit_admin_electricalschedulesubject_path(electricalschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_electricalschedulesubject_path(electricalschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <tbody>
+            <% @electricalschedulesubjects.each do |electricalschedulesubject| %>
+              <tr>
+                <td><%= electricalschedulesubject.day rescue nil %></td>
+                <td><%= electricalschedulesubject.classtime.time rescue nil %></td>
+                <td><%= electricalschedulesubject.electrical_subject.name.titleize rescue nil %></td>
+                <td><%= electricalschedulesubject.lecture1.name rescue nil %></td>
+                <td><%= electricalschedulesubject.classroom.room.upcase rescue nil  %></td>
+                <td><%= link_to 'Edit', edit_admin_electricalschedulesubject_path(electricalschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_electricalschedulesubject_path(electricalschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>&nbsp;&nbsp;<%= link_to 'Cetak SK', admin_download_sk_mengajar_path(id: electricalschedulesubject.id, format: 'pdf'), target: '_blank', class: 'btn btn-default' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br>
+      </div>
+    </div>
+</div>
 
-<br>
+
+
 <% else %>
 <h3 class="lead">Maaf Data Belum Ada, &nbsp;&nbsp;<%= link_to 'Buat Jadwal', new_admin_electricalschedulesubject_path, class: 'btn btn-default' %></h3>
 <% end %>

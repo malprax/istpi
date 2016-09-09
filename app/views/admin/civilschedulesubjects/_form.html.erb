@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :day, label: 'Hari', collection: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'] %>
-    <%= f.association :classtime, label_method: :time, label:'Waktu Kuliah' %>
+    <%= f.association :classtime, collection: @classtime,label_method: :time, label:'Waktu Kuliah' %>
     <%= f.association :civil_subject, label: 'Mata Kuliah' %>
 
     <%= f.association :classroom, label_method: lambda{ |classroom| "#{classroom.room.upcase}"}, label: 'Ruang Kuliah' %>

@@ -46,8 +46,7 @@
             <li ><%= link_to "Jadwal Kuliah", '#' %></li>
           </ul>
         </li>
-
-        <li ><%#= link_to "Perpustakaan", '#' %></li>
+        <li ><%= link_to "Perpustakaan", '#' %></li>
         <li class="<%= params[:controller] == 'registrations' ? 'active' : '' %>"><%= link_to "Calon Mahasiswa", calon_mahasiswa_index_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -111,6 +110,7 @@
             <li class="<%= params[:controller] == 'functional_structurals' ? 'active' : '' %>"><%= link_to "Struktural", admin_functional_structurals_path %></li>
             <li class="<%= params[:controller]== 'incomings' ? 'active' : '' %>"><%= link_to "Surat Masuk", surat_masuk_index_path %></li>
             <li class="<%= params[:controller]== 'outcomings' ? 'active' : '' %>"><%= link_to "Surat Keluar", outcoming_mails_path %></li>
+            <li ><%= link_to "Keuangan", '#' %></li>
           </ul>
         </li>
 
@@ -134,7 +134,7 @@
           </ul>
         </li>
         <li ><%= link_to "Perpustakaan", '#' %></li>
-        <li ><%= link_to "Keuangan", '#' %></li>
+        
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>

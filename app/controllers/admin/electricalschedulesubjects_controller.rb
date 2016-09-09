@@ -1,15 +1,28 @@
+require 'prawn'
 class Admin::ElectricalschedulesubjectsController < ApplicationController
   before_action :set_electricalschedulesubject, only: [:show, :edit, :update, :destroy]
 
   # GET /electricalschedulesubjects
   # GET /electricalschedulesubjects.json
   def index
-    @electricalschedulesubjects = Electricalschedulesubject.all
+    @electricalschedulesubjects = Electricalschedulesubject.order('count asc')
   end
 
   # GET /electricalschedulesubjects/1
   # GET /electricalschedulesubjects/1.json
   def show
+    @electricalschedulesubject = Electricalschedulesubject.find(params[:id])
+    # @registration = Registration.find_by_nama(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = SkMengajarPdf.new(@electricalschedulesubject)
+        send_data pdf.render,
+        type: "application/pdf",
+        disposition: "inline",
+        filename: "SK Mengajar Dosen ISTPI atas nama #{@electricalschedulesubject.lecture.name}.pdf"
+      end
+    end
   end
 
   # GET /electricalschedulesubjects/new
@@ -28,7 +41,7 @@ class Admin::ElectricalschedulesubjectsController < ApplicationController
 
     respond_to do |format|
       if @electricalschedulesubject.save
-        format.html { redirect_to admin_electricalschedulesubjects_path, notice: 'Electricalschedulesubject was successfully created.' }
+        format.html { redirect_to admin_electricalschedulesubjects_path, notice: 'Jadwal Berhasil Dibuat' }
         format.json { render :show, status: :created, location: @electricalschedulesubject }
       else
         format.html { render :new }
@@ -42,7 +55,7 @@ class Admin::ElectricalschedulesubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @electricalschedulesubject.update(electricalschedulesubject_params)
-        format.html { redirect_to admin_electricalschedulesubjects_path, notice: 'Electricalschedulesubject was successfully updated.' }
+        format.html { redirect_to admin_electricalschedulesubjects_path, notice: 'Jadwal berhasil diperbarui' }
         format.json { render :show, status: :ok, location: @electricalschedulesubject }
       else
         format.html { render :edit }
@@ -56,8 +69,23 @@ class Admin::ElectricalschedulesubjectsController < ApplicationController
   def destroy
     @electricalschedulesubject.destroy
     respond_to do |format|
-      format.html { redirect_to admin_electricalschedulesubjects_url, notice: 'Electricalschedulesubject was successfully destroyed.' }
+      format.html { redirect_to admin_electricalschedulesubjects_url, notice: 'Jadwal berhasil dihapus' }
       format.json { head :no_content }
+    end
+  end
+
+  def download_pdf
+    @electricalschedulesubject = Electricalschedulesubject.find(params[:id])
+    # @registration = Registration.find_by_nama(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = SkMengajarPdf.new(@electricalschedulesubject)
+        send_data pdf.render,
+        type: "application/pdf",
+        disposition: "inline",
+        filename: "SK Mengasuh Dosen ISTPI Matakuliah #{@electricalschedulesubject.electrical_subject.name.titleize}.pdf"
+      end
     end
   end
 

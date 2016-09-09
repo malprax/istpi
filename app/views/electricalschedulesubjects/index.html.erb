@@ -1,43 +1,33 @@
-<p id="notice"><%= notice %></p>
+<% if @electricalschedulesubjects.present? %>
+<h1 class="lead">Jadwal Kuliah Teknik Elektro</h1>
 
-<h1>Listing Electricalschedulesubjects</h1>
-
-<table>
+<table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th>Civil subject</th>
-      <th>Lecture1</th>
-      <th>Lecture2</th>
-      <th>Lecture3</th>
-      <th>Day</th>
-      <th>Time</th>
-      <th>Year</th>
-      <th>Room</th>
-      <th>Count</th>
-      <th colspan="3"></th>
+      <th>Hari</th>
+      <th>Waktu</th>
+      <th>Mata Kuliah</th>
+      <th>Dosen</th>
+      <th>Ruangan</th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @electricalschedulesubjects.each do |electricalschedulesubject| %>
       <tr>
-        <td><%= electricalschedulesubject.civil_subject_id %></td>
-        <td><%= electricalschedulesubject.lecture1_id %></td>
-        <td><%= electricalschedulesubject.lecture2_id %></td>
-        <td><%= electricalschedulesubject.lecture3_id %></td>
-        <td><%= electricalschedulesubject.day %></td>
-        <td><%= electricalschedulesubject.time_id %></td>
-        <td><%= electricalschedulesubject.year_id %></td>
-        <td><%= electricalschedulesubject.room_id %></td>
-        <td><%= electricalschedulesubject.count %></td>
-        <td><%= link_to 'Show', electricalschedulesubject %></td>
-        <td><%= link_to 'Edit', edit_electricalschedulesubject_path(electricalschedulesubject) %></td>
-        <td><%= link_to 'Destroy', electricalschedulesubject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= electricalschedulesubject.day rescue nil %></td>
+        <td><%= electricalschedulesubject.classtime.time rescue nil %></td>
+        <td><%= electricalschedulesubject.electrical_subject.name.titleize rescue nil %></td>
+        <td><%= electricalschedulesubject.lecture1.name rescue nil %></td>
+        <td><%= electricalschedulesubject.classroom.room.upcase rescue nil  %></td>
+        <td><%= link_to 'Edit', edit_admin_electricalschedulesubject_path(electricalschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_electricalschedulesubject_path(electricalschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Electricalschedulesubject', new_electricalschedulesubject_path %>
+<% else %>
+<h3 class="lead">Maaf, Belum Ada Data Buku Induk Silahkan Kembali Lain Waktu..</h3>
+<% end %>

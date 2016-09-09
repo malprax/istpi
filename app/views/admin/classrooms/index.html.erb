@@ -1,4 +1,5 @@
-<h1 class="lead">Daftar Ruang Kelas</h1>
+<% if @classrooms.present? %>
+<h1 class="lead">Daftar Ruang Kelas&nbsp;&nbsp;<%= link_to 'Buat Ruang Kelas', new_admin_classroom_path, class:'btn btn-default' %></h1>
 
 <table class="table table-hover table-striped">
   <thead>
@@ -19,5 +20,6 @@
 </table>
 
 <br>
-
-<%= link_to 'Buat Ruang Kelas', new_admin_classroom_path, class:'btn btn-default' %>
+<% else %>
+<h3 class="lead">Maaf Data Belum Ada, &nbsp;&nbsp;<%= link_to 'Buat Ruang Kelas', new_admin_classroom_path, class: 'btn btn-default' %></h3>
+<% end %>

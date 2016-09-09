@@ -657,3 +657,22 @@ For correspondence: Anastasia Mikhailovna Kulikova, General post office, St. Ale
 tulis semua progress
 
 #buka aplikasi server pangkalan data dan baca dokumentasinya
+
+#report 9 september 2016
+1. Ada bug di jadwal mata kuliah karena belum ada parameter untuk tidak memilih lagi ruang kuliah di waktu yang sama
+2. fitur tahun ajaran mesti diperbaiki
+3. jadwal kuliah mesti ada kelasnya
+
+sudah lunas
+2. fitur pendaftaran online fix
+3. fitur daftar dosen fix
+4. fitur daftar pejabat struktural fix
+5. fitur autentifikasi user fix
+6. beli domain istpi.ac.id fix satu tahun
+
+belum lunas
+7. fitur pendaftaran domain istpi.com
+8. fitur daftar mata kuliah fix
+9. fitur jadwal mata kuliah fix
+10. fitur sk mengajar fix
+11. fitur download formulir mahasiswa baru

@@ -28,7 +28,7 @@ class Admin::StudiyearsController < ApplicationController
 
     respond_to do |format|
       if @studiyear.save
-        format.html { redirect_to @studiyear, notice: 'Studiyear was successfully created.' }
+        format.html { redirect_to admin_studiyears_path, notice: 'Tahun ajaran berhasil dibuat' }
         format.json { render :show, status: :created, location: @studiyear }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::StudiyearsController < ApplicationController
   def update
     respond_to do |format|
       if @studiyear.update(studiyear_params)
-        format.html { redirect_to @studiyear, notice: 'Studiyear was successfully updated.' }
+        format.html { redirect_to admin_studiyears_path, notice: 'Tahun ajaran berhasil diperbarui' }
         format.json { render :show, status: :ok, location: @studiyear }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::StudiyearsController < ApplicationController
   def destroy
     @studiyear.destroy
     respond_to do |format|
-      format.html { redirect_to studiyears_url, notice: 'Studiyear was successfully destroyed.' }
+      format.html { redirect_to admin_studiyears_url, notice: 'Tahun ajaran berhasil dihapus' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class Admin::StudiyearsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def studiyear_params
-      params.require(:studiyear).permit(:name)
+      params.require(:studiyear).permit(:name, :even_odd)
     end
 end

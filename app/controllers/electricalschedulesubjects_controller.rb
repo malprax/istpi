@@ -4,7 +4,7 @@ class ElectricalschedulesubjectsController < ApplicationController
   # GET /electricalschedulesubjects
   # GET /electricalschedulesubjects.json
   def index
-    @electricalschedulesubjects = Electricalschedulesubject.all
+    @electricalschedulesubjects = Electricalschedulesubject.order('count asc')
   end
 
   # GET /electricalschedulesubjects/1
@@ -28,7 +28,7 @@ class ElectricalschedulesubjectsController < ApplicationController
 
     respond_to do |format|
       if @electricalschedulesubject.save
-        format.html { redirect_to @electricalschedulesubject, notice: 'Electricalschedulesubject was successfully created.' }
+        format.html { redirect_to @electricalschedulesubject, notice: 'Jadwal Berhasil Dibuat' }
         format.json { render :show, status: :created, location: @electricalschedulesubject }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ElectricalschedulesubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @electricalschedulesubject.update(electricalschedulesubject_params)
-        format.html { redirect_to @electricalschedulesubject, notice: 'Electricalschedulesubject was successfully updated.' }
+        format.html { redirect_to @electricalschedulesubject, notice: 'Jadwal berhasil diperbarui' }
         format.json { render :show, status: :ok, location: @electricalschedulesubject }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ElectricalschedulesubjectsController < ApplicationController
   def destroy
     @electricalschedulesubject.destroy
     respond_to do |format|
-      format.html { redirect_to electricalschedulesubjects_url, notice: 'Electricalschedulesubject was successfully destroyed.' }
+      format.html { redirect_to electricalschedulesubjects_url, notice: 'Jadwal berhasil dihapus' }
       format.json { head :no_content }
     end
   end
