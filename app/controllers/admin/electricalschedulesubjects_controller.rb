@@ -20,7 +20,7 @@ class Admin::ElectricalschedulesubjectsController < ApplicationController
         send_data pdf.render,
         type: "application/pdf",
         disposition: "inline",
-        filename: "SK Mengajar Dosen ISTPI atas nama #{@electricalschedulesubject.lecture.name}.pdf"
+        filename: "SK Mengasuh Dosen ISTPI Matakuliah #{@electricalschedulesubject.electrical_subject.name.titleize}.pdf"
       end
     end
   end

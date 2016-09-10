@@ -9,7 +9,7 @@
       <th>Mata Kuliah</th>
       <th>Dosen</th>
       <th>Ruangan</th>
-      <th colspan="1"></th>
+      
     </tr>
   </thead>
 
@@ -21,7 +21,7 @@
         <td><%= electricalschedulesubject.electrical_subject.name.titleize rescue nil %></td>
         <td><%= electricalschedulesubject.lecture1.name rescue nil %></td>
         <td><%= electricalschedulesubject.classroom.room.upcase rescue nil  %></td>
-        <td><%= link_to 'Edit', edit_admin_electricalschedulesubject_path(electricalschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_electricalschedulesubject_path(electricalschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+
       </tr>
     <% end %>
   </tbody>
