@@ -676,3 +676,7 @@ belum lunas
 9. fitur jadwal mata kuliah fix
 10. fitur sk mengajar fix
 11. fitur download formulir mahasiswa baru
+
+
+#report 16 september 2016
+1. segera buat fitur krs online
