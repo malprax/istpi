@@ -1,0 +1,12 @@
+<%= simple_form_for(@choose_subject) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :electrical_subject_id %>
+    <%= f.input :studiyear_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
