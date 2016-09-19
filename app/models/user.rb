@@ -14,6 +14,7 @@
 
 class User < ActiveRecord::Base
     attr_accessor :password, :password_confirmation, :login
+    has_many :choose_electrical_subjects
 
     before_save :encrypt_password
     validates :name, presence: true

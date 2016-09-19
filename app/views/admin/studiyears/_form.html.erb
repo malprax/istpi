@@ -2,11 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :even_odd, as: :checkbox %>
+    <%= f.input :name, label:'Tahun Ajaran', placeholder:'Misalnya 2000/2001' %>
+    <%= f.input :even_odd, collection:['Ganjil', 'Genap'], label:'Ganjil atau Genap', include_blank: false %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class:'btn btn-success' %>&nbsp;&nbsp;<%= link_to 'Kembali', admin_studiyears_path, class: 'btn btn-default' %>
   </div>
 <% end %>

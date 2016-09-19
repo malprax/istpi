@@ -6,15 +6,15 @@
     <thead>
       <tr>
         <th>Tahun Ajar</th>
-        <th colspan="3"></th>
+        <th colspan="1"></th>
       </tr>
     </thead>
 
     <tbody>
       <% @studiyears.each do |studiyear| %>
         <tr>
-          <td><%= studiyear.name %></td>
-          <td><%= link_to 'Edit', edit_admin_studiyear_path(studiyear), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_studiyear_path(studiyear), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-warning' %></td>
+          <td><%= studiyear.name %>&nbsp;&nbsp;<%= studiyear.even_odd %></td>
+          <td><%= link_to 'Edit', edit_admin_studiyear_path(studiyear), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_studiyear_path(studiyear), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
         </tr>
       <% end %>
     </tbody>

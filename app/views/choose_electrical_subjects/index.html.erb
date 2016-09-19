@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Choose Electrical Subjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Electrical subject</th>
+      <th>Studiyear</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @choose_electrical_subjects.each do |choose_electrical_subject| %>
+      <tr>
+        <td><%= choose_electrical_subject.electrical_subject_id %></td>
+        <td><%= choose_electrical_subject.studiyear_id %></td>
+        <td><%= choose_electrical_subject.user_id %></td>
+        <td><%= link_to 'Show', choose_electrical_subject %></td>
+        <td><%= link_to 'Edit', edit_choose_electrical_subject_path(choose_electrical_subject) %></td>
+        <td><%= link_to 'Destroy', choose_electrical_subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Choose electrical subject', new_choose_electrical_subject_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  electrical_subject_id: 1
+  studiyear_id: 1
+  user_id: 1
+
+two:
+  electrical_subject_id: 1
+  studiyear_id: 1
+  user_id: 1

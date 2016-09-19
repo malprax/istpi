@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ChooseSubjectTest < ActiveSupport::TestCase
+class ChooseElectricalSubjectTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

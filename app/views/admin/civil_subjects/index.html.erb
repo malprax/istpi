@@ -21,7 +21,7 @@
           <tbody>
             <% @civil_subjects.each do |civil_subject| %>
               <tr>
-                <td><%= civil_subject.code %></td>
+                <td><%= civil_subject.code.upcase %></td>
                 <td><%= civil_subject.name.titleize if civil_subject %></td>
                 <td><%= civil_subject.credit %></td>
                 <td><%= civil_subject.semester.name rescue nil %></td>

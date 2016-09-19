@@ -9,6 +9,8 @@
 #
 
 class Studiyear < ActiveRecord::Base
+  has_many :choose_electrical_subjects
+  
   has_many :electricalschedulesubjects
   has_many :civilschedulesubjects
 end

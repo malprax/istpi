@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919031944) do
+ActiveRecord::Schema.define(version: 20160919150206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,19 @@ ActiveRecord::Schema.define(version: 20160919031944) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "choose_subjects", force: :cascade do |t|
-    t.string   "electrical_subject_id"
-    t.string   "studiyear_id"
+  create_table "choose_electrical_subjects", force: :cascade do |t|
+    t.integer  "electrical_subject_id"
+    t.integer  "studiyear_id"
+    t.integer  "user_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+  end
+
+  create_table "choose_electrical_subjects_electrical_subjects", force: :cascade do |t|
+    t.integer  "electrical_subject_id"
+    t.integer  "choose_electrical_subject_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "civil_subjects", force: :cascade do |t|
@@ -255,9 +263,9 @@ ActiveRecord::Schema.define(version: 20160919031944) do
 
   create_table "studiyears", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "even_odd",   default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "even_odd"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -269,25 +277,5 @@ ActiveRecord::Schema.define(version: 20160919031944) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
-
-  create_table "users_civil_subjects", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "civil_subject_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  add_index "users_civil_subjects", ["civil_subject_id"], name: "index_users_civil_subjects_on_civil_subject_id", using: :btree
-  add_index "users_civil_subjects", ["user_id"], name: "index_users_civil_subjects_on_user_id", using: :btree
-
-  create_table "users_electrical_subjects", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "electrical_subject_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
-  add_index "users_electrical_subjects", ["electrical_subject_id"], name: "index_users_electrical_subjects_on_electrical_subject_id", using: :btree
-  add_index "users_electrical_subjects", ["user_id"], name: "index_users_electrical_subjects_on_user_id", using: :btree
 
 end

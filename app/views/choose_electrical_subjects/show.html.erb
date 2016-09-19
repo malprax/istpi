@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Electrical subject:</strong>
+  <%= @choose_electrical_subject.electrical_subject_id %>
+</p>
+
+<p>
+  <strong>Studiyear:</strong>
+  <%= @choose_electrical_subject.studiyear_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @choose_electrical_subject.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_choose_electrical_subject_path(@choose_electrical_subject) %> |
+<%= link_to 'Back', choose_electrical_subjects_path %>
