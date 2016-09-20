@@ -1,0 +1,28 @@
+
+<h3 class='lead'>KRS Online</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Electrical subject</th>
+      <th>Studiyear</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @choose_subjects.each do |choose_subject| %>
+      <tr>
+        <td><%= choose_subject.electrical_subject_id %></td>
+        <td><%= choose_subject.studiyear_id %></td>
+        <td><%= link_to 'Show', choose_subject %></td>
+        <td><%= link_to 'Edit', edit_choose_subject_path(choose_subject) %></td>
+        <td><%= link_to 'Destroy', choose_subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Choose subject', new_choose_subject_path %>

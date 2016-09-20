@@ -2,13 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%#= f.input :electrical_subject_id %>
-    <%= f.input :studiyear_id %>
-    <%= f.input :user_id %>
-    <%= f.association :electrical_subjects, as: :check_boxes %>
+    <%= f.association :studiyear, label_method: lambda{|studiyear| "#{studiyear.name} #{studiyear.even_odd}"}, include_blank: false, label: 'Tahun Ajaran' %>
+    <%= f.association :electrical_subjects, as: :check_boxes, label_method: lambda{|electrical_subject|"#{electrical_subject.code.upcase} - #{electrical_subject.name.titleize} - #{electrical_subject.credit} SKS - Semester #{electrical_subject.semester.name}"}, label: 'Pilih Mata Kuliah' %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-success' %>&nbsp;&nbsp;<%#= link_to 'Kembali', choose_electrical_subjects_path, class:'btn btn-default' %>
   </div>
 <% end %>

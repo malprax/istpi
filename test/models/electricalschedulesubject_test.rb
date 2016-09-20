@@ -4,14 +4,15 @@
 #
 #  id                    :integer          not null, primary key
 #  electrical_subject_id :integer
-#  lecture1_id           :integer
-#  lecture2_id           :integer
-#  lecture3_id           :integer
 #  day                   :string
 #  classtime_id          :integer
 #  studiyear_id          :integer
 #  classroom_id          :integer
 #  count                 :integer
+#  lecture1_id           :integer
+#  lecture2_id           :integer
+#  lecture3_id           :integer
+#  class_time_id         :integer
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
 #

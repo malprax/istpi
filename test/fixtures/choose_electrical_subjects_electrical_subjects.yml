@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: choose_electrical_subjects_electrical_subjects
+#
+#  id                           :integer          not null, primary key
+#  electrical_subject_id        :integer
+#  choose_electrical_subject_id :integer
+#  created_at                   :datetime         not null
+#  updated_at                   :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined.  If you add columns to the

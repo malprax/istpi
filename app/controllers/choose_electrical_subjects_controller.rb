@@ -10,11 +10,23 @@ class ChooseElectricalSubjectsController < ApplicationController
   # GET /choose_electrical_subjects/1
   # GET /choose_electrical_subjects/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = KrsPdf.new(@choose_electrical_subject)
+        send_data pdf.render,
+        type: "application/pdf",
+        disposition: "inline",
+        # filename: "KRS #{@choose_electrical_subject.studi_year.name} Semester #{@choose_electrical_subject.studi_year.even_odd} - #{@choose_electrical_subject.user.name.titleize}.pdf"
+        filename: "KRS #{@choose_electrical_subject.user.name.titleize}.pdf"
+      end
+    end
   end
 
   # GET /choose_electrical_subjects/new
   def new
     @choose_electrical_subject = ChooseElectricalSubject.new
+
   end
 
   # GET /choose_electrical_subjects/1/edit
@@ -25,7 +37,7 @@ class ChooseElectricalSubjectsController < ApplicationController
   # POST /choose_electrical_subjects.json
   def create
     @choose_electrical_subject = ChooseElectricalSubject.new(choose_electrical_subject_params)
-
+    @choose_electrical_subject.user_id = current_user.id if current_user
     respond_to do |format|
       if @choose_electrical_subject.save
         format.html { redirect_to @choose_electrical_subject, notice: 'Choose electrical subject was successfully created.' }
@@ -69,6 +81,6 @@ class ChooseElectricalSubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def choose_electrical_subject_params
-      params.require(:choose_electrical_subject).permit(:electrical_subject_ids, :studiyear_id, :user_id)
+      params.require(:choose_electrical_subject).permit(:studiyear_id, :user_id, :electrical_subject_ids => [])
     end
 end
