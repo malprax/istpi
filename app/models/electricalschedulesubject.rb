@@ -29,6 +29,8 @@ class Electricalschedulesubject < ActiveRecord::Base
 
   attr_reader :subject
 
+  scope :sortir, ->{order('count asc').order('classtime_id asc')} 
+
   def self.subject(c)
     #code
     a = Electricalschedulesubject.pluck(:electrical_subject_id)

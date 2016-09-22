@@ -5,7 +5,7 @@ class Admin::ElectricalschedulesubjectsController < ApplicationController
   # GET /electricalschedulesubjects
   # GET /electricalschedulesubjects.json
   def index
-    @electricalschedulesubjects = Electricalschedulesubject.order('count asc')
+    @electricalschedulesubjects = Electricalschedulesubject.sortir
   end
 
   # GET /electricalschedulesubjects/1
