@@ -663,15 +663,15 @@ tulis semua progress
 2. fitur tahun ajaran mesti diperbaiki
 3. jadwal kuliah mesti ada kelasnya
 
-sudah lunas
+sudah lunas dengan total 1 juta
 2. fitur pendaftaran online fix
-3. fitur daftar dosen fix
+3. fitur pendaftaran domain ist-pi.com
 4. fitur daftar pejabat struktural fix
 5. fitur autentifikasi user fix
 6. beli domain istpi.ac.id fix satu tahun
 
 belum lunas
-7. fitur pendaftaran domain istpi.com
+7. fitu pembuatan data dosen
 8. fitur daftar mata kuliah fix
 9. fitur jadwal mata kuliah fix
 10. fitur sk mengajar fix
