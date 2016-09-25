@@ -1,7 +1,7 @@
 class CreateStudentsBiographies < ActiveRecord::Migration
   def change
     create_table :students_biographies do |t|
-      t.string :name
+      t.string :full_name
       t.string :stambuk
       t.string :jenis_kelamin
       t.string :tempat_lahir
@@ -13,7 +13,7 @@ class CreateStudentsBiographies < ActiveRecord::Migration
       t.string :alamat_rumah_kabupaten
       t.string :alamat_rumah_kodepos
       t.string :siswa_no_kontak
-      t.string :siswa_email
+      t.integer :user_id
       t.string :ayah_nama
       t.string :ayah_tempat_lahir
       t.string :ayah_tanggal_lahir

@@ -20,7 +20,7 @@
       <tbody>
         <% @students_biographies.each do |students_biography| %>
           <tr>
-            <td><%= link_to students_biography.name, students_biography %></td>
+            <td><%= link_to students_biography.user.name, students_biography %></td>
             <td><%= students_biography.stambuk %></td>
             <td><%= students_biography.jenis_kelamin %></td>
             <td><%= students_biography.tempat_lahir %>&nbsp; <%= students_biography.tanggal_lahir %></td>
@@ -32,7 +32,7 @@
     </table>
 
       <%= will_paginate @students_biographies, :previous_label => '&laquo;', :next_label => '&raquo;', renderer: BootstrapPagination::Rails %>
-    
+
 <br>
 <% else %>
 <h3 class="lead">Maaf, Belum Ada Data Mahasiswa Silahkan Kembali Lain Waktu..</h3>

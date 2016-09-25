@@ -203,7 +203,7 @@ ActiveRecord::Schema.define(version: 20160919150206) do
   end
 
   create_table "students_biographies", force: :cascade do |t|
-    t.string   "name"
+    t.string   "full_name"
     t.string   "stambuk"
     t.string   "jenis_kelamin"
     t.string   "tempat_lahir"
@@ -215,7 +215,7 @@ ActiveRecord::Schema.define(version: 20160919150206) do
     t.string   "alamat_rumah_kabupaten"
     t.string   "alamat_rumah_kodepos"
     t.string   "siswa_no_kontak"
-    t.string   "siswa_email"
+    t.integer  "user_id"
     t.string   "ayah_nama"
     t.string   "ayah_tempat_lahir"
     t.string   "ayah_tanggal_lahir"

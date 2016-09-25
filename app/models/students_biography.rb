@@ -3,7 +3,7 @@
 # Table name: students_biographies
 #
 #  id                                   :integer          not null, primary key
-#  name                                 :string
+#  full_name                            :string
 #  stambuk                              :string
 #  jenis_kelamin                        :string
 #  tempat_lahir                         :string
@@ -15,7 +15,7 @@
 #  alamat_rumah_kabupaten               :string
 #  alamat_rumah_kodepos                 :string
 #  siswa_no_kontak                      :string
-#  siswa_email                          :string
+#  user_id                              :integer
 #  ayah_nama                            :string
 #  ayah_tempat_lahir                    :string
 #  ayah_tanggal_lahir                   :string
@@ -62,6 +62,7 @@
 #
 
 class StudentsBiography < ActiveRecord::Base
+  belongs_to :user
   def self.search(query)
     #code
     where("lower(name) LIKE lower(?) OR lower(stambuk) LIKE lower(?)", "%#{query}%", "%#{query}%")

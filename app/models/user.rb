@@ -14,9 +14,11 @@
 
 class User < ActiveRecord::Base
     attr_accessor :password, :password_confirmation, :login
-    has_many :choose_electrical_subjects
+    has_many :choose_electrical_subjects, dependent: :destroy
+    has_many :students_biographies, dependent: :destroy
 
     before_save :encrypt_password
+    before_create :create_biography
     validates :name, presence: true
     validates :password, presence: true
     validates :password, confirmation: true
@@ -57,5 +59,13 @@ class User < ActiveRecord::Base
     def self.search(query)
       #code
       where("lower(name) like lower(?) OR lower(email) like lower(?)", "%#{query}%", "%#{query}%")
+    end
+
+    def create_biography
+      #code
+      if self.role == 'mahasiswa'
+        StudentsBiography.build(:user_id => '#{self.id}')
+      else
+      end
     end
 end

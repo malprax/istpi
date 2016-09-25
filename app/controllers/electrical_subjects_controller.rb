@@ -8,8 +8,8 @@ class ElectricalSubjectsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: 'Kurikulum'
-        template: 'electrical_subjects/index.pdf.erb'
+        render pdf: 'Kurikulum',
+        template: 'electrical_subjects/index.pdf.erb',
         layout: 'pdf.html.erb'
         # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
       end
