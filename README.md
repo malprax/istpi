@@ -680,3 +680,6 @@ belum lunas
 
 #report 16 september 2016
 1. segera buat fitur krs online
+
+
+youtube-dl "https://d1wst0behutosd.cloudfront.net/videos/10586514/29332713.mp4?Expires=1474728595&Signature=bEOpn75XjELDREIVgV09xiaKhykWaTsVGTAXh48MZx21y4ucwhy-RIzFmGuZantdw1igmfSSy6b1pMTQr1AQxOq4KOLtZRrBmIYrNF~BDJRYFwjScgpp1p1h~yctYVm3nd8HefesfAaKitDuGJO~VylsKkk1NKoG7srWVoGb~Jc~vjrF0Sq1IjyPe5azmV1N2zYMV1iJZN4ftmFTV84mS8R9-r7MQXYu5pL5gFAiN7Lwoah7NhIrK267chhxA7FvjMETolX17GXVoWiZlJRlJkrlaisiEL6N-I7VLmWSREznpx13l~iAHGVQwDeymjdphUiGuoixx5LZE2dLpPzDuw__&Key-Pair-Id=APKAJJ6WELAPEP47UKWQ"

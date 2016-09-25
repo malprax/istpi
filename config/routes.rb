@@ -71,6 +71,12 @@ Rails.application.routes.draw do
   #surat masuk
   get 'surat_masuk_index' => 'incoming_mails#index', :as => "surat_masuk_index"
 
+  #kurikulum Teknik Elektro
+  resources :electrical_subjects do
+    collection do
+      get  'download' => 'electrical_subjects#download', as: :download
+    end
+  end
   #beranda
   root 'pages#index'
   get 'aturan_kuliah' => 'pages#aturan_kuliah', :as => 'aturan_kuliah'
