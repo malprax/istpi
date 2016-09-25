@@ -8,7 +8,10 @@ class ElectricalSubjectsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+        render pdf: 'Kurikulum'
+        template: 'electrical_subjects/index.pdf.erb'
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
       end
     end
   end
@@ -65,22 +68,6 @@ class ElectricalSubjectsController < ApplicationController
       format.html { redirect_to electrical_subjects_url, notice: 'Electrical subject was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-
-
-    #code
-    # @electrical_subjects = ElectricalSubject.all
-    # respond_to do |format|
-    #   format.html
-    #   format.pdf do
-    #     pdf = KurikulumPdf.new(@electrical_subjects)
-    #     send_data pdf.render,
-    #     type: "application/pdf",
-    #     disposition: "inline",
-    #     filename: "Kurikulum_Teknik_Elektro.pdf"
-    #   end
-    # end
   end
 
   private
