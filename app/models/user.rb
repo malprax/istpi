@@ -64,8 +64,7 @@ class User < ActiveRecord::Base
     def create_biography
       #code
       if self.role == 'mahasiswa'
-        StudentsBiography.build(:user_id => '#{self.id}')
-      else
+        StudentsBiography.create(:user_id => :id)
       end
     end
 end
