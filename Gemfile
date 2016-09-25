@@ -159,6 +159,8 @@ gem 'puma'
 
 #convert to pdf
 gem 'prawn'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 #nice_date
 gem 'bootstrap-datepicker-rails'

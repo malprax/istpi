@@ -73,9 +73,9 @@ Rails.application.routes.draw do
 
   #kurikulum Teknik Elektro
   resources :electrical_subjects do
-    collection do
-      get  'download' => 'electrical_subjects#download', as: :download
-    end
+    # collection do
+    #   get  'download' => 'electrical_subjects#download', as: :download
+    # end
   end
   #beranda
   root 'pages#index'

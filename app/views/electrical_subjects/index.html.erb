@@ -35,7 +35,7 @@
         <br>
       </div>
       <div class='panel-footer'>
-        <%= link_to 'Download Kurikulum', download_kurikulum_electrical_subjects_path(@electrical_subjects), format:'pdf') %>
+        <%= link_to 'Download Kurikulum', electrical_subjects_path(@electrical_subjects, format:'pdf'), target:'_blank', class:'btn btn-default' %>
       </div>
     </div>
 <% else %>

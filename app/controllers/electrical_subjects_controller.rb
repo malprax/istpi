@@ -5,6 +5,12 @@ class ElectricalSubjectsController < ApplicationController
   # GET /electrical_subjects.json
   def index
     @electrical_subjects = ElectricalSubject.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /electrical_subjects/1
@@ -61,12 +67,7 @@ class ElectricalSubjectsController < ApplicationController
     end
   end
 
-  def download
-    html = render_to_string(:action => :index, :layout => "pdf_layout.html")
-    pdf = WickedPdf.new.pdf_from_string(html)
-    send_data(pdf,
-    :filename => "Kurikulum Teknik Elektro.pdf",
-    :disposition => 'attachment')
+
 
     #code
     # @electrical_subjects = ElectricalSubject.all
