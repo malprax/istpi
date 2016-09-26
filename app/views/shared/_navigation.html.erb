@@ -83,10 +83,8 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Akademik<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "Aturan", "#" %></li>
-            <li><%= link_to "Jadwal", "#" %></li>
-            <li><%= link_to "Nilai", "#" %></li>
-            <li class="<%= params[:controller]== 'students_biographies' ? 'active' : '' %>"><%= link_to "Mahasiswa", students_biographies_path %></li>
-            <li class="<%= params[:controller] == 'lectures' ? 'active' : '' %>"><%= link_to "Dosen", admin_dosen_index_path %></li>
+            <li class="<%= params[:controller]== 'admin/students_biographies' ? 'active' : '' %>"><%= link_to "Mahasiswa", admin_students_biographies_path %></li>
+            <li class="<%= params[:controller] == 'admin/lectures' ? 'active' : '' %>"><%= link_to "Dosen", admin_dosen_index_path %></li>
             <li><%= link_to "Penasehat Akademik", "#" %></li>
             <li ><%= link_to "Kalender Akademik", '#' %></li>
           </ul>

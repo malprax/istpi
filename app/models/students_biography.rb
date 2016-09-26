@@ -63,6 +63,7 @@
 
 class StudentsBiography < ActiveRecord::Base
   belongs_to :user
+  
   def self.search(query)
     #code
     where("lower(name) LIKE lower(?) OR lower(stambuk) LIKE lower(?)", "%#{query}%", "%#{query}%")
