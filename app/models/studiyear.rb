@@ -10,8 +10,7 @@
 #
 
 class Studiyear < ActiveRecord::Base
-  has_many :choose_electrical_subjects
-  
-  has_many :electricalschedulesubjects
-  has_many :civilschedulesubjects
+  has_many :choose_electrical_subjects, dependent: :destroy
+  has_many :electricalschedulesubjects, dependent: :destroy
+  has_many :civilschedulesubjects, dependent: :destroy
 end

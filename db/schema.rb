@@ -264,6 +264,7 @@ ActiveRecord::Schema.define(version: 20160919150206) do
   create_table "studiyears", force: :cascade do |t|
     t.string   "name"
     t.string   "even_odd"
+    t.boolean  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

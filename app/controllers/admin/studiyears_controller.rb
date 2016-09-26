@@ -69,6 +69,6 @@ class Admin::StudiyearsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def studiyear_params
-      params.require(:studiyear).permit(:name, :even_odd)
+      params.require(:studiyear).permit(:name, :even_odd, :status)
     end
 end

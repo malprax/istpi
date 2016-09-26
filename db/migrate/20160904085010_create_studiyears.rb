@@ -3,6 +3,7 @@ class CreateStudiyears < ActiveRecord::Migration
     create_table :studiyears do |t|
       t.string :name
       t.string :even_odd
+      t.boolean :status
 
       t.timestamps null: false
     end

@@ -15,5 +15,6 @@ class ChooseElectricalSubject < ActiveRecord::Base
   belongs_to :studiyear
   has_and_belongs_to_many :electrical_subjects
 
+  validates_uniqueness_of :studiyear, :message => 'Anda Sudah Membuat KRS Semester Ini'
   # attr_accessible :electrial_subject_ids
 end

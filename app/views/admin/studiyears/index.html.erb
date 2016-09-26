@@ -13,7 +13,7 @@
     <tbody>
       <% @studiyears.each do |studiyear| %>
         <tr>
-          <td><%= studiyear.name %>&nbsp;&nbsp;<%= studiyear.even_odd %></td>
+          <td><%= studiyear.name %>&nbsp;&nbsp;<%= studiyear.even_odd %>&nbsp;&nbsp;<%= 'Aktif' if studiyear.status == true %></td>
           <td><%= link_to 'Edit', edit_admin_studiyear_path(studiyear), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_studiyear_path(studiyear), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
         </tr>
       <% end %>

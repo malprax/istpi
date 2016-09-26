@@ -4,6 +4,7 @@
   <div class="form-inputs">
     <%= f.input :name, label:'Tahun Ajaran', placeholder:'Misalnya 2000/2001' %>
     <%= f.input :even_odd, collection:['Ganjil', 'Genap'], label:'Ganjil atau Genap', include_blank: false %>
+    <%= f.input :status, label: 'Status Aktif' %>
   </div>
 
   <div class="form-actions">
