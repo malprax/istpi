@@ -64,7 +64,12 @@ class User < ActiveRecord::Base
     def create_biography
       #code
       if self.role == 'mahasiswa'
-        StudentsBiography.create(:user_id => :id)
+        StudentsBiography.create(:user_id => :id )
       end
+    end
+
+    def stambuk
+      #code
+
     end
 end

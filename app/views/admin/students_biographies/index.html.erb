@@ -5,23 +5,21 @@
 <table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th>Nama</th>
+      <th>Username</th>
+      <th>Nama Lengkap</th>
       <th>Stambuk</th>
-      <th>Jenis kelamin</th>
-      <th>Tempat, Tanggal Lahir</th>
       <th>Fakultas</th>
       <th>Jurusan</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @students_biographies.each do |students_biography| %>
       <tr>
-        <td><%= link_to students_biography.user.name, students_biography rescue nil %></td>
+        <td><%= students_biography.user.name rescue nil %></td>
+        <td><%= students_biography.full_name %></td>
         <td><%= students_biography.stambuk %></td>
-        <td><%= students_biography.jenis_kelamin %></td>
-        <td><%= students_biography.tempat_lahir %>&nbsp; <%= students_biography.tanggal_lahir %></td>
         <td><%= students_biography.fakultas %></td>
         <td><%= students_biography.jurusan %></td>
         <td><%= link_to 'Edit', edit_admin_students_biography_path(students_biography), class: 'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_students_biography_path(students_biography), method: :delete, data: { confirm: 'Anda yakin?' }, class: 'btn btn-danger' %></td>

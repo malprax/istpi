@@ -63,9 +63,28 @@
 
 class StudentsBiography < ActiveRecord::Base
   belongs_to :user
-  
+  before_create :set_stambuk
   def self.search(query)
     #code
     where("lower(name) LIKE lower(?) OR lower(stambuk) LIKE lower(?)", "%#{query}%", "%#{query}%")
+  end
+
+  def set_stambuk
+    #code
+    # format stambuk : tahun(216)+kode jurusan(sipil 11 elektro 12)+1+no urut
+    self.stambuk = '#{tahun_stambuk}+#{kode_jurusan}+#{no_urut}'
+  end
+
+  def tahun_stambuk
+    #code
+
+  end
+
+  def kode_jurusan
+    #code
+  end
+
+  def no_urut
+    #code
   end
 end

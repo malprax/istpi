@@ -2,7 +2,6 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :studiyear, label_method: lambda{|studiyear| "#{studiyear.name} #{studiyear.even_odd}"}, include_blank: false, label: 'Tahun Ajaran' %>
     <%= f.association :electrical_subjects, as: :check_boxes, label_method: lambda{|electrical_subject|"#{electrical_subject.code.upcase} - #{electrical_subject.name.titleize} - #{electrical_subject.credit} SKS - Semester #{electrical_subject.semester.name}"}, label: 'Pilih Mata Kuliah' %>
   </div>
 

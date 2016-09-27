@@ -38,7 +38,7 @@ class ChooseElectricalSubjectsController < ApplicationController
   def create
     @choose_electrical_subject = ChooseElectricalSubject.new(choose_electrical_subject_params)
     @choose_electrical_subject.user_id = current_user.id if current_user
-    @choose_electrical_subject.studiyear_id = Studiyear.where(status: true)
+    @choose_electrical_subject.studiyear_id = current_studiyear.id
     respond_to do |format|
       if @choose_electrical_subject.save
         format.html { redirect_to @choose_electrical_subject, notice: 'Choose electrical subject was successfully created.' }
