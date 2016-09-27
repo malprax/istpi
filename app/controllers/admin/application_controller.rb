@@ -6,7 +6,7 @@ class Admin::ApplicationController < ActionController::Base
 
   helper_method :current_user
   helper_method :current_studiyear
-  helpper_method :current_study
+  helper_method :current_study
 
   private
   def current_user
