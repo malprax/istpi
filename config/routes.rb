@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :choose_electrical_subjects
-  resources :choose_subjects
+  # resources :choose_electrical_subjects
+  
   namespace :admin do
     resources :users, :sessions, :buku_induks, :lectures, :functional_structurals, :students_biographies, :civil_subjects, :electrical_subjects, :studiyears, :classrooms, :classtimes, :electricalschedulesubjects, :civilschedulesubjects, :semesters, :class_times
       #  sessions
@@ -52,6 +52,10 @@ Rails.application.routes.draw do
        collection do
          get 'ok' => 'registrations#ok_mahasiswa', :as => "ok_mahasiswa"
        end
+    end
+
+    resources :users do
+      resources :choose_electrical_subjects
     end
 
   end

@@ -1,0 +1,31 @@
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-sm-12 col-md-12'>
+      <div class='panel panel-default'>
+        <div class='panel-heading'>
+            <h3>INSTITUT SAINS DAN TEKNOLOGI PEMBANGUNAN INDONESIA</h2>
+            <h3 class='lead'>Kartu Rencana Studi (KRS)</h3>
+            <p>Tahun Ajaran : <%= @choose_electrical_subject.studiyear.name %>&nbsp;&nbsp;Semester <%= @choose_electrical_subject.studiyear.even_odd %></p>
+            <P>Fakultas Teknik Jurusan Elektro</P>
+            <p>Nama&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<%= @choose_electrical_subject.user.name.titleize rescue nil %></p>
+            <p>Stambuk : </p>
+
+
+        </div>
+        <div class='panel-body'>
+          <ul class='list-group'>
+            <% @choose_electrical_subject.electrical_subjects.each_with_index do |matakuliah, i| %>
+                <li class='list-group-item'><%= i = i + 1 %>.&nbsp;&nbsp;<%= matakuliah.code.upcase %>&nbsp;&nbsp;<%= matakuliah.name.upcase %>&nbsp;&nbsp;<%= matakuliah.credit.upcase %></li>
+            <% end %>
+          </ul>
+          <br />
+          <div class='pull-right'>
+            <%#= link_to 'Edit', edit_choose_electrical_subject_path(@choose_electrical_subject), class:'btn btn-warning' %>
+            <%#= link_to 'Cetak KRS', choose_electrical_subject_path(@choose_electrical_subject, format: 'pdf'), target:'_blank', class:'btn btn-success' %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

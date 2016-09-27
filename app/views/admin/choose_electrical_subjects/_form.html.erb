@@ -1,0 +1,11 @@
+<%= simple_form_for(@choose_electrical_subject) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :electrical_subjects, as: :check_boxes, label_method: lambda{|electrical_subject|"#{electrical_subject.code.upcase} - #{electrical_subject.name.titleize} - #{electrical_subject.credit} SKS - Semester #{electrical_subject.semester.name}"}, label: 'Pilih Mata Kuliah' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-success' %>&nbsp;&nbsp;<%#= link_to 'Kembali', choose_electrical_subjects_path, class:'btn btn-default' %>
+  </div>
+<% end %>

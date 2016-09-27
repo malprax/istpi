@@ -118,8 +118,7 @@
             <li ><%#= link_to "Aturan Kuliah", '#' %></li>
             <li ><%= link_to "Kurikulum", admin_civil_subjects_path %></li>
             <li ><%= link_to "Jadwal Kuliah", admin_civilschedulesubjects_path %></li>
-            <li><%= link_to "Nilai", "#" %></li>
-            <li><%= link_to "Isi KRS", "#" %></li>
+
           </ul>
         </li>
 
@@ -142,8 +141,8 @@
             <ul class="dropdown-menu">
               <li ><%= link_to "Edit Profil", '#' %></li>
               <li ><%= link_to "Ganti Password", edit_admin_user_path(current_user) %></li>
-              <li ><%= link_to "Lihat KRS ku", choose_electrical_subjects_path(current_study) %></li>
-              <li><%= link_to "Isi KRS", new_choose_electrical_subject_path %></li>
+              <li ><%= link_to "Lihat KRS ku", admin_user_choose_electrical_subjects_path(current_user) %></li>
+              <li><%#= link_to "Isi KRS", admin_user_choose_electrical_subject_path(current_user) %></li>
               <li ><%= link_to "Jadwal Kuliah ku", '#' %></li>
               <li ><%= link_to "Nilaiku", '#' %></li>
 
