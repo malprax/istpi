@@ -1,4 +1,4 @@
-<%= simple_form_for(@choose_electrical_subject) do |f| %>
+<%= simple_form_for([@user, @choose_electrical_subject], :url => (@choose_electrical_subject.new_record? ? admin_user_choose_electrical_subjects_path(@user) : admin_user_choose_electrical_subject_path(@user, @choose_electrical_subject)), :method => (@choose_electrical_subject.new_record? ? :post : :put)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

@@ -18,10 +18,10 @@
     <% @students_biographies.each do |students_biography| %>
       <tr>
         <td><%= students_biography.user.name rescue nil %></td>
-        <td><%= students_biography.full_name %></td>
+        <td><%= students_biography.full_name.titleize rescue nil %></td>
         <td><%= students_biography.stambuk %></td>
-        <td><%= students_biography.fakultas %></td>
-        <td><%= students_biography.jurusan %></td>
+        <td><%= students_biography.fakultas.titleize rescue nil %></td>
+        <td><%= students_biography.jurusan.titleize rescue nil %></td>
         <td><%= link_to 'Edit', edit_admin_students_biography_path(students_biography), class: 'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_students_biography_path(students_biography), method: :delete, data: { confirm: 'Anda yakin?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>

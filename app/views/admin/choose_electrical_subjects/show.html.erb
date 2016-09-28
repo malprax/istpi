@@ -20,8 +20,8 @@
           </ul>
           <br />
           <div class='pull-right'>
-            <%#= link_to 'Edit', edit_choose_electrical_subject_path(@choose_electrical_subject), class:'btn btn-warning' %>
-            <%#= link_to 'Cetak KRS', choose_electrical_subject_path(@choose_electrical_subject, format: 'pdf'), target:'_blank', class:'btn btn-success' %>
+            <%= link_to 'Edit', edit_admin_user_choose_electrical_subject_path(@user, @choose_electrical_subject), class:'btn btn-warning' %>
+            <%= link_to 'Cetak KRS', admin_user_choose_electrical_subject_path(current_user, @choose_electrical_subject, format: 'pdf'), target:'_blank', class:'btn btn-success' %>
           </div>
         </div>
 

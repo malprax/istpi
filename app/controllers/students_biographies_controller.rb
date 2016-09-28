@@ -5,9 +5,9 @@ class StudentsBiographiesController < ApplicationController
   # GET /students_biographies.json
   def index
     if params[:search]
-        @students_biographies = StudentsBiography.paginate(:page => params[:page], per_page: 10).search(params[:search]).order('created_at asc')
+        @students_biographies = StudentsBiography.paginate(:page => params[:page], per_page: 10).search(params[:search]).order('stambuk asc')
     else
-        @students_biographies = StudentsBiography.all.paginate(:page => params[:page], per_page: 10).order('created_at asc')
+        @students_biographies = StudentsBiography.all.paginate(:page => params[:page], per_page: 10).order('stambuk asc')
     end
   end
 

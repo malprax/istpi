@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='row'>
     <div class='col-sm-12 col-md-12'>
-      <h3 class='lead'>Edit Data <%= @students_biography.user.name.titleize %></h3>
+      <h3 class='lead'>Edit Data <%= @students_biography.user.full_name.titleize rescue nil  %></h3>
       <%= render 'form' %>
     </div>
   </div>

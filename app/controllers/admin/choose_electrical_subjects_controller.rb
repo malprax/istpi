@@ -10,6 +10,9 @@ class Admin::ChooseElectricalSubjectsController < ApplicationController
   # GET /choose_electrical_subjects/1
   # GET /choose_electrical_subjects/1.json
   def show
+    @user = current_user
+    @choose_electrical_subjects = ChooseElectricalSubject.all
+    @choose_electrical_subject = @user.choose_electrical_subjects.find(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
@@ -25,7 +28,9 @@ class Admin::ChooseElectricalSubjectsController < ApplicationController
 
   # GET /choose_electrical_subjects/new
   def new
-    @choose_electrical_subject = ChooseElectricalSubject.new
+    # @choose_electrical_subject = ChooseElectricalSubject.new
+    @user = current_user
+    @choose_electrical_subject = @user.choose_electrical_subjects.build
 
   end
 

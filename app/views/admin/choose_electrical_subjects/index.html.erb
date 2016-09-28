@@ -14,7 +14,7 @@
           <% @choose_electrical_subjects.each do |choose| %>
             <tr>
               <td><%=  link_to "#{choose.studiyear.name} #{choose.studiyear.even_odd} #{choose.studiyear.status ? 'aktif' : ''}", admin_user_choose_electrical_subject_path(current_user, choose) %></td>
-              <td><%#= link_to 'Edit', edit_choose_electrical_subject_path(choose), class:'btn btn-warning' %>&nbsp;&nbsp;<%#= link_to 'Destroy', choose, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+              <td><%= link_to 'Edit', edit_admin_user_choose_electrical_subject_path(choose), class:'btn btn-warning' %>&nbsp;&nbsp;<%#= link_to 'Destroy', choose, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
             </tr>
           <% end %>
         </tbody>
