@@ -6,7 +6,7 @@
     <%= f.input :name, label: 'Mata Kuliah' %>
     <%= f.input :credit, label: 'Jumlah Kredit', collection:['1','2','3','4'] %>
     <%= f.association :semester, label: 'Semester'%>
-    <%= f.input :category, label: 'Kategori', collection: ['Umum','Jurusan','Pilihan'] %>
+    <%= f.input :category, label: 'Kategori', collection: ['Umum','Jurusan','Pilihan', 'Laboratorium', 'Penunjang'] %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-default' %>&nbsp;&nbsp;<%= link_to 'Kembali', admin_electrical_subjects_path, class: 'btn btn-success' %>

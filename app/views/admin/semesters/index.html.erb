@@ -1,6 +1,6 @@
 
 <% if @semesters.present? %>
-<h1 class="lead">Daftar Semester&nbsp;&nbsp;<%= link_to 'Buat Semester', new_semester_path, class:'btn btn-default' %></h1>
+<h1 class="lead">Daftar Semester&nbsp;&nbsp;<%= link_to 'Buat Semester', new_admin_semester_path, class:'btn btn-default' %></h1>
 
 <table class="table table-hover table-striped">
   <thead>
@@ -14,7 +14,7 @@
     <% @semesters.each do |semester| %>
       <tr>
         <td><%= semester.name %></td>
-        <td><%= link_to 'Edit', edit_semester_path(semester), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', semester, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+        <td><%= link_to 'Edit', edit_admin_semester_path(semester), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', semester, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
         <td></td>
       </tr>
     <% end %>
