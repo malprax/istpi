@@ -12,13 +12,13 @@
         </thead>
 
         <tbody>
-          <% @electrical_subjects.each do |electrical_subject| %>
+          <% @civil_subjects.each do |civil_subject| %>
             <tr>
-              <td><%= electrical_subject.code.upcase %></td>
-              <td><%= electrical_subject.name.titleize if electrical_subject %></td>
-              <td><%= electrical_subject.credit %></td>
-              <td><%= electrical_subject.semester.name %></td>
-              <td><%= electrical_subject.category %></td>
+              <td><%= civil_subject.code.upcase %></td>
+              <td><%= civil_subject.name.titleize if civil_subject %></td>
+              <td><%= civil_subject.credit %></td>
+              <td><%= civil_subject.semester.name %></td>
+              <td><%= civil_subject.category %></td>
 
             </tr>
           <% end %>

@@ -1,10 +1,14 @@
 <html>
-  <head></head>
-  <title>RailsWickedPdf
+  <head>
+
+    <title>IST-PI | <%= @title if @title %></title>
     <%= wicked_pdf_stylesheet_link_tag    "application", :media => "all" %>
-    <%= wicked_pdf_javascript_include_tag "application" %>
+    <%#= wicked_pdf_javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-  </title>
+
+  </head>
+
+
   <body>
     <%= yield %>
   </body>

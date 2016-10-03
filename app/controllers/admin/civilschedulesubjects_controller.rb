@@ -4,7 +4,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
   # GET /civilschedulesubjects
   # GET /civilschedulesubjects.json
   def index
-    @civilschedulesubjects = Civilschedulesubject.order('count asc')
+    @civilschedulesubjects = Civilschedulesubject.sortir
   end
 
   # GET /civilschedulesubjects/1
@@ -20,7 +20,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
 
   # GET /civilschedulesubjects/1/edit
   def edit
-    
+
   end
 
   # POST /civilschedulesubjects
@@ -30,7 +30,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
 
     respond_to do |format|
       if @civilschedulesubject.save
-        format.html { redirect_to @civilschedulesubject, notice: 'Jadwal berhasil dibuat' }
+        format.html { redirect_to admin_civilschedulesubjects_path, notice: 'Jadwal berhasil dibuat' }
         format.json { render :show, status: :created, location: @civilschedulesubject }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @civilschedulesubject.update(civilschedulesubject_params)
-        format.html { redirect_to @civilschedulesubject, notice: 'Jadwal berhasil diperbarui' }
+        format.html { redirect_to admin_civilschedulesubjects_path, notice: 'Jadwal berhasil diperbarui' }
         format.json { render :show, status: :ok, location: @civilschedulesubject }
       else
         format.html { render :edit }

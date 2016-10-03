@@ -6,6 +6,16 @@ class CivilSubjectsController < ApplicationController
   def index
     @civil_subjects = CivilSubject.all
     @semesters = Semester.all
+    @title = 'Civil Subject'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Kurikulum',
+        template: 'civil_subjects/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /civil_subjects/1

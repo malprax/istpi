@@ -4,7 +4,17 @@ class CivilschedulesubjectsController < ApplicationController
   # GET /civilschedulesubjects
   # GET /civilschedulesubjects.json
   def index
-    @civilschedulesubjects = Civilschedulesubject.order('count asc')
+    @civilschedulesubjects = Civilschedulesubject.sortir
+    @title = 'Jadwal Kuliah Teknik Sipil'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Kurikulum',
+        template: 'civilschedulesubjects/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /civilschedulesubjects/1

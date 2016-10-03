@@ -26,6 +26,8 @@ class Civilschedulesubject < ActiveRecord::Base
   belongs_to :lecture2, :class_name => 'Lecture'
   belongs_to :lecture3, :class_name => 'Lecture'
 
+  scope :sortir, ->{order('count asc').order('classtime_id asc')} 
+
   def set_count
     #code
     if self.day == 'Senin'

@@ -5,6 +5,16 @@ class ElectricalschedulesubjectsController < ApplicationController
   # GET /electricalschedulesubjects.json
   def index
     @electricalschedulesubjects = Electricalschedulesubject.sortir
+    @title = 'Jadwal Kuliah Teknik Elektro'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'Jadwal Kuliah Teknik Elektro',
+        template: 'electricalschedulesubjects/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
+      end
+    end
   end
 
   # GET /electricalschedulesubjects/1

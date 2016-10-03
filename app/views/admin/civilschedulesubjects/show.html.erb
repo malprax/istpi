@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Civil subject:</strong>
   <%= @civilschedulesubject.civil_subject_id %>
@@ -27,17 +25,17 @@
 
 <p>
   <strong>Time:</strong>
-  <%= @civilschedulesubject.time_id %>
+  <%= @civilschedulesubject.classtime_id %>
 </p>
 
 <p>
   <strong>Year:</strong>
-  <%= @civilschedulesubject.year_id %>
+  <%= @civilschedulesubject.studiyear_id %>
 </p>
 
 <p>
   <strong>Room:</strong>
-  <%= @civilschedulesubject.room_id %>
+  <%= @civilschedulesubject.classroom_id %>
 </p>
 
 <p>
@@ -45,5 +43,5 @@
   <%= @civilschedulesubject.count %>
 </p>
 
-<%= link_to 'Edit', edit_civilschedulesubject_path(@civilschedulesubject) %> |
-<%= link_to 'Back', civilschedulesubjects_path %>
+<%= link_to 'Edit', edit_admin_civilschedulesubject_path(@civilschedulesubject) %> |
+<%= link_to 'Back', admin_civilschedulesubjects_path %>

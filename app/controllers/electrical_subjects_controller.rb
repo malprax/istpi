@@ -5,6 +5,7 @@ class ElectricalSubjectsController < ApplicationController
   # GET /electrical_subjects.json
   def index
     @electrical_subjects = ElectricalSubject.all
+    @title = 'Daftar Mata Kuliah Teknik Elektro'
     respond_to do |format|
       format.html
       format.pdf do

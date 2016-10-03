@@ -1,34 +1,40 @@
 <% if @civilschedulesubjects.present? %>
 <div class="well">
-  <h3 class="lead">Jadwal Kuliah Teknik Sipil&nbsp;&nbsp;<%= link_to 'Buat Jadwal', new_admin_civilschedulesubject_path %></h1>
+  <h3 class="lead">Jadwal Kuliah Teknik Sipil&nbsp;&nbsp;<%= link_to 'Buat Jadwal', new_admin_civilschedulesubject_path, class:'btn btn-default' %></h1>
+    <div class="panel panel-default">
+      <div class="panel-title pull-right">
+        <%#= render 'shared/search' %>
+      </div>
+      <div class="panel-body">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Hari</th>
+                  <th>Waktu</th>
+                  <th>Mata Kuliah</th>
+                  <th>Dosen</th>
+                  <th>Ruangan</th>
+                  <th colspan="1"></th>
+                </tr>
+              </thead>
 
-  <table class="table table-hover table-striped">
-    <thead>
-      <tr>
-        <th>Day</th>
-        <th>Time</th>
-        <th>Mata Kuliah</th>
-        <th>Room</th>
-        <th>Dosen</th>
-        <th colspan="1"></th>
-      </tr>
-    </thead>
+              <tbody>
+                <% @civilschedulesubjects.each do |civilschedulesubject| %>
+                  <tr>
+                    <td><%= civilschedulesubject.day %></td>
+                    <td><%= civilschedulesubject.classtime.time rescue nil %></td>
+                    <td><%= civilschedulesubject.civil_subject.name.titleize %></td>
+                    <td><%= civilschedulesubject.lecture1.name rescue nil %></td>
+                    <td><%= civilschedulesubject.classroom.room.upcase rescue nil %></td>
+                    <td><%= link_to 'Edit', edit_admin_civilschedulesubject_path(civilschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_civilschedulesubject_path(civilschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>&nbsp;&nbsp;<%= link_to 'Cetak SK', admin_download_sk_mengajar_path(id: civilschedulesubject.id, format: 'pdf'), target: '_blank', class: 'btn btn-default' %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
 
-    <tbody>
-      <% @civilschedulesubjects.each do |civilschedulesubject| %>
-        <tr>
-          <td><%= civilschedulesubject.day %></td>
-          <td><%= civilschedulesubject.time_id %></td>
-          <td><%= civilschedulesubject.civil_subject_id %></td>
-          <td><%= civilschedulesubject.room_id %></td>
-          <td><%= civilschedulesubject.lecture1_id %></td>
-          <td><%= link_to 'Edit', edit_civilschedulesubject_path(civilschedulesubject, class: 'btn btn-warning') %>&nbsp;&nbsp;<%= link_to 'Hapus', civilschedulesubject, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-danger' %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <br>
+            <br>
+      </div>
+    </div>
 </div>
 
 
