@@ -25,10 +25,10 @@
           <td><%= registration.kontak_person %></td>
           <td><%= registration.jurusan_peminat %></td>
           <td>
-            <%= link_to "e", admin_edit_calon_mahasiswa_path(registration), class: 'btn btn-warning' %>
-            <%= link_to "x", admin_delete_calon_mahasiswa_path(registration), method: :delete, data:{confirm: "Hapus Calon Mahasiswa?"}, class: 'btn btn-danger' %>
-            <%= link_to "p", admin_calon_mahasiswa_download_pdf_path(:nama => registration.nama, format: 'pdf'), target: '_blank', class: 'btn btn-primary' %>
-            <%= link_to "v", ok_mahasiswa_admin_registrations_path(registration), class: "btn btn-success", target: '_blank' %>
+            <%= link_to simbol_edit(""), admin_edit_calon_mahasiswa_path(registration), class: 'btn btn-warning' %>
+            <%= link_to simbol_hapus(""), admin_delete_calon_mahasiswa_path(registration), method: :delete, data:{confirm: "Hapus Calon Mahasiswa?"}, class: 'btn btn-danger' %>
+            <%= link_to simbol_cetak(""), admin_calon_mahasiswa_download_pdf_path(:nama => registration.nama, format: 'pdf'), target: '_blank', class: 'btn btn-primary' %>
+            <%= link_to simbol_ok(""), ok_mahasiswa_admin_registrations_path(registration), class: "btn btn-success", target: '_blank' %>
           </td>
         </tr>
       <% end %>

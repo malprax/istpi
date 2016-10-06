@@ -27,7 +27,7 @@
                 <td><%= electrical_subject.credit %></td>
                 <td><%= electrical_subject.semester.name %></td>
                 <td><%= electrical_subject.category %></td>
-                <td><%= link_to 'Edit', edit_admin_electrical_subject_path(electrical_subject), class: 'btn btn-warning' %>&nbsp;<%= link_to 'Hapus', admin_electrical_subject_path(electrical_subject), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+                <td><%= link_to simbol_edit(""), edit_admin_electrical_subject_path(electrical_subject), class: 'btn btn-warning' %>&nbsp;<%= link_to simbol_hapus(""), admin_electrical_subject_path(electrical_subject), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
               </tr>
             <% end %>
           </tbody>

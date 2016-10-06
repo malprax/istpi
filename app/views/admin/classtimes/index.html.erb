@@ -13,7 +13,7 @@
     <% @classtimes.each do |classtime| %>
       <tr>
         <td><%= classtime.time %></td>
-        <td><%= link_to 'Edit', edit_admin_classtime_path(classtime), class: 'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_classtime_path(classtime), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+        <td><%= link_to simbol_edit(""), edit_admin_classtime_path(classtime), class: 'btn btn-warning' %>&nbsp;&nbsp;<%= link_to simbol_hapus(""), admin_classtime_path(classtime), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>

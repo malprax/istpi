@@ -26,7 +26,7 @@
                     <td><%= civilschedulesubject.civil_subject.name.titleize %></td>
                     <td><%= civilschedulesubject.lecture1.name rescue nil %></td>
                     <td><%= civilschedulesubject.classroom.room.upcase rescue nil %></td>
-                    <td><%= link_to 'Edit', edit_admin_civilschedulesubject_path(civilschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Hapus', admin_civilschedulesubject_path(civilschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>&nbsp;&nbsp;<%= link_to 'Cetak SK', admin_download_sk_mengajar_path(id: civilschedulesubject.id, format: 'pdf'), target: '_blank', class: 'btn btn-default' %></td>
+                    <td><%= link_to simbol_edit(""), edit_admin_civilschedulesubject_path(civilschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to simbol_hapus(""), admin_civilschedulesubject_path(civilschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>&nbsp;&nbsp;<%= link_to simbol_cetak(""), admin_download_sk_mengajar_path(id: civilschedulesubject.id, format: 'pdf'), target: '_blank', class: 'btn btn-default' %></td>
                   </tr>
                 <% end %>
               </tbody>

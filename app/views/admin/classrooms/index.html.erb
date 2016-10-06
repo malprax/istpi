@@ -13,7 +13,7 @@
     <% @classrooms.each do |classroom| %>
       <tr>
         <td><%= classroom.room.upcase %></td>
-        <td><%= link_to 'Edit', edit_admin_classroom_path(classroom), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to 'Destroy', admin_classroom_path(classroom), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        <td><%= link_to simbol_edit(""), edit_admin_classroom_path(classroom), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to simbol_hapus(""), admin_classroom_path(classroom), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
