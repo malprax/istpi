@@ -2,10 +2,10 @@
 <html>
 <head>
   <title>User ISTPI</title>
-  <%= stylesheet_link_tag    'users/login', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'users/login', media: 'all', 'data-turbolinks-track' => true %>
   <%#= javascript_include_tag 'admin/application', 'data-turbolinks-track' => true %>
   <meta name="description" content="ISTPI">
-  <meta name="author" content="Admin ISTPI">
+  <meta name="user" content="User ISTPI">
   <meta name="keywords" content="istpi, institut sains dan teknologi pembangunan indonesia makassar">
   <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   <%= csrf_meta_tags %>
@@ -15,7 +15,6 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
-
           <%= yield %>
       </div>
     </div>

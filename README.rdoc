@@ -1,3 +1,4 @@
 == README
 
-Buat segera deadline sabtu besok
+Catatan Dari Pangkalan Data
+File yang wajib diupload antara lain KTP, Foto, Surat Keterangan Sehat Rochani, Surat Keterangan Sehat Jasmani, Surat Keterangan Bebas Narkotika, Surat Pernyataan dari Pimpinan PT. Upload file maksimum berukuran 500 KB dengan tipe gambar/pdf
