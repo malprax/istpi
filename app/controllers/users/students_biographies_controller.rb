@@ -1,4 +1,4 @@
-class StudentsBiographiesController < ApplicationController
+class Users::StudentsBiographiesController < ApplicationController
   before_action :set_students_biography, only: [:show, :edit, :update, :destroy]
 
   # GET /students_biographies

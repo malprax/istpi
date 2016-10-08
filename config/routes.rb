@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # resources :choose_electrical_subjects
-
+  namespace :user do
+    get "login" => 'sessions#new', :as => "login"
+    get "logout" => 'sessions#destroy', :as => "logout"
+  end
   namespace :admin do
     resources :users, :sessions, :buku_induks, :lectures, :functional_structurals, :students_biographies, :civil_subjects, :electrical_subjects, :studiyears, :classrooms, :classtimes, :electricalschedulesubjects, :civilschedulesubjects, :semesters, :class_times
       #  sessions
