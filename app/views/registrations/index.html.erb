@@ -1,5 +1,5 @@
 <% if @registrations.present? %>
-<h3 class="lead">Daftar Calon Mahasiswa Baru,&nbsp;&nbsp;<%= link_to "Daftar Sekarang",new_calon_mahasiswa_path, class: 'btn btn-danger btn_title' %></h3>
+<h3 class="lead">Daftar Calon Mahasiswa Baru,&nbsp;&nbsp;<%= link_to "Daftar Sekarang",new_calon_mahasiswa_path, class: 'btn btn-info btn_title' %></h3>
 
 <table class= "table table-hover table-striped">
   <thead>
@@ -23,7 +23,7 @@
         <td><%= registration.kontak_person %></td>
         <td><%= registration.jurusan_peminat %></td>
         <td>
-          <%= link_to "cetak", calon_mahasiswa_download_pdf_path(:nama => registration.nama, format: 'pdf'), target: '_blank', class: 'btn btn-default' %>
+          <%= link_to simbol_cetak(""), calon_mahasiswa_download_pdf_path(:nama => registration.nama, format: 'pdf'), target: '_blank', class: 'btn btn-default' %>
         </td>
 
       </tr>

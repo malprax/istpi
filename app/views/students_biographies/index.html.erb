@@ -1,0 +1,41 @@
+<% if @students_biographies.present? %>
+<h3 class="lead">Daftar Nama Mahasiswa ISTPI Aktif</h3>
+<div class="panel panel-default">
+  <div class="panel-title pull-right">
+    <%= render 'shared/search' %>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Stambuk</th>
+          <th>Jenis kelamin</th>
+          <th>Tempat, Tanggal Lahir</th>
+          <th>Fakultas</th>
+          <th>Jurusan</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @students_biographies.each do |students_biography| %>
+          <tr>
+            <td><%= link_to students_biography.user.name, students_biography rescue nil %></td>
+            <td><%= students_biography.stambuk %></td>
+            <td><%= students_biography.jenis_kelamin %></td>
+            <td><%= students_biography.tempat_lahir %>&nbsp; <%= students_biography.tanggal_lahir %></td>
+            <td><%= students_biography.fakultas %></td>
+            <td><%= students_biography.jurusan %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+      <%= will_paginate @students_biographies, :previous_label => '&laquo;', :next_label => '&raquo;', renderer: BootstrapPagination::Rails %>
+
+<br>
+<% else %>
+<h3 class="lead">Maaf, Belum Ada Data Mahasiswa Silahkan Kembali Lain Waktu..</h3>
+<% end %>
+  </div>
+</div>
