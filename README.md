@@ -688,4 +688,8 @@ youtube-dl "https://d1wst0behutosd.cloudfront.net/videos/10586514/29332713.mp4?E
 dolphindatalab.com
 dokterhardisk.com
 
-gagal lagi hari ini untuk fokus
+10 oktober 2016
+pr catatan penting:
+masih gagal buat sk mengajar
+buat juga absensi online
+cepat routing siswa agar bisa login cepat
