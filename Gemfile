@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -76,7 +76,7 @@ end
 # gem 'protected_attributes'
 
 #editor
-gem "ckeditor", :git => "https://github.com/galetahub/ckeditor.git"
+gem "ckeditor", :git => "http://github.com/galetahub/ckeditor.git"
 
 #user_authority
 gem 'cancancan'
@@ -125,7 +125,7 @@ gem 'chosen-rails'
 
 #admin
 #gem 'activeadmin', github: 'activeadmin'
-gem 'rails_admin', :git => "https://github.com/artdevil/rails_admin"
+gem 'rails_admin', :git => "http://github.com/artdevil/rails_admin"
 
 #facebook API
 gem 'koala'
