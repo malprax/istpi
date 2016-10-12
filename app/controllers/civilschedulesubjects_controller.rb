@@ -4,7 +4,7 @@ class CivilschedulesubjectsController < ApplicationController
   # GET /civilschedulesubjects
   # GET /civilschedulesubjects.json
   def index
-    @civilschedulesubjects = Civilschedulesubject.sortir
+    @civilschedulesubjects = Civilschedulesubject.order('code created_at')
     @title = 'Jadwal Kuliah Teknik Sipil'
     respond_to do |format|
       format.html
