@@ -4,7 +4,7 @@ class ElectricalschedulesubjectsController < ApplicationController
   # GET /electricalschedulesubjects
   # GET /electricalschedulesubjects.json
   def index
-    @electricalschedulesubjects = Electricalschedulesubject.order('code created_at')
+    @electricalschedulesubjects = Electricalschedulesubject.order('count asc')
     @title = 'Jadwal Kuliah Teknik Elektro'
     respond_to do |format|
       format.html
