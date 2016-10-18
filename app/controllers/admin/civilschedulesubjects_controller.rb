@@ -66,7 +66,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
 
   def download_pdf
     @civilschedulesubject = Civilschedulesubject.find(params[:id])
-    # @registration = Registration.find_by_nama(params[:id])
+    @pembantu_rektor_i = FunctionalStructural.where(:jabatan => 'Pembantu Rektor I').first
     respond_to do |format|
       format.html
       format.pdf do

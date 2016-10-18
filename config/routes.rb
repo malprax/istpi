@@ -34,7 +34,8 @@ Rails.application.routes.draw do
        delete 'struktural/:id' => 'functional_structurals#destroy', :as => "delete_struktural"
 
        #electricalshcedulesubject
-       get 'download_sk_mengajar' => 'electricalschedulesubjects#download_pdf', :as => "download_sk_mengajar"
+       get 'download_sk_mengajar_sipil' => 'civilschedulesubjects#download_pdf', :as => "download_sk_mengajar_sipil"
+       get 'download_sk_mengajar_elektro' => 'electricalschedulesubjects#download_pdf', :as => "download_sk_mengajar_elektro"
 
        #  surat masuk
       #  get 'calon_mahasiswa_index' => 'registrations#index', :as => "calon_mahasiswa_index"
