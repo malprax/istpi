@@ -5,6 +5,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
   # GET /civilschedulesubjects.json
   def index
     @civilschedulesubjects = Civilschedulesubject.order('count asc')
+
   end
 
   # GET /civilschedulesubjects/1
@@ -60,6 +61,21 @@ class Admin::CivilschedulesubjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to civilschedulesubjects_url, notice: 'Jadwal berhasil dihapus' }
       format.json { head :no_content }
+    end
+  end
+
+  def download_pdf
+    @civilschedulesubject = Civilschedulesubject.find(params[:id])
+    # @registration = Registration.find_by_nama(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = SkMengajarSipilPdf.new(@civilschedulesubject)
+        send_data pdf.render,
+        type: "application/pdf",
+        disposition: "inline",
+        filename: "SK Mengasuh Dosen ISTPI Matakuliah #{@civilschedulesubject.civil_subject.name.titleize}.pdf"
+      end
     end
   end
 
