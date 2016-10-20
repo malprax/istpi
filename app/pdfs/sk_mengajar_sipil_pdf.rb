@@ -23,6 +23,15 @@ class SkMengajarSipilPdf< Prawn::Document
         jadwal
         tandatangan2
         catatan
+      start_new_page
+        kopsurat
+        garis
+        materi_dosen_1
+      start_new_page
+        kopsurat
+        garis
+        materi_dosen_2
+
     #akhir surat
   end
 
@@ -53,7 +62,7 @@ class SkMengajarSipilPdf< Prawn::Document
     bounding_box([80, cursor], :width => 500, :height => 80) do
         text_box "SURAT KEPUTUSAN", :at  => [120,cursor], :size  => 12
         text_box "INSTITUS SAINS DAN TEKNOLOGI PEMBANGUNAN INDONESIA", :at  => [0,cursor-20], :size  => 12
-        text_box "NOMOR: 01/SK/IST-PI/IX/#{@civilschedulesubject.created_at}", :at  => [90,cursor-40], :size  => 12
+        text_box "NOMOR: 01/SK/IST-PI/IX/#{@civilschedulesubject.created_at.strftime('%Y')}", :at  => [90,cursor-40], :size  => 12
     end
   end
 
@@ -131,27 +140,35 @@ class SkMengajarSipilPdf< Prawn::Document
 
   def lampiran
     #code
-    bounding_box([0, cursor], :width => 500, :height => 100) do
-      text_box "Lampiran : SK No. 01/SK/IST-PI/IX/#{@civilschedulesubject.created_at}, tentang pengangkata Dosen ", :at  => [60,cursor-20], :size  => 12
+    bounding_box([0, cursor], :width => 500, :height => 40) do
+      text_box "Lampiran : SK No. 01/SK/IST-PI/IX/#{@civilschedulesubject.created_at.strftime('%Y')}, tentang pengangkatan Dosen ", :at  => [60,cursor-20], :size  => 12
       text_box "Pengampuh Mata Kuliah Semester #{@tahun_ajaran.even_odd} TA #{@tahun_ajaran.name} atas nama:", :at  => [60,cursor-40], :size  => 12
     end
   end
 
   def jadwal
     #code
-    bounding_box([0, cursor], :width => 500, :height => 300, position: :center) do
-    text_box "JADWAL PERKULIAHAN IST-PI MAKASSAR, SEMESTER #{@tahun_ajaran.even_odd.upcase} ", :at  => [60,cursor-20], :size  => 12
-    text_box "TAHUN AJARAN #{@tahun_ajaran.name}", :at  => [60,cursor-40], :size  => 12
-    text_box "Tabel", :at  => [60,cursor-60], :size  => 12
+    bounding_box([0, cursor], :width => 500, :height => 60) do
+      text_box "JADWAL PERKULIAHAN IST-PI MAKASSAR, SEMESTER #{@tahun_ajaran.even_odd.upcase} ", :at  => [60,cursor-20], :size  => 12
+      text_box "TAHUN AJARAN #{@tahun_ajaran.name}", :at  => [60,cursor-40], :size  => 12
+    end
+    bounding_box([60, cursor], :width => 500, :height => 80) do
+      data = [ ["No", "Hari", "Waktu", "Mata Kuliah", "SKS", "Ruang", "Prodi"],
+              ["1","#{@civilschedulesubject.day}", "#{@civilschedulesubject.classtime.time}", "#{@civilschedulesubject.civil_subject.name.upcase}", "#{@civilschedulesubject.civil_subject.credit}", "#{@civilschedulesubject.classroom.room.upcase}","T. Sipil"],
 
-    # table([[ "Item", "Quantity" ], *shopping_list]) do |t|
-    #     t.header = true
-    #     t.row_colors = [ "aaaaff", "aaffaa", "ffaaaa" ]
-    #     t.row(0).style :background_color => '448844', :text_color => 'ffffff'
-    #     report erratum • discuss
-    #     t.columns(1).align = :right
-    # end
+              ]
+      table(data, :cell_style => { :inline_format => true }) do
+          # values = cells.columns(1..-1).rows(1..-1)
+          # bad_sales = values.filter do |cell|
+          #   cell.content.to_i < 40
+          # end
+          # bad_sales.background_color = "FFAAAA"
+          # good_sales = values.filter do |cell|
+          #   cell.content.to_i > 70
+          # end
+          # good_sales.background_color = "AAFFAA"
       end
+    end
   end
 
   def tandatangan2
@@ -170,6 +187,99 @@ class SkMengajarSipilPdf< Prawn::Document
         text_box "Catatan", :at  => [60,cursor], :size  => 10
         text_box "Diminta agar menyampaikan Rencana Pembelajaran Semester (RPS) dan Satuan Acara", :at  => [60,cursor-20], :size  => 10
         text_box "Perkuliahan (SAP) kepada Prodi masing-masing sebelum perkuliahan dimulai", :at  => [60,cursor-40], :size  => 10
+    end
+  end
+
+  def materi_dosen_1
+    #code
+    bounding_box([0, cursor], :width => 500, :height => 100) do
+        text_box "DOSEN                        : #{@civilschedulesubject.lecture1.name.upcase}", :at  => [60,cursor], :size  => 10
+        text_box "MATA KULIAH / KODE  : #{@civilschedulesubject.civil_subject.name.upcase} / #{@civilschedulesubject.civil_subject.code.upcase}", :at  => [60,cursor-20], :size  => 10
+        text_box "HARI, JAM                   : #{@civilschedulesubject.day}, #{@civilschedulesubject.classtime.time}", :at  => [60,cursor-40], :size  => 10
+        text_box "RUANG                        : #{@civilschedulesubject.classroom.room.upcase}", :at  => [60,cursor-60], :size  => 10
+        text_box "KELAS                         : -", :at  => [60,cursor-80], :size  => 10
+    end
+    bounding_box([60, cursor], :width => 500, :height => 800) do
+      data = [ ["No", "Tanggal", "Pokok Bahasan", "Uraian Pokok Bahasan", "Dosen", "Ketua Kelas"],
+              ["1","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["2","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["3","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["4","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["5","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["6","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["7","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["8","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ["","", "", "", "", ""],
+              ]
+      table(data, :cell_style => { :inline_format => true }) do
+          # values = cells.columns(1..-1).rows(1..-1)
+          # bad_sales = values.filter do |cell|
+          #   cell.content.to_i < 40
+          # end
+          # bad_sales.background_color = "FFAAAA"
+          # good_sales = values.filter do |cell|
+          #   cell.content.to_i > 70
+          # end
+          # good_sales.background_color = "AAFFAA"
+      end
+    end
+  end
+
+  def materi_dosen_2
+    #code
+    bounding_box([60, cursor], :width => 500, :height => 600) do
+      data = [ ["No", "Tanggal", "Pokok Bahasan", "Uraian Pokok Bahasan", "Dosen", "Ketua Kelas"],
+      ["9","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["10","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["11","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["12","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["13","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["14","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["15","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["16","", "", "", "", ""],
+      ["","", "", "", "", ""],
+      ["","", "", "", "", ""],
+              ]
+      table(data, :cell_style => { :inline_format => true }) do
+          # values = cells.columns(1..-1).rows(1..-1)
+          # bad_sales = values.filter do |cell|
+          #   cell.content.to_i < 40
+          # end
+          # bad_sales.background_color = "FFAAAA"
+          # good_sales = values.filter do |cell|
+          #   cell.content.to_i > 70
+          # end
+          # good_sales.background_color = "AAFFAA"
+      end
     end
   end
 end

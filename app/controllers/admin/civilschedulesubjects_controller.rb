@@ -4,7 +4,7 @@ class Admin::CivilschedulesubjectsController < ApplicationController
   # GET /civilschedulesubjects
   # GET /civilschedulesubjects.json
   def index
-    @civilschedulesubjects = Civilschedulesubject.order('count asc')
+    @civilschedulesubjects = Civilschedulesubject.sortir
 
   end
 

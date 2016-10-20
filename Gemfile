@@ -159,6 +159,8 @@ gem 'puma'
 
 #convert to pdf
 gem 'prawn'
+gem 'prawn-table', '~> 0.2.2'
+
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 

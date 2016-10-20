@@ -10,7 +10,8 @@
         <tr>
           <th>Nama</th>
           <th>Stambuk</th>
-          <th>Jenis kelamin</th>
+          <!-- <th>Jenis kelamin</th> -->
+          <th>User Id</th>
           <th>Tempat, Tanggal Lahir</th>
           <th>Fakultas</th>
           <th>Jurusan</th>
@@ -22,7 +23,8 @@
           <tr>
             <td><%= link_to students_biography.user.name, students_biography rescue nil %></td>
             <td><%= students_biography.stambuk %></td>
-            <td><%= students_biography.jenis_kelamin %></td>
+            <!-- <td><%#= students_biography.jenis_kelamin %></td> -->
+            <td><%= students_biography.user.name %></td>
             <td><%= students_biography.tempat_lahir %>&nbsp; <%= students_biography.tanggal_lahir %></td>
             <td><%= students_biography.fakultas %></td>
             <td><%= students_biography.jurusan %></td>

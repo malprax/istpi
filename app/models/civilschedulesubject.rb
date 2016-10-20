@@ -26,7 +26,29 @@ class Civilschedulesubject < ActiveRecord::Base
   belongs_to :lecture2, :class_name => 'Lecture'
   belongs_to :lecture3, :class_name => 'Lecture'
 
-  scope :sortir, ->{order('count desc').order('classtime_id asc')} 
+  scope :sortir, ->{order('count asc').waktu}
+  # scope :waktu
+
+  # def date_date=(time)
+  #   time.to_i
+  # end
+  #
+  # def self.waktunya
+  #   #code
+  #   all.sort_by do |item|
+  #     DateTime.parse(item([:time])).to_i * 1
+  #   end
+  # end
+
+  def self.waktu(classtime)
+    #code
+    self.classtime
+  end
+
+  def classtime=(classtime)
+    #code
+    # self.classtime.time.to_i
+  end
 
   def set_count
     #code

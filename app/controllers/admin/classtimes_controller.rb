@@ -4,7 +4,7 @@ class Admin::ClasstimesController < ApplicationController
   # GET /classtimes
   # GET /classtimes.json
   def index
-    @classtimes = Classtime.order('time asc')
+    @classtimes = Classtime.order_waktu
   end
 
   # GET /classtimes/1
