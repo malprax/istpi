@@ -1,4 +1,4 @@
-# istpi
+d# istpi
 fakultas TEKNIK
 teknik sipil
 teknik elektro
@@ -696,3 +696,21 @@ cepat routing siswa agar bisa login cepat
 
 UsernameChanges saved
 http://www.facebook.com/ARsouvenirs
+
+
+Hello Crafters Nice to see you this morning;  I want to show you my handmade call If you have any question or if you want me like your videos or share it,  please write in the comment. Thank you for your time and hope you enjoy it
+
+Good Seo rwb 23 oktober 2016
+ Arsenal vs Ludogorets 6-0 All Goals Highlights 19/10/2016 UCL
+
+ footballdemons,
+ Sanchez goals,
+ Arsenal,
+ Ludogorets,
+ Oxlade-Chamberlain goals,
+ UCL,
+hd,
+19\/10\/2016,
+soccer highlights,
+ozil goals,
+Walcott goals
