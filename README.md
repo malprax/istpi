@@ -666,18 +666,38 @@ tulis semua progress
 3. jadwal kuliah mesti ada kelasnya
 
 sudah lunas dengan total 1 juta
-2. fitur pendaftaran online fix
-3. fitur pendaftaran domain ist-pi.com
-4. fitur daftar pejabat struktural fix
-5. fitur autentifikasi user fix
-6. beli domain istpi.ac.id fix satu tahun
+1.	Pembelian Domain ISTPI.AC.ID Nota Terlampir 		  Rp   100.000,-
+2.	Pembelian Domain IST-PI.COM - Nota Terlampir  		Rp    108.926,
+3.	Pembuatan Pendaftaran OnLine Mahasiswa Baru 	    Rp    300.000,-
+4.	Pembuatan Daftar Nama Dosen Online 			          Rp    150.000,-
+5.	Pembuatan Daftar Struktural Online 			          Rp    150.000,-
+6.	Pembuatan Biodata Siswa Online 				            Rp    150.000,-
+7.	Biaya Internet						                        Rp     41.074,-
+
 
 belum lunas
-7. fitu pembuatan data dosen
-8. fitur daftar mata kuliah fix
-9. fitur jadwal mata kuliah fix
-10. fitur sk mengajar fix
-11. fitur download formulir mahasiswa baru
+8.  fitur pembuatan data dosen                        Rp    125.000,-
+9.  fitur pembuatan data ruang kuliah                 Rp    125.000,-
+10. fitur pembuatan data waktu kuliah                 Rp    125.000,-
+11. fitur pembuatan data semester kuliah              Rp    125.000,-
+12.	Biaya Internet						                        Rp    100.000,-
+
+fitur yang sudah jadi lagi
+11. fitur pembuatan data tahun ajaran
+12. fitur pembuatan admin panel
+13. fitur pembuatan user panel
+14. fitur sk mengajar
+15. fitur download formulir mahasiswa baru
+16. fitur download jadwal mata kuliah
+17. fitur download absensi mata kuliah tanpa mahasiswa
+18. fitur pembuatan krs online
+
+
+comming soon
+19. fitur pembuatan aplikasi mobile info
+20. fitur pembuatan googledrive istpi
+21. fitur boost dan keamanan website dengan cloudflare
+22. fitur ping website agar tetap aktif dengan new relic
 
 
 #report 16 september 2016

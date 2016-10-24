@@ -9,11 +9,10 @@ class CivilschedulesubjectsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = SkMengajarSipilPdf.new(@civilschedulesubject)
-        send_data pdf.render,
-        type: "application/pdf",
-        disposition: "inline",
-        filename: "SK Mengasuh Dosen ISTPI Matakuliah #{@civilschedulesubject.civil_subject.name.titleize}.pdf"
+        render pdf: 'Jadwal Kuliah Teknik Sipil',
+        template: 'civilschedulesubjects/index.pdf.erb',
+        layout: 'pdf.html.erb'
+        # render :pdf => 'Kurikulum Teknik Elektro', :layout => 'Kurikulum Teknik Elektro.html'
       end
     end
   end
