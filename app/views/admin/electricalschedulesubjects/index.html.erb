@@ -27,13 +27,13 @@
                 <td><%= electricalschedulesubject.electrical_subject.name.titleize rescue nil %></td>
                 <td><%= electricalschedulesubject.lecture1.name rescue nil %></td>
                 <td><%= electricalschedulesubject.classroom.room.upcase rescue nil  %></td>
-                <td><%= link_to simbol_edit(""), edit_admin_electricalschedulesubject_path(electricalschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to simbol_hapus(""), admin_electricalschedulesubject_path(electricalschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>&nbsp;&nbsp;<%= link_to simbol_cetak(""), admin_download_sk_mengajar_path(id: electricalschedulesubject.id, format: 'pdf'), target: '_blank', class: 'btn btn-default' %></td>
+                <td><%= link_to simbol_edit(""), edit_admin_electricalschedulesubject_path(electricalschedulesubject), class:'btn btn-warning' %>&nbsp;&nbsp;<%= link_to simbol_hapus(""), admin_electricalschedulesubject_path(electricalschedulesubject), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>&nbsp;&nbsp;<%#= link_to simbol_cetak(""), admin_download_sk_mengajar_path(id: electricalschedulesubject.id, format: 'pdf'), target: '_blank', class: 'btn btn-default' %></td>
               </tr>
             <% end %>
           </tbody>
         </table>
         <br>
-        <%= link_to "Download Jadwal", electricalschedulesubjects_path(@electricalschedulesubjects, format:'pdf'), target:'_blank', class:'btn btn-default' %>
+        <%#= link_to "Download Jadwal", electricalschedulesubjects_path(@electricalschedulesubjects, format:'pdf'), target:'_blank', class:'btn btn-default' %>
       </div>
     </div>
 </div>

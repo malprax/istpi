@@ -698,6 +698,7 @@ comming soon
 20. fitur pembuatan googledrive istpi
 21. fitur boost dan keamanan website dengan cloudflare
 22. fitur ping website agar tetap aktif dengan new relic
+23. fitur pembuatan absensi online
 
 
 #report 16 september 2016

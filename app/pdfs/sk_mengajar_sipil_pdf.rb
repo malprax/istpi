@@ -31,6 +31,7 @@ class SkMengajarSipilPdf< Prawn::Document
         kopsurat
         garis
         materi_dosen_2
+        tandatangan3
 
     #akhir surat
   end
@@ -124,6 +125,7 @@ class SkMengajarSipilPdf< Prawn::Document
         text_box "IST-Pembangunan Indonesia", :at  => [60,cursor-60], :size  => 12
         move_down 60
         text_box "#{@pembantu_rektor_i.lecture.name}", :at  => [60,cursor-80], :size  => 12
+        text_box "NIDN : #{@pembantu_rektor_i.lecture.nidn if @pembantu_rektor_i.lecture.nidn}", :at  => [60,cursor-100], :size  => 12
     end
   end
 
@@ -178,6 +180,7 @@ class SkMengajarSipilPdf< Prawn::Document
         text_box "Pembantu Rektor I", :at  => [60,cursor-20], :size  => 12
         move_down 60
         text_box "#{@pembantu_rektor_i.lecture.name}", :at  => [60,cursor-40], :size  => 12
+        text_box "NIDN : #{@pembantu_rektor_i.lecture.nidn if @pembantu_rektor_i.lecture.nidn}", :at  => [60,cursor-60], :size  => 12
     end
   end
 
@@ -242,7 +245,7 @@ class SkMengajarSipilPdf< Prawn::Document
 
   def materi_dosen_2
     #code
-    bounding_box([60, cursor], :width => 500, :height => 600) do
+    bounding_box([60, cursor], :width => 500, :height => 500) do
       data = [ ["No", "Tanggal", "Pokok Bahasan", "Uraian Pokok Bahasan", "Dosen", "Ketua Kelas"],
       ["9","", "", "", "", ""],
       ["","", "", "", "", ""],
@@ -280,6 +283,17 @@ class SkMengajarSipilPdf< Prawn::Document
           # end
           # good_sales.background_color = "AAFFAA"
       end
+    end
+  end
+  def tandatangan3
+    #code
+    bounding_box([0, cursor], :width => 500, :height => 200) do
+      text_box "Mengetahui", :at  => [60,cursor], :size  => 12
+        text_box "IST-Pembangunan Indonesia", :at  => [60,cursor-20], :size  => 12
+        text_box "Pembantu Rektor I", :at  => [60,cursor-40], :size  => 12
+        move_down 60
+        text_box "#{@pembantu_rektor_i.lecture.name}", :at  => [60,cursor-40], :size  => 12
+        text_box "NIDN : #{@pembantu_rektor_i.lecture.nidn if @pembantu_rektor_i.lecture.nidn}", :at  => [60,cursor-60], :size  => 12
     end
   end
 end
