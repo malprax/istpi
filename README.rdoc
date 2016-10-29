@@ -1,4 +1,4 @@
-== README
+~== README
 
 Catatan Dari Pangkalan Data
 File yang wajib diupload antara lain
@@ -50,5 +50,5 @@ Bcute craft
 
 
 Hubungi mahasiswa
-Abrisal
+Abrisal #bahaya nanti di coret dikti ini kampus
 081354909847 luwuk banggai kerja dari pangkep
