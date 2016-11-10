@@ -691,6 +691,7 @@ fitur yang sudah jadi lagi
 16. fitur download jadwal mata kuliah
 17. fitur download absensi mata kuliah tanpa mahasiswa
 18. fitur pembuatan krs online
+19. fitur cloudflare security and always on
 
 
 comming soon
