@@ -270,3 +270,8 @@ PDPT Dikti Sudha berhasil disinkronisasi
 
 buat sistem istpi seperti pdpt dikti
 download video lagi
+
+
+Untuk mendapatkan Token anda dapat mengirimkan SMS ke 98108
+dengan mengetikkan keyword "SMARTBISNIS 25000" (Tanpa tanda petik)
+Setelah anda mendapatkan SMS yang berisi Token silahkan dimasukkan dibawah.
