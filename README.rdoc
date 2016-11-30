@@ -276,3 +276,6 @@ http://starbox.smartbisnis.co.id/digilite/member/topup/sms
 Untuk mendapatkan Token anda dapat mengirimkan SMS ke 98108
 dengan mengetikkan keyword "SMARTBISNIS 25000" (Tanpa tanda petik)
 Setelah anda mendapatkan SMS yang berisi Token silahkan dimasukkan dibawah.
+
+besok cek amplop
+besok cek surat
