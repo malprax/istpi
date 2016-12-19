@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   def current_studiyear
     #code
     @studiyear = Studiyear.find_by_status(true)
+    #some change
   end
 
   def current_study
