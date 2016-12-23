@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :students
   # resources :choose_electrical_subjects
   namespace :users do
     resources :sessions, :students_biographies, :choose_electrical_subjects
